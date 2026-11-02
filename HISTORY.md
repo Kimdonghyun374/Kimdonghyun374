@@ -58,3 +58,13 @@
 - 제외: 사용자 선택으로 `.gitignore`에 `*.rbxl`, `*.rbxlx` 추가 → `Copy\asd.rbxl` 미업로드 (Part_Icles 재배포 금지 라이선스).
 - 커밋 d0cdddb: `.gitignore`, `.mcp.json`, `CLAUDE.md`, `HISTORY.md`. 사용자가 터미널에서 브라우저 GitHub 로그인 후 push 성공. `git ls-remote`로 원격 main = d0cdddb 확인.
 - 이 기록 자체는 아직 커밋·푸시하지 않음.
+
+## 2026-11-03 — Mac에서 GitHub 저장소 pull
+- 실행 컴퓨터: Mac `dongdong-ui-MacBookPro.local`. 작업 폴더: `/Users/dongdong/projectMS`.
+- 작업: 빈 폴더를 git 저장소(main)로 초기화하고 origin `https://github.com/Kimdonghyun374/Kimdonghyun374.git` 연결 후 `git pull origin main` → 6387f2a까지 받음.
+- 참고(실제 확인): Mac 개발 폴더 `/Users/dongdong/Documents/ChatGPT/ProjectMS` 존재(src/, tests/, studio/, verification/, history.md 등). 이번 작업에서는 읽기·수정하지 않음.
+- 참고: Claude Code 사용자 설정에 `Roblox_Studio`(`/Applications/RobloxStudio.app/Contents/MacOS/StudioMCP`)를 등록함. 저장소의 `.mcp.json`은 Windows 전용(`cmd.exe`) 명령이라 Mac에서는 실행되지 않으며, 같은 이름으로 사용자 설정을 가릴 수 있음(미검증).
+- 저장소 공개 여부: GitHub API 기준 `private: false` (공개).
+- 변경(사용자 지시): `.mcp.json`을 저장소에서 제거(`git rm`, Mac 로컬 파일도 삭제)하고 `.gitignore`에 `.mcp.json` 추가. 이전 내용은 git 기록 d0cdddb에 남아 있음.
+- ⚠️ Windows에서 이 변경을 pull하면 `C:\ProjectMs\.mcp.json`이 삭제됨 → 그 전에 같은 내용(`cmd.exe /c %LOCALAPPDATA%\Roblox\mcp.bat`)을 Windows Claude Code 사용자 설정(`claude mcp add --scope user ...`)으로 옮겨야 Studio MCP가 유지됨.
+- 이 기록과 위 변경은 아직 커밋·푸시하지 않음.
