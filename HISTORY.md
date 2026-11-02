@@ -51,3 +51,10 @@
 - 변경점: 원문의 옛 워크스페이스 링크(v0.1 4044227f…, 프로젝트 3a74227f…)를 현재 워크스페이스 페이지(v0.1 1df8abb5…, DRAFT 0608abb5…) 멘션으로 교체. 문서 간 로컬 .md 링크는 새 페이지 멘션으로 바꿔 각 페이지 맨 위에 추가. 본문 내용은 그대로.
 - 이번에는 블록 한도 거절 없음. 기존 v0.1·목차·개발 계획 페이지는 수정하지 않음.
 - 남은 작업: 사용자가 Notion에서 표·코드 블록 표시 확인.
+
+## 2026-11-03 — GitHub 저장소 업로드
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 대상: https://github.com/Kimdonghyun374/Kimdonghyun374 (빈 공개 저장소, main 브랜치).
+- 준비: Git 미설치 → 사용자 승인으로 `winget install Git.Git`(2.56.0.4) 설치. `C:\ProjectMs`를 git 저장소로 초기화, 저장소 로컬 user.name `Kimdonghyun374`, email `Kimdonghyun374@users.noreply.github.com`(실제 이메일 비공개).
+- 제외: 사용자 선택으로 `.gitignore`에 `*.rbxl`, `*.rbxlx` 추가 → `Copy\asd.rbxl` 미업로드 (Part_Icles 재배포 금지 라이선스).
+- 커밋 d0cdddb: `.gitignore`, `.mcp.json`, `CLAUDE.md`, `HISTORY.md`. 사용자가 터미널에서 브라우저 GitHub 로그인 후 push 성공. `git ls-remote`로 원격 main = d0cdddb 확인.
+- 이 기록 자체는 아직 커밋·푸시하지 않음.
