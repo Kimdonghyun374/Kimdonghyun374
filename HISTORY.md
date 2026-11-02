@@ -57,7 +57,7 @@
 - 준비: Git 미설치 → 사용자 승인으로 `winget install Git.Git`(2.56.0.4) 설치. `C:\ProjectMs`를 git 저장소로 초기화, 저장소 로컬 user.name `Kimdonghyun374`, email `Kimdonghyun374@users.noreply.github.com`(실제 이메일 비공개).
 - 제외: 사용자 선택으로 `.gitignore`에 `*.rbxl`, `*.rbxlx` 추가 → `Copy\asd.rbxl` 미업로드 (Part_Icles 재배포 금지 라이선스).
 - 커밋 d0cdddb: `.gitignore`, `.mcp.json`, `CLAUDE.md`, `HISTORY.md`. 사용자가 터미널에서 브라우저 GitHub 로그인 후 push 성공. `git ls-remote`로 원격 main = d0cdddb 확인.
-- 이 기록 자체는 아직 커밋·푸시하지 않음.
+- 이 기록은 이후 커밋 6387f2a로 푸시함.
 
 ## 2026-11-03 — Mac에서 GitHub 저장소 pull
 - 실행 컴퓨터: Mac `dongdong-ui-MacBookPro.local`. 작업 폴더: `/Users/dongdong/projectMS`.
@@ -68,3 +68,10 @@
 - 변경(사용자 지시): `.mcp.json`을 저장소에서 제거(`git rm`, Mac 로컬 파일도 삭제)하고 `.gitignore`에 `.mcp.json` 추가. 이전 내용은 git 기록 d0cdddb에 남아 있음.
 - ⚠️ Windows에서 이 변경을 pull하면 `C:\ProjectMs\.mcp.json`이 삭제됨 → 그 전에 같은 내용(`cmd.exe /c %LOCALAPPDATA%\Roblox\mcp.bat`)을 Windows Claude Code 사용자 설정(`claude mcp add --scope user ...`)으로 옮겨야 Studio MCP가 유지됨.
 - 이 기록과 위 변경은 아직 커밋·푸시하지 않음.
+
+## 2026-11-03 — Windows에서 Mac 변경 반영 및 agent.md 공유
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMs`.
+- Git 동기화 규칙 추가(CLAUDE.md, 커밋 6fba16d). 첫 push가 Mac 커밋 32dd27b 때문에 거절됨 → `.mcp.json`을 세션 scratchpad에 백업 후 `git pull --rebase`, pull로 삭제된 `.mcp.json`을 복원. 현재 Windows `.mcp.json`은 로컬 전용(.gitignore 대상)이며 Studio MCP 설정 유지. 사용자 설정으로 옮기지는 않음.
+- 사용자 지시(다른 AI 에이전트도 함께 작업): Codex 미러의 `agent.md` 원문을 그대로 `C:\ProjectMs\agent.md`로 복사(SHA256 일치 확인). 원본은 그대로 둠.
+- 변경 파일: `agent.md`(신규), `CLAUDE.md`(agent.md 위치 안내), `HISTORY.md`.
+- 검증: 작업 전 fetch → 원격 변경 없음 확인.
