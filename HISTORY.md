@@ -90,3 +90,9 @@
 - 문서: `docs/GDD_v0.3.md`, `docs/LEVEL_DESIGN_v0.3.md`(Codex 미러 v0.2를 복사해 개정, 미러 원본은 변경 안 함), `docs/ring-plaza-graybox-top.jpg`. CLAUDE.md 3·4절 갱신.
 - Notion: `레벨디자인 실행안 v0.2` 페이지를 v0.3 내용으로 교체하고 제목 변경, `게임 기획서 v0.2` 페이지는 해당 부분만 수정하고 제목을 `게임 기획서 v0.3`으로 변경. 경고 없음. 스크린샷은 Notion에 올리지 않음.
 - 남은 작업: LEVEL_DESIGN_v0.3 15절 — B0 기록, 비행·드롭 상한 8명 기준 조정, 신규 이용자 테스트.
+
+## 2026-11-09 — 주 작업 레포 C:\ProjectMS 연결·푸시 확인
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS` (Windows는 대소문자를 구분하지 않으므로 기존 `C:\ProjectMs`와 같은 폴더).
+- 배경: 사용자가 Codex를 통해 주 작업 레포를 `C:\ProjectMS`로 통일했다고 알림. Codex는 기존 `Kimdonghyun374` 폴더(같은 레포의 다른 사본으로 추정)를 백업으로 옮겼다고 보고함. 백업 위치는 이 레포에 기록되지 않음 → Codex 쪽 기록 필요.
+- 확인(실제 실행): origin = https://github.com/Kimdonghyun374/Kimdonghyun374.git, fetch 후 로컬 HEAD = 원격 main = 1407f74, 작업 트리 깨끗함.
+- 사용자 지시로 이 기록을 커밋·푸시해 push 동작을 시험함.
