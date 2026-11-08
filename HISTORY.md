@@ -259,3 +259,11 @@
 - 8종 Decal 업로드 모두 HTTP200, operation done=true, moderation Approved. InsertService.LoadAsset로 각 Decal.Texture 실제 이미지 ID 읽고 미부모화 임시 모델 Destroy.
 - art/ui/toy-city-v01/toy-v03-icons/manifest.json 실제 Image ID/Decal ID와 상태 기록, UIAssets.luau 추가, README/TODO 업데이트.
 - 영구 Studio 변경/Save/Publish 없음. UI 연결 및 화면/모바일 표시 검증은 후속.
+
+## 2026-11-09 — "Label" 기본 글자 버그 수정
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. TODO에 "Studio 사용 중" 표시.
+- 원인: `WorldProgressClient`·`ScoutBuggyClient`의 `label()` 함수가 TextLabel을 만들 때 Text를 지정하지 않아 Roblox 기본값 "Label"이 메시지가 올 때까지 보였음(월드 패널 맨 아래, 차고 창 메시지 줄).
+- 백업: `ServerStorage.ProjectMSBackups.BeforeLabelFix_1794164615` (두 스크립트).
+- 변경: 두 스크립트의 `label()`에 `item.Text = ""` 한 줄과 이유 주석 추가. 다른 로직 변경 없음.
+- 검증(실제 실행, Play 1인 Mock): 접속 후 Phase·Wins는 정상 값, World Message·Garage Message는 빈 글자. PlayerGui 전체에서 "Label"은 SalvageHUD.PickupNotice 1곳만 남음 — 평소 숨김이고 표시할 때 글자를 채우므로 화면에 안 보여 수정하지 않음. Stop 후 Edit 복귀.
+- Edit의 UI 미리보기는 이미 빈 글자로 고쳐져 있어 변경 없음. Save 안 함.

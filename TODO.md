@@ -14,7 +14,6 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 기준일: 2026-11-09 KST · 기준 커밋: `8fb3fd0`
 
 ## 진행 중
-- [ ] 월드 패널·차고 창 "Label" 기본 글자 버그 수정 — **Studio 사용 중** (Claude, 2026-11-09)
 - [ ] 토이 v03 UI 아이콘 Studio 연결: 8종 업로드/심사 승인 완료. art/ui/toy-city-v01/toy-v03-icons/UIAssets.luau 및 manifest.json의 실제 Image ID 사용. UI 연결/PC·모바일 표시 검증 남음. (Codex, 2026-11-09)
 
 ## 사용자가 직접 할 일
@@ -38,7 +37,6 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 보류 / 확인 필요
 
-- [ ] 월드 패널 아래 메시지 줄이 비어 있을 때 기본 글자 "Label"이 보임(WorldProgressClient 기존 버그, Play 화면 확인). Text를 빈 문자열로 시작하게 한 줄 수정 필요.
 - [ ] UI 시트의 배치 요소(아래 메뉴 바 BASE/MISSILES/WORLD/RIDE, 목표물 HP 막대, 재장전 막대, 보관함 카드 격자·탭, 영어/한국어 표기)는 미적용 — 사용자 결정 후 진행.
 
 - [ ] 단순 SF UI 시트 피드백 후 메뉴 기호 + 이용 가능한 모든 미사일·탈것 개별 UI 이미지 제작, asset ID 매핑, Claude Studio 적용. 장비 목록은 Studio/MS_MASTER 대조. 패널·글자·수치는 Roblox 네이티브. 근거 art/ui/toy-city-v01/CLAUDE_HANDOFF.md.
@@ -55,6 +53,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 - [ ] 미검증: 2인 이상 동시 접속, 버기 대로 주행, 월드2 실제 진입, 모바일 실기기, 게시 서버 저장·재접속.
 
 ## 완료
+- [x] "Label" 기본 글자 버그: WorldProgressClient·ScoutBuggyClient 글자 칸을 빈 글자로 시작 (Claude, 2026-11-09)
 - [x] 토이 v03 UI 아이콘 8종 업로드, Approved 확인, Decal.Texture 실제 Image ID 매핑 저장 (Codex, 2026-11-09; 완료 커밋 Git 이력 참조).
 - [x] 토이 v03 기준 메뉴·재화 아이콘 8종 재제작 및 PNG/미리보기/적용 안내 저장 (Codex, 2026-11-09; 완료 커밋 Git 이력 참조). 미사일 제외, 업로드는 별도 보류.
 - [x] UI 색·모양 테마: v02(어두운 SF)로 먼저 적용 후 사용자 선택으로 v03 밝은 스타일로 교체. UITheme + UIThemeClient, Edit 미리보기 포함 (Claude, 2026-11-09)
