@@ -14,7 +14,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 기준일: 2026-11-09 KST · 기준 커밋: `8fb3fd0`
 
 ## 진행 중
-- [ ] 토이 v03 UI 아이콘 Studio 연결: 8종 업로드/심사 승인 완료. art/ui/toy-city-v01/toy-v03-icons/UIAssets.luau 및 manifest.json의 실제 Image ID 사용. UI 연결/PC·모바일 표시 검증 남음. (Codex, 2026-11-09)
+- [ ] 토이 v03 UI 아이콘 8종을 화면 UI에 연결 (업로드·심사는 Codex 완료, 연결은 사용자 지시로 Claude가 맡음) — **Studio 사용 중** (Claude, 2026-11-09)
 
 ## 사용자가 직접 할 일
 
