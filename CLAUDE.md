@@ -66,9 +66,9 @@ Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현
 - **월드 진행** (`WorldConfig`, `ProgressionRules/Service`, `WorldProgressClient`):
   개인 도시, 공유 낮 180초/밤 25초(밤엔 공격 거절, 새 낮에 수리). 1월드 HP 배율 0.25, 완파 시 Win+1,
   Win1 + 1월드 완파 1회로 2월드 해금(소비 없음). 각 월드 건물 4개.
-- **맵 (2026-11-09 Claude 적용)**: 링 광장(반지름 56) + 기지별 진격 대로 `Workspace.ProjectMS_Lanes.Lane_1~8`(d 88~1000).
+- **맵 (2026-11-09 Claude 적용)**: 링 광장(반지름 108, 가운데 공동 레이드 자리 반지름 60) + 큰 기지 80×110(제작 라인·전시장·기지 차고·AFK 연구 자리, 기지 차고만 작동) + 기지별 진격 대로 `Workspace.ProjectMS_Lanes.Lane_1~8`(d 225~1140).
   월드1 개인 도시는 `Lane_N.Entry` 기준으로 자기 기지 대로에 복제(템플릿 `ProjectMS_City`는 Lane_1 좌표로 편집).
-  기지 없으면 월드1 도시 없음. 구역2·3·보스장은 바닥·표지만. 월드2는 X+1720 섬, TravelRoad는 백업으로 이동.
+  기지 없으면 월드1 도시 없음. 구역2·3은 바닥·표지만. UI는 `UITheme`+`UIThemeClient`로 v03 밝은 테마. 월드2는 X+1720 섬, TravelRoad는 백업으로 이동.
   상세: `docs/LEVEL_DESIGN_v0.3.md`.
 - **정찰 버기** (`Vehicle*`, `ScoutBuggyClient`): 부품 50 구매, 100/200 업그레이드, 속도 32/44/58,
   1인 1대, 재호출 5초, WASD/E, 월드 이동 시 하차. 템플릿 `ServerStorage.ProjectMS_VehicleTemplates.ScoutBuggy`.
