@@ -14,6 +14,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 기준일: 2026-11-09 KST · 기준 커밋: `8fb3fd0`
 
 ## 진행 중
+- [ ] UI 테마를 v03 밝은 스타일(toy-city-v03/ui/01-gameplay-hud.png)로 교체 — **Studio 사용 중** (Claude, 2026-11-09)
 - [ ] toy-city-v03/ui/01-gameplay-hud.png 기준 UI 이미지 재제작 및 업로드 매핑 (미사일 이미지 생성 제외 — 사용자 2026-11-09 지시) (Codex, 2026-11-09). art/ui/toy-city-v01/production-v03. 게임 코드 수정 없음.
 
 ## 사용자가 직접 할 일
