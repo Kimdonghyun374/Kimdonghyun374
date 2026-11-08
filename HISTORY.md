@@ -229,3 +229,13 @@
 ## 2026-11-09 KST — 이전 UI 아이콘 8개 폐기
 - 사용자 추가 삭제 지시에 따라 이번 작업의 메뉴/재화 아이콘 PNG 원본 8개 삭제 및 부재 확인. 미사일 3개는 앞서 삭제됨. 레포 복사/Roblox 업로드 전 파일.
 - art/references/toy-city-v03/ui/01-gameplay-hud.png와 이전 컨셉/홍보 아트 보존. 새 UI 기준은 toy-city-v03 흰 패널/남색 글자/파란 버튼/기본색 아이콘. 새 기준 재제작은 아직 미완료.
+
+## 2026-11-09 — UI 색·모양을 Codex UI 시트 스타일로
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. TODO에 "Studio 사용 중" 표시(Codex는 레포에서 아이콘 PNG 작업 중).
+- 기준: `art/ui/toy-city-v01/simple-scifi-ui-sheet-v02.png`, `CLAUDE_HANDOFF.md`(사용자 지시: 색과 모양 위주).
+- 백업: `ServerStorage.ProjectMSBackups.BeforeUITheme_1794162905` (UI 스크립트 5개 + UI 미리보기 사본).
+- 방식: 기존 UI 스크립트 5개(MissileBase·Salvage·ScoutBuggy·PetMissile·WorldProgress Client)는 수정하지 않음. 새 ModuleScript `ReplicatedStorage.PetMissiles.UITheme`(색표, 기존 색→시트 색 치환표, 패널·카드·버튼 판별, UIStroke·UICorner 6, 버튼 GothamBlack) + 새 LocalScript `StarterPlayerScripts.UIThemeClient`(PlayerGui의 HUD 5개에 적용, 새 요소·상태별 색 변경도 계속 치환). Edit 미리보기 사본 5개에도 `Theme.Apply` 1회 적용.
+- 검증(실제 실행, Play 1인 Mock): 기지 1 차지·제작 후 Inventory 남색(28,36,52)+테두리+모서리 6, Close 빨강, Roll(부품 부족) 회색, 아이템 카드(40,50,68), 장착 해제 보조색, Focus·World1 파랑, World2(잠김) 회색, 부품 글자 노랑. 화면 `docs/ui-theme-play.jpg`. Stop 후 Edit 복귀. Edit 미리보기 촬영은 캡처 시간 초과로 실패, 카메라 Fixed 확인.
+- 발견: 월드 패널 메시지 줄에 기본 글자 "Label"이 Play에서도 보임(기존 버그) → TODO 보류에 기록.
+- 미적용: 아이콘 이미지(Codex 제작 중), 아래 메뉴 바·HP/재장전 막대·카드 격자·영어 표기 등 배치 변경.
+- 문서: GDD_v0.3 11절에 UI 테마 한 단락. Save 안 함.
