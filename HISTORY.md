@@ -267,3 +267,12 @@
 - 변경: 두 스크립트의 `label()`에 `item.Text = ""` 한 줄과 이유 주석 추가. 다른 로직 변경 없음.
 - 검증(실제 실행, Play 1인 Mock): 접속 후 Phase·Wins는 정상 값, World Message·Garage Message는 빈 글자. PlayerGui 전체에서 "Label"은 SalvageHUD.PickupNotice 1곳만 남음 — 평소 숨김이고 표시할 때 글자를 채우므로 화면에 안 보여 수정하지 않음. Stop 후 Edit 복귀.
 - Edit의 UI 미리보기는 이미 빈 글자로 고쳐져 있어 변경 없음. Save 안 함.
+
+## 2026-11-09 — Codex v03 UI 아이콘 8종 화면 연결
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. 사용자 지시로 Codex 진행 항목(아이콘 UI 연결)을 Claude가 맡음, TODO에 "Studio 사용 중" 표시.
+- 입력: `art/ui/toy-city-v01/toy-v03-icons/` (UIAssets.luau, manifest.json, README.md — Codex 업로드·moderation Approved).
+- 백업: `ServerStorage.ProjectMSBackups.BeforeUIIcons_1794164752` (UITheme, UI 미리보기 5개).
+- Studio 변경: 새 ModuleScript `ReplicatedStorage.PetMissiles.UIAssets`(Codex 파일 내용 그대로 + 출처 주석). `UITheme` 소스 갱신 — 색값을 Codex README 근사값으로(#FAFCFF 패널, #10275E 글자, #C3D5FA 테두리, #2479F7 주요, #29B928 확인, #F14D60 닫기), `Theme.IconTargets`(9곳: Resources.Scrap/ResearchData 22, Panel.Home/World1/World2 22, BaseBanner.OpenInventory 26, Inventory.Roll 30, PetMissileHUD Focus 36, OpenGarage 28)와 아이콘 부착(왼쪽 ImageLabel `ThemeIcon` + UIPadding `ThemeIconPadding`). `UIThemeClient`·기존 UI 스크립트 변경 없음. Edit 미리보기 5개는 테마 전 원본에서 재복제 후 적용(빈 "Label" 글자 정리 포함).
+- 검증(실제 실행, Play 1인 Mock): 기지 1 차지·제작 후 PlayerGui에서 ThemeIcon 9개, `PreloadAsync` 후 모두 IsLoaded=true, 크기 22~36px, 부모 Visible. 스크린샷 `docs/ui-theme-play.jpg` 교체. Stop 후 Edit 카메라 정상, 임시 probe 모듈 제거 확인.
+- 미검증: 아이콘의 실제 보기 품질(스크린샷 해상도가 낮음), 집중 공격 남색 아이콘의 파란 버튼 위 대비, 모바일 화면 글자 줄바꿈 → TODO 보류.
+- 문서: GDD_v0.3 11절 UI 단락에 아이콘 문장 추가. Save 안 함.
