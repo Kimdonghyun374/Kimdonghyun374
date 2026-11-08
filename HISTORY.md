@@ -96,3 +96,9 @@
 - 배경: 사용자가 Codex를 통해 주 작업 레포를 `C:\ProjectMS`로 통일했다고 알림. Codex는 기존 `Kimdonghyun374` 폴더(같은 레포의 다른 사본으로 추정)를 백업으로 옮겼다고 보고함. 백업 위치는 이 레포에 기록되지 않음 → Codex 쪽 기록 필요.
 - 확인(실제 실행): origin = https://github.com/Kimdonghyun374/Kimdonghyun374.git, fetch 후 로컬 HEAD = 원격 main = 1407f74, 작업 트리 깨끗함.
 - 사용자 지시로 이 기록을 커밋·푸시해 push 동작을 시험함.
+
+## 2026-11-09 KST — Codex에서 GitHub push 연결 시험
+
+- 사용자 요청으로 C:\ProjectMS의 origin과 main 연결을 재확인하고 이 기록을 테스트 커밋 대상으로 추가.
+- origin: https://github.com/Kimdonghyun374/Kimdonghyun374.git. 작업 시작 시 fetch 성공, 로컬 HEAD 및 origin/main 모두 8fb3fd0, ahead/behind 0/0, 미커밋 변경 없음.
+- 이번 변경은 이력 문서 한 건이며 게임 코드와 Studio는 변경하지 않음. 이 커밋의 push 성공 여부는 실행 결과 및 원격 main의 커밋 ID 대조로 별도 확인.
