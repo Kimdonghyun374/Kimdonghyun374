@@ -183,3 +183,12 @@
 - 기존 코드·UI 스크립트는 수정하지 않음(백업 대상 없음, 새 오브젝트만 추가).
 - 검증(실제 실행): Edit 스크린샷에서 월드 패널·자원·버기 버튼·미사일 패널 표시 확인(`docs/ui-preview-edit.jpg`). 빈 글자가 "Label"로 보이던 2곳 수정. Play 시 PlayerGui에 미리보기 사본 0개, 실제 HUD 5개만 존재 확인 후 Stop.
 - 주의: 미리보기는 캡처 시점 사본이라 UI 코드가 바뀌면 다시 캡처해야 함(TODO 보류에 기록). Save 안 함.
+
+## 2026-11-09 KST — 단순 SF UI 방향 시트와 Claude 인수인계
+- Windows DESKTOP-RLF93FA, C:\ProjectMS. 시작 전 fetch/status 동기화 확인. 시작 bf0beec.
+- 사용자 수정: 입체 토이 아이콘 대신 아주 단순한 SF UI, Pet Simulator 99 구조 참고, 패널/버튼/글자는 Roblox에서 제작. 이후 모든 이용 가능한 미사일/탈것도 개별 UI 이미지 제작으로 명확화.
+- art/ui/toy-city-v01/simple-scifi-ui-sheet-v02.png, README, prompts, CLAUDE_HANDOFF 작성. 내장 ImageGen 사용, 생성 이미지 시각 검토 및 원본 SHA256 일치. 초기 16종 입체 아이콘안은 미채택/미업로드.
+- Studio Edit에서 실제 UI 생성부와 Disabled 여부 읽음: PetMissileClient/MissileBaseClient/SalvageClient/WorldProgressClient/ScoutBuggyClient 활성, 옛 MissileHUD 비활성. 인수인계에 GUI 경로/기존 Remote 흐름/적용 순서 기록.
+- 초기 토이 테마 모듈을 DataModel에 붙이지 않은 임시 Instance로만 구성 검증 후 Destroy. 변경된 디자인용 배포 코드나 실제 렌더 검증으로 간주하지 않음.
+- 사용자 업로드 폴더 허용 완료 응답 있음. 최신 요청이 방향 시트 검토로 변경되어 업로드/asset ID 발급/기존 게임 UI 교체는 하지 않음. Studio Save/Publish 없음.
+- 다음: UI 시트 피드백, 전체 장비 목록 대조 및 개별 PNG 생성, 실제 업로드/ID 매핑, Claude 적용 및 PC/모바일 검증. 현재 시트 숫자/탭/희귀도는 예시.
