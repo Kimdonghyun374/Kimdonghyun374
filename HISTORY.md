@@ -150,3 +150,13 @@
 - Notion: 레벨디자인 v0.3 페이지에 같은 수정 + 지난번 누락된 손상 연출 표·상한 검토 결과 반영. 게임 기획서 v0.3 페이지는 해당 부분 수정, 10절은 새 내용 아래에 v0.2 장벽안 원문을 "보류, 참고용"으로 남김(저장소 GDD에서는 교체). 첫 시도에서 서식 차이로 2곳 미일치 → 다시 읽고 반영, 최종 경고 없음.
 - Studio·게임 코드 변경 없음. 대로 끝 보스 선(d 905/960/992)은 쓰지 않으며 보스 구현 때 제거 예정.
 - 남은 작업: 보스 구현 착수 시점·밤 처리(기본안: 밤에도 가능) 사용자 확인.
+
+## 2026-11-09 — 구글 시트 MS_MASTER에 현재 게임 데이터 입력
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`.
+- 연결: Claude 커넥터 Google Sheets·Google Drive (사용자 로그인). 대상 시트 `MS_MASTER` (링크는 사용자가 제공, 저장소에는 ID를 적지 않음).
+- 사용자 지시: 데이터 관련 내용을 이 시트에 모두 적고, ① 현재 값 채우기 ② 시트를 기준으로 게임 반영 ③ 6맵 구조 검토를 모두 진행.
+- 이번에 한 것(①): Studio Edit에서 설정 모듈(Config·BaseConfig·SalvageConfig·WorldConfig·VehicleConfig·MissileCatalog)과 건물 속성을 읽기 전용으로 읽어 입력. 새 탭 README·COMBAT·MISSILES_CURRENT·BASE_CRAFT·BUILDINGS·WORLDS·SALVAGE·BOSS_PLAN·PROFILE_SCHEMA 추가, 비어 있던 Vehicles 탭 채움. 각 행에 값·단위·설명·게임 위치·상태(구현/기획/미정)·메모 열. 머리글 굵게·고정.
+- 보존: 사용자 탭 PLAYERDATA·MISSILES·InfrastructureLevel·시트4는 수정하지 않음(다시 읽어 확인). 실제 플레이어 데이터는 적지 않음(PROFILE_SCHEMA는 항목·기본값만).
+- 검증: MISSILES_CURRENT·MISSILES·PLAYERDATA를 다시 읽어 값 확인. Studio·게임 코드 변경 없음.
+- ② 방식: 사용자가 시트 값을 고치고 "시트 반영"을 요청하면 백업 후 Studio 설정에 옮기고 Play 확인(README에 명시). 아직 반영 요청 없음.
+- 남은 일: MISSILES 1맵 숫자 의미, InfrastructureLevel 용도, 6맵 채택 여부 사용자 결정(TODO).

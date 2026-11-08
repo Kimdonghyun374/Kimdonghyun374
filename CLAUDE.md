@@ -44,6 +44,7 @@
 | Roblox Place | **122289987934213** (연결 이름 `프로젝트MS`, game.Name `Place1`, gameId 10767294709) | 최종 적용·검증 Place. 134593398924034에도 일부 적용 이력 → 혼동 주의 |
 | 과거 로그 | `C:\RobloxDD\DEVELOPMENT_LOG.md` | 존재 시 보존 |
 | Notion | 워크스페이스 `개인창고`, 상위 페이지 [미사일 시뮬레이터 DRAFT](https://app.notion.com/p/0608abb5061282f8a62e81a77697ea61) | 하위: [게임 기획서 v0.1](https://app.notion.com/p/1df8abb506128308bf4f819dc005a839), [기획서 목차](https://app.notion.com/p/9fd8abb5061282c08d76019f7993a75b), [개발 계획](https://app.notion.com/p/04f8abb5061282c486bb81e5d58db4f8). Claude 커넥터로 연결됨. 무료 블록 한도로 새 페이지 생성이 막힐 수 있음 |
+| 구글 시트 | `MS_MASTER` (데이터 기준표, 링크는 사용자에게 받음) | README 탭에 규칙. 사용자 탭(PLAYERDATA·MISSILES·InfrastructureLevel·시트4)은 AI가 덮어쓰지 않음. 값 변경 → "시트 반영" 요청 시 Studio에 옮김. Claude 커넥터(Google Sheets)로 연결됨 |
 
 Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현재 Windows에 있는 코드 사본은
 `outputs/gdd-v02/source/` 47개(2026-11-03 Studio와 길이·지문 대조, **정적 분석용 — 수정해도 Studio 반영 안 됨**)뿐이다.
