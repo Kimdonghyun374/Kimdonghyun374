@@ -75,3 +75,18 @@
 - 사용자 지시(다른 AI 에이전트도 함께 작업): Codex 미러의 `agent.md` 원문을 그대로 `C:\ProjectMs\agent.md`로 복사(SHA256 일치 확인). 원본은 그대로 둠.
 - 변경 파일: `agent.md`(신규), `CLAUDE.md`(agent.md 위치 안내), `HISTORY.md`.
 - 검증: 작업 전 fetch → 원격 변경 없음 확인.
+
+## 2026-11-09 — 링 광장 + 기지별 진격 대로 그레이박스, 서버 8명 기준, v0.3 문서
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMs`. 대상: Studio Place 122289987934213 (Edit).
+- 목적(사용자 지시): 서버 정원 8명으로 정하고, 기존 에셋으로 "링 광장 + 기지별 진격 대로" 구조를 Place에 그레이박스로 적용, 기획서 갱신.
+- 작업 전: git fetch → 원격 변경 없음. 수정 대상 4개 스크립트 지문이 11-03 대조값과 같음을 확인.
+- 백업: `ServerStorage.ProjectMSBackups.BeforeRingPlaza_1794155422` (ProjectMS_Bases, ProjectMS_City, ProjectMS_Worlds, ProjectMS_Garage, SpawnLocation, Baseplate, pixel_missile, ProgressionService, BaseService, BaseConfig, WorldConfig 복제본 + 원본 TravelRoad 이동 보관).
+- Studio 배치 변경: Baseplate 2048×2048. Base_1~8을 반지름 72 링에 45° 간격·발판이 중심을 향하게 배치(Base_7·8은 Base_1 복제). 새 폴더 `ProjectMS_Lanes`(PlazaFloor + Lane_1~8: Road d88~1000 폭22, Entry d100, 구역 바닥 4개·표지, 보스 선 3개). ProjectMS_City 4건물을 Lane_1 기준 A1 동선 좌표로 이동(HP·보상 유지). 스폰(0,26)·World_1.Entry(26,0)·차고(-26,0)·pixel_missile 중앙. World_2 전체 X+1300(입구 1720). TravelRoad는 백업 폴더로 이동.
+- Studio 코드 변경: BaseConfig `PlotCount = 8`; WorldConfig `LaneFolder`, `TemplateLane = 1` 추가; BaseService 공개 함수 `GetPlotId(player)` 추가; ProgressionService에 `laneEntry`/`laneTransform` 추가 — 월드1 개인 도시를 자기 기지 대로로 변환 복제, 기지 없으면 생성 안 함, 기지 변경 시 재생성, 월드1 진입은 내 대로 입구로.
+- 검증(실제 실행, Studio Play 1인 Mock): 기지 8개 인식. 기지 차지 전 도시 0개 → 발판 3 접촉으로 기지 3 차지 후 도시 4개가 Lane_3에 회전 배치(주택 (140,-24) 등). ProgressionRequest enter(1) → Lane_3 입구 (100,0) 도착, home → 기지 3. 제작 후 대로 입구에서 자동 공격으로 주택 파괴·드롭 3개 확인. Play 종료 후 Edit 복귀, 런타임 폴더 잔존 없음, 기지 소유 0 확인. 임시 러너 스크립트는 만들지 않음.
+- 콘솔: Studio DataStore 접근 불가 경고(기존, Mock 사용), `rbxassetid://203785492` 에셋 타입 불일치 경고 3회(이번 변경 전부터인지 미확인).
+- 미검증: 2인 이상 동시 접속, 월드2 실제 진입(Win 조건), 버기 대로 주행, 모바일, 게시 서버. 서버 정원 8은 사용자가 게시 설정에서 변경해야 함(미변경). Save/Publish 안 함.
+- 참고: 옛 MissileSimulator(Disabled)의 Range 표시가 Lane_1 입구 근처(0,-105)에 보임. 건드리지 않음.
+- 문서: `docs/GDD_v0.3.md`, `docs/LEVEL_DESIGN_v0.3.md`(Codex 미러 v0.2를 복사해 개정, 미러 원본은 변경 안 함), `docs/ring-plaza-graybox-top.jpg`. CLAUDE.md 3·4절 갱신.
+- Notion: `레벨디자인 실행안 v0.2` 페이지를 v0.3 내용으로 교체하고 제목 변경, `게임 기획서 v0.2` 페이지는 해당 부분만 수정하고 제목을 `게임 기획서 v0.3`으로 변경. 경고 없음. 스크린샷은 Notion에 올리지 않음.
+- 남은 작업: LEVEL_DESIGN_v0.3 15절 — B0 기록, 비행·드롭 상한 8명 기준 조정, 신규 이용자 테스트.
