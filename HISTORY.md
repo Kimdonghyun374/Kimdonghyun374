@@ -276,3 +276,8 @@
 - 검증(실제 실행, Play 1인 Mock): 기지 1 차지·제작 후 PlayerGui에서 ThemeIcon 9개, `PreloadAsync` 후 모두 IsLoaded=true, 크기 22~36px, 부모 Visible. 스크린샷 `docs/ui-theme-play.jpg` 교체. Stop 후 Edit 카메라 정상, 임시 probe 모듈 제거 확인.
 - 미검증: 아이콘의 실제 보기 품질(스크린샷 해상도가 낮음), 집중 공격 남색 아이콘의 파란 버튼 위 대비, 모바일 화면 글자 줄바꿈 → TODO 보류.
 - 문서: GDD_v0.3 11절 UI 단락에 아이콘 문장 추가. Save 안 함.
+
+## 2026-11-09 KST — 작업 시작 알림 등록
+- Windows DESKTOP-RLF93FA, C:\ProjectMS. fetch/status 동기화 확인.
+- TODO 사용자 할 일에 전시 공간 좌우 분리/2층 구조 변경, 프로토타입 모델 식별성 등록. AGENTS.md와 agent.md에 시작 알림 명시.
+- 문서만 변경, Studio 모델 수정 없음.
