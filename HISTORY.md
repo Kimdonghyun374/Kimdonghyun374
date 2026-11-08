@@ -175,3 +175,11 @@
 - 시트 변경: 새 탭 CODEX_PLAN(맵별 구성, 1맵 8종 목록 — 기존 5종은 각 희귀도 첫 칸, 새로 필요한 3종 표시, 희귀도 안 균등 확률 제안, 결정 항목), MISSILES_CURRENT 참고 문구 수정, README 탭 목록에 추가, PROFILE_SCHEMA에 기획 항목 Discovered 추가.
 - 서식(사용자 요청): 모든 표에 테두리, 머리글 파란 배경·흰 글자, 사용자 MISSILES 탭 맵 제목 주황, 상태 색(구현 초록·기획 노랑·미정 회색·필요 주황, 조건부 서식), 탭 색(README 파랑, 사용자 탭·CODEX 주황, BOSS 노랑), 열 너비 조정. 사용자 탭은 내용 변경 없이 서식만. 첫 시도는 조건부 서식을 여러 탭에 한 규칙으로 넣어 거절(전체 미적용) → 탭별로 나눠 재적용 성공.
 - 탈것 방향 변경(사용자 결정, 기획): 정찰 버기 → 호버보드 → 추진기 보드 → 소형 호버바이크. 시트 Vehicles 이름·메모 변경(상태 기획, 비용·속도는 현재 값), GDD v0.3 변경 요약과 LEVEL_DESIGN v0.3 0절에 한 줄 추가. Studio·코드 변경 없음.
+
+## 2026-11-09 — 현재 UI를 Edit 화면에서 미리 볼 수 있게 함
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213.
+- 배경: StarterGui가 비어 있고 HUD 5개는 LocalScript가 Play 때 만들어 Edit 화면에서 UI를 볼 수 없었음. TODO에 "Studio 사용 중" 표시 후 작업(Codex는 레포의 art/ui 작업 중, Studio 미사용).
+- 방법: Play에서 기지 1 차지 + 제작 1회 후 PlayerGui의 MissileBaseHUD·SalvageHUD·ScoutBuggyHUD·PetMissileHUD·WorldProgressHUD 모양(클래스·크기·위치·색·글자·UICorner 등)을 직렬화 → Edit의 StarterGui에 `UIPreview_<이름>` ScreenGui 5개로 재구성. 각 사본에 속성 `EditPreviewOnly`와 LocalScript `RemoveInPlay`(Play 때 자기 자신 삭제). 보관함 패널은 화면을 가려 Visible=false로 둠, 회수 알림에 예시 글자 "부품 +20".
+- 기존 코드·UI 스크립트는 수정하지 않음(백업 대상 없음, 새 오브젝트만 추가).
+- 검증(실제 실행): Edit 스크린샷에서 월드 패널·자원·버기 버튼·미사일 패널 표시 확인(`docs/ui-preview-edit.jpg`). 빈 글자가 "Label"로 보이던 2곳 수정. Play 시 PlayerGui에 미리보기 사본 0개, 실제 HUD 5개만 존재 확인 후 Stop.
+- 주의: 미리보기는 캡처 시점 사본이라 UI 코드가 바뀌면 다시 캡처해야 함(TODO 보류에 기록). Save 안 함.
