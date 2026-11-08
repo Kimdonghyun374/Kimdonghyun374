@@ -197,3 +197,13 @@
 - 사용자 첨부 3장의 연출을 참고해 미사일·호버보드·도시 파괴 가로 홍보 아트와 정사각 게임 아이콘을 내장 ImageGen으로 제작. art/marketing/launch-v01에 PNG2, README, 전체 프롬프트 저장.
 - 검증: 2장 시각 검토, 생성 원본/복사본 SHA256 일치. 가로 원본 1672×941(16:9 구도, 정확 비율과 약 0.05% 차이), 아이콘 1254×1254(정확 1:1). 가로의 정확한 최종 출력 규격 조정 필요는 README에 기록.
 - 게임·Studio 변경, 업로드·게시 없음. 사용자 참고 원본은 공개 레포에 복사하지 않음.
+## 2026-11-09 — 큰 기지(타이쿤) 재배치와 공동 레이드 자리 그레이박스
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. TODO에 "Studio 사용 중" 표시 후 작업(Codex는 레포 art/ui 작업).
+- 사용자 요청: 공동 보스 레이드 자리, 기지별 탈것 소환 자리, 너무 작은 기지, 미사일 전시 대폭 확대, 높은 등급 제작 시간 증가로 제작기 여러 대, AFK 연구시설 → 기획서·레벨디자인 수정 + 그레이박스 재작업.
+- 백업: `ServerStorage.ProjectMSBackups.BeforeBigBases_1794161033` (ProjectMS_Bases·Lanes·City·Garage·Worlds, SpawnLocation, Baseplate).
+- 발견: `pixel_missile`이 이미 Workspace에 없었음(제 작업 아님, 복구하지 않음, TODO에 기록).
+- Studio 변경: 기지 8개 80×110, 중심 d=170(앞 끝 115·뒤 끝 225). 기존 부품(Floor·ClaimPad·Generator·Display·Storage)은 이름 유지·위치 이동. 기지마다 `Layout` 폴더(코드 미참조): GeneratorSlot_2~6, GalleryFloor + Pedestal_2~50, VehiclePad, AFKLab, LaneExit, 안내 표지. 광장 반지름 108, `ProjectMS_Lanes.RaidArena`(반지름 60, 표시 기둥). 스폰 (0,84), World_1.Entry (84,0), 공용 차고 (-84,0). 대로 재생성 d 225~1140, 입구 240, 구역 260~540/580~780/820~1020/대로 끝 1040~1140, 보스 선 제거. `BaseplateExtension_N/S/E/W` 추가. ProjectMS_City 4건물 -Z 140 이동(Lane_1 기준 유지). 코드 변경 없음. 기지 파트 합계 536.
+- 검증(실제 실행, Play 1인 Mock): 스폰 (0,80). 발판 접촉으로 기지 3 차지 → 도시 4개가 Lane_3에 (280..510) 생성. 기지 귀환 → 제작기 옆 도착. 제작 → Display에 미리보기 생성. 월드1 진입 → Lane_3 입구 (240,0). 자동 공격으로 주택 파괴(HP 0). Stop 후 Edit 런타임 폴더 없음·기지 소유 0.
+- 사고와 조치: 스크린샷 하나가 시간 초과되면서 Edit 카메라가 Scriptable로 남아 사용자 카메라가 움직이지 않았음 → CameraType Fixed로 복구, 광장 위로 위치. 문서 스크린샷 동안 UI 미리보기 Enabled를 잠시 끄고 다시 켬.
+- 문서: `docs/LEVEL_DESIGN_v0.3.md`(머리말, 0절, 2절 재작성 + 2-1 기지 구획 + 2-2 레이드 자리, 4·5·9·10·11·12·13절 수치), `docs/GDD_v0.3.md`(변경 요약, 4절 맵, 7절 공간 구조, 12절 후순위), 스크린샷 `docs/big-bases-top.jpg`·`docs/big-bases-closeup.jpg`. Notion 두 페이지 같은 내용 반영(첫 시도 1곳 미일치 → 다시 읽고 반영). 시트 WORLDS 탭 대로 거리 갱신 + 기지 구획 표 추가.
+- 미검증: 2인 이상, 모바일, 탈것 대로 주행. Save 안 함.
