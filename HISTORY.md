@@ -122,3 +122,16 @@
 - 실행 Windows DESKTOP-RLF93FA, C:\ProjectMS. v0.3 기획에 기반해 토이 시티·인더스트리얼 프런티어·네온 리액터 비교 이미지 3종을 내장 ImageGen으로 생성.
 - art/references/concepts-v01에 PNG 3개, README와 전체 프롬프트 저장. 원본/복사본 SHA256 일치 확인 및 생성 이미지 시각 검토.
 - 승인 전 제안이며 정확한 배치도·게임 구현 완료로 간주하지 않음. 사용자 스타일 선택이 남음. 게임/Studio 변경·실행 테스트 없음.
+
+## 2026-11-09 — 8명 상한 검토, 붕괴 대상 확인, 체력 단계별 손상 연출
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213 (Edit).
+- 목적(사용자 지시): TODO 다음 후보 1·2 진행 + 건물이 체력에 따라 무너져 가는 모습 제작. 보스장은 구현하지 말고 계획만 보고.
+- 백업: `ServerStorage.ProjectMSBackups.BeforeDamageStages_1794157543` (Config, SalvageConfig).
+- 상한 검토(코드 확인): `MaxActiveFlights 150` 서버 공용, 재장전 3초 > 최대 비행 2.5초 → 1인 최대 10발, 8명 80 < 150. `MaxDrops 150` 서버 공용, 8명×4건물×4드롭=128 < 150, 초과 시 합치기/직접 지급으로 손실 없음. **값은 유지**하고 근거 주석만 추가.
+- 붕괴 대상: 개인 건물 붕괴는 `SalvageService`가 소유자에게만 FireClient → 자기 도시만 그림(코드 확인).
+- Studio 변경: `ReplicatedStorage.PetMissiles.Config`(주석), `SalvageConfig`(주석 + `DamageStageRatios`·`DamageLeanDegrees`·`DamageDebrisPerStage`·`DamageMaxDebris`·`DamageDebrisLifetime`), 신규 LocalScript `StarterPlayer.StarterPlayerScripts.BuildingDamageClient`(맞을 때 흔들림, 75/50/25%에서 창문 소등·그을음·파편·연기·불·기울기, 파괴 시 정리).
+- 검증(실제 실행, Studio Play 1인 Mock): ① 서버에서 연구동 체력을 70/45/20%로 낮춤 → 클라이언트에서 창문 48/48 소등, 연기·불 이미터 2개, 기울기 4.00°, 다른 건물 변화 없음. ② 실제 미사일 1개로 사무실 공격 → HP 45/30/15에서 창문 12/24/36 소등, 파괴 후 효과 부착물 제거 확인. Play 종료 후 Edit 복귀, 런타임·효과 폴더 잔존 없음, 기지 소유 0.
+- 참고: 이번 Play 콘솔에 `[ProfileStore]: Roblox API services available` 표시(지난번엔 unavailable). Studio는 `StudioMockData=true`로 Mock 저장소 사용(BaseService 451행)이라 실제 저장소 기록 없음.
+- 미검증: 모바일 프레임, 2인 이상, 연기·불의 실제 시각 품질(스크린샷은 낮은 각도라 연기가 잘 안 보임).
+- 문서: `docs/LEVEL_DESIGN_v0.3.md` 7절(손상 연출 표), 10절(보스장 구현안, 검토 대기 — 바닥 선 순서가 반대로 놓인 오류 기록), 11절(상한 검토 결과). `TODO.md` 갱신.
+- 보스장 메모(미구현): 대로별 개인 장벽(Humanoid 구조로 기존 전투·손상·붕괴 재사용), 도전 패드 d≈900(지금은 월드1 완파 조건), 서버가 장벽을 초당 약 2.6으로 안쪽 이동, 체력 = 실측 DPS×25초, 성공 시 BossCleared 저장·다음 월드 조건, 실패 시 손실 없이 5초 뒤 재도전, 밤 처리 방식은 사용자 결정 필요. 그레이박스 선은 실패선이 바깥에 있어 순서 재배치 필요.
