@@ -239,3 +239,11 @@
 - 발견: 월드 패널 메시지 줄에 기본 글자 "Label"이 Play에서도 보임(기존 버그) → TODO 보류에 기록.
 - 미적용: 아이콘 이미지(Codex 제작 중), 아래 메뉴 바·HP/재장전 막대·카드 격자·영어 표기 등 배치 변경.
 - 문서: GDD_v0.3 11절에 UI 테마 한 단락. Save 안 함.
+
+## 2026-11-09 — UI 테마를 v03 밝은 스타일로 교체
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. TODO에 "Studio 사용 중" 표시.
+- 사용자 결정: Codex 진행 항목과 같은 `art/references/toy-city-v03/ui/01-gameplay-hud.png`(밝은 장난감 스타일)로 맞춤.
+- 백업: `ServerStorage.ProjectMSBackups.BeforeUIThemeV03_1794163558` (v02 어두운 SF UITheme).
+- Studio 변경: `ReplicatedStorage.PetMissiles.UITheme` 소스 교체 — 흰 패널+연한 파랑 테두리, 남색 글자, 파랑 알약 버튼(테두리 없음), 초록/주황/빨강/연회색, 모서리 12, 버튼 글자색을 배경 밝기에 따라 흰색/남색으로, 표에 없는 밝은 글자(희귀도 색)는 같은 색조로 45% 어둡게, 스크롤바 색. `UIThemeClient`는 그대로. Edit 미리보기 5개는 테마 전 원본(`BeforeUITheme_1794162905`)에서 다시 복제해 v03 적용.
+- 검증(실제 실행, Play 1인 Mock): 기지 1 차지·제작 후 Inventory 흰색+남색 제목, Roll(부족) 연회색+남색 글자, Close 빨강+흰 글자, 아이템 카드 연파랑, 희귀도 글자 (105,116,124), 장착 해제 밝은 보조색+남색 글자, Focus 파랑, 부품 (215,135,0)·연구자료 (20,140,210), 차고 버튼 밝은 보조색. 화면 `docs/ui-theme-play.jpg`(v03로 교체). Stop 후 Edit 카메라 정상.
+- 문서: GDD_v0.3 11절 UI 단락을 v03 기준으로 수정. TODO 갱신. Save 안 함.

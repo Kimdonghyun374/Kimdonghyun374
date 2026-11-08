@@ -14,7 +14,6 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 기준일: 2026-11-09 KST · 기준 커밋: `8fb3fd0`
 
 ## 진행 중
-- [ ] UI 테마를 v03 밝은 스타일(toy-city-v03/ui/01-gameplay-hud.png)로 교체 — **Studio 사용 중** (Claude, 2026-11-09)
 - [ ] toy-city-v03/ui/01-gameplay-hud.png 기준 UI 이미지 재제작 및 업로드 매핑 (미사일 이미지 생성 제외 — 사용자 2026-11-09 지시) (Codex, 2026-11-09). art/ui/toy-city-v01/production-v03. 게임 코드 수정 없음.
 
 ## 사용자가 직접 할 일
@@ -53,7 +52,7 @@ n- [ ] UI 미리보기는 2026-11-09 캡처 시점 사본이다. UI 스크립트
 - [ ] 미검증: 2인 이상 동시 접속, 버기 대로 주행, 월드2 실제 진입, 모바일 실기기, 게시 서버 저장·재접속.
 
 ## 완료
-- [x] UI 색·모양 테마: Codex 시트 v02 색표, UITheme 모듈 + UIThemeClient, Edit 미리보기에도 적용 (Claude, 2026-11-09)
+- [x] UI 색·모양 테마: v02(어두운 SF)로 먼저 적용 후 사용자 선택으로 v03 밝은 스타일로 교체. UITheme + UIThemeClient, Edit 미리보기 포함 (Claude, 2026-11-09)
 - [x] 베이컨 보이 홍보 아트 수정: 중간 디테일 + 공중 미사일 3종, 가로/정사각 (Codex, 2026-11-09; 완료 커밋 Git 이력 참조), art/marketing/bacon-fleet-v02.
 - [x] 기지 차고 연결: Base_N.Layout.VehiclePad 프롬프트(E) → 탈것 메뉴, 주인만 (Claude, 2026-11-09)
 - [x] 큰 기지(80×110) 재배치: 제작 라인 6칸·전시장 50칸·기지 차고·AFK 연구시설 자리, 광장 가운데 공동 레이드 구역, 대로 140 바깥 이동, 보스 선 제거 (Claude, 2026-11-09)
