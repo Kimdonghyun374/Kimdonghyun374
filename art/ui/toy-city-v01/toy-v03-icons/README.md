@@ -28,10 +28,10 @@
 
 8종 생성 결과 시각 검토 및 PNG 크기/알파 확인. 브라우저 도구의 로컬 파일 접근 제한으로 preview.html 렌더 검증은 미실행. 원본 확대 미리보기의 일부 잔색은 알파 1/255 표본으로 확인했으며, 실제 게임 크기의 최종 표시는 Studio 적용 후 확인해야 한다.
 
-asset:read / asset:write 권한 확인 성공. Open Cloud 업로드는 폴더 미허용 오류로 차단됨. 사용자의 허용 완료 응답 후 같은 경로를 재시도했으나 동일 오류. 업로드된 에셋 없음, manifest.json assetId는 null. 임의 ID/미사일 매핑 생성 없음.
+2026-11-09 폴더 권한 저장 후 8종 업로드 성공, 모든 operation done=true 및 moderation Approved 확인. manifest.json의 assetId/image는 ImageLabel용 실제 이미지 ID, decalAssetId는 업로드된 Decal ID. InsertService로 Decal.Texture를 읽고 임시 모델을 Destroy하여 매핑 확인. UIAssets.luau를 복사해 ImageLabel.Image에 사용 가능. 게임 UI 연결은 아직 미적용.
 
 업로드 경로: C:\\ProjectMS\\art\\ui\\toy-city-v01\\toy-v03-icons
 
 ## Claude 인수인계
 
-사용자는 이번 밝은 토이 v03 UI를 채택했다. TODO의 simple-scifi 테마 작업에는 이 디자인 변경을 반영할 것. 본 작업은 Studio 코드/화면을 변경하지 않았다. 위 target은 이전 실제 UI 소스 조사 기준이므로 현재 UI 생성부를 재확인 후 이미지 배치. 등록 완료 시 manifest에 실제 ID를 기록하고 ImageLabel.Image에 연결한다. 기존 서버 검증·저장·경제·버튼 Activated 연결은 보존한다. Save/Publish 없음.
+사용자는 이번 밝은 토이 v03 UI를 채택했다. TODO의 simple-scifi 테마 작업에는 이 디자인 변경을 반영할 것. 본 작업은 Studio 코드/화면을 변경하지 않았다. 위 target은 이전 실제 UI 소스 조사 기준이므로 현재 UI 생성부를 재확인 후 이미지 배치. 등록된 UIAssets.luau / manifest.json의 image 값을 ImageLabel.Image에 연결한다. 기존 서버 검증·저장·경제·버튼 Activated 연결은 보존한다. Save/Publish 없음.

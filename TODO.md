@@ -15,7 +15,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 - [ ] 월드 패널·차고 창 "Label" 기본 글자 버그 수정 — **Studio 사용 중** (Claude, 2026-11-09)
-- [ ] 토이 v03 UI 아이콘 업로드/적용: 8종 PNG 제작 완료, art/ui/toy-city-v01/toy-v03-icons. 폴더 허용 완료 응답 후에도 Studio 업로드 미허용 오류 지속. 실제 ID 미발급. 사용자 최신 디자인은 흰 패널/남색 글자/파란 버튼. (Codex, 2026-11-09)
+- [ ] 토이 v03 UI 아이콘 Studio 연결: 8종 업로드/심사 승인 완료. art/ui/toy-city-v01/toy-v03-icons/UIAssets.luau 및 manifest.json의 실제 Image ID 사용. UI 연결/PC·모바일 표시 검증 남음. (Codex, 2026-11-09)
 
 ## 사용자가 직접 할 일
 
@@ -55,6 +55,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 - [ ] 미검증: 2인 이상 동시 접속, 버기 대로 주행, 월드2 실제 진입, 모바일 실기기, 게시 서버 저장·재접속.
 
 ## 완료
+- [x] 토이 v03 UI 아이콘 8종 업로드, Approved 확인, Decal.Texture 실제 Image ID 매핑 저장 (Codex, 2026-11-09; 완료 커밋 Git 이력 참조).
 - [x] 토이 v03 기준 메뉴·재화 아이콘 8종 재제작 및 PNG/미리보기/적용 안내 저장 (Codex, 2026-11-09; 완료 커밋 Git 이력 참조). 미사일 제외, 업로드는 별도 보류.
 - [x] UI 색·모양 테마: v02(어두운 SF)로 먼저 적용 후 사용자 선택으로 v03 밝은 스타일로 교체. UITheme + UIThemeClient, Edit 미리보기 포함 (Claude, 2026-11-09)
 - [x] 베이컨 보이 홍보 아트 수정: 중간 디테일 + 공중 미사일 3종, 가로/정사각 (Codex, 2026-11-09; 완료 커밋 Git 이력 참조), art/marketing/bacon-fleet-v02.

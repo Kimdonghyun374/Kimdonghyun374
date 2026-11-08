@@ -1,71 +1,95 @@
 {
   "version": "toy-v03-icons",
   "reference": "art/references/toy-city-v03/ui/01-gameplay-hud.png",
-  "status": "upload_blocked_directory_permission",
+  "status": "uploaded_approved",
   "assets": [
     {
       "key": "scrap",
       "file": "scrap.png",
       "width": 1254,
       "height": 1254,
-      "assetId": null,
-      "target": "SalvageHUD.Resources.Scrap"
+      "assetId": "77913723342034",
+      "target": "SalvageHUD.Resources.Scrap",
+      "decalAssetId": "110707870561853",
+      "image": "rbxassetid://77913723342034",
+      "moderation": "Approved"
     },
     {
       "key": "research",
       "file": "research.png",
       "width": 1254,
       "height": 1254,
-      "assetId": null,
-      "target": "SalvageHUD.Resources.ResearchData"
+      "assetId": "77079576253238",
+      "target": "SalvageHUD.Resources.ResearchData",
+      "decalAssetId": "112188822303494",
+      "image": "rbxassetid://77079576253238",
+      "moderation": "Approved"
     },
     {
       "key": "base",
       "file": "base.png",
       "width": 1254,
       "height": 1254,
-      "assetId": null,
-      "target": "WorldProgressHUD.Panel.Home"
+      "assetId": "110510289052386",
+      "target": "WorldProgressHUD.Panel.Home",
+      "decalAssetId": "80394863820170",
+      "image": "rbxassetid://110510289052386",
+      "moderation": "Approved"
     },
     {
       "key": "inventory",
       "file": "inventory.png",
       "width": 1254,
       "height": 1254,
-      "assetId": null,
-      "target": "MissileBaseHUD.BaseBanner.OpenInventory"
+      "assetId": "138263092777994",
+      "target": "MissileBaseHUD.BaseBanner.OpenInventory",
+      "decalAssetId": "137086941230015",
+      "image": "rbxassetid://138263092777994",
+      "moderation": "Approved"
     },
     {
       "key": "world",
       "file": "world.png",
       "width": 1254,
       "height": 1254,
-      "assetId": null,
-      "target": "WorldProgressHUD.Panel.World1 / World2"
+      "assetId": "75479527729747",
+      "target": "WorldProgressHUD.Panel.World1 / World2",
+      "decalAssetId": "110106891194673",
+      "image": "rbxassetid://75479527729747",
+      "moderation": "Approved"
     },
     {
       "key": "focus",
       "file": "focus.png",
       "width": 1254,
       "height": 1254,
-      "assetId": null,
-      "target": "PetMissileHUD.Panel.Focus"
+      "assetId": "77724239658969",
+      "target": "PetMissileHUD.Panel.Focus",
+      "decalAssetId": "95234654931829",
+      "image": "rbxassetid://77724239658969",
+      "moderation": "Approved"
     },
     {
       "key": "garage",
       "file": "garage.png",
       "width": 1254,
       "height": 1254,
-      "assetId": null,
-      "target": "ScoutBuggyHUD.OpenGarage"
+      "assetId": "101670554399901",
+      "target": "ScoutBuggyHUD.OpenGarage",
+      "decalAssetId": "88869566417193",
+      "image": "rbxassetid://101670554399901",
+      "moderation": "Approved"
     },
     {
       "key": "craft",
       "file": "craft.png",
       "width": 1254,
       "height": 1254,
-      "assetId": null,
-      "target": "MissileBaseHUD.Inventory.Roll"
+      "assetId": "114415018886740",
+      "target": "MissileBaseHUD.Inventory.Roll",
+      "decalAssetId": "107063857990857",
+      "image": "rbxassetid://114415018886740",
+      "moderation": "Approved"
     }
   ]
 }

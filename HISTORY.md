@@ -253,3 +253,9 @@
 - 사용자 지정 art/references/toy-city-v03/ui/01-gameplay-hud.png 기반 메뉴·재화 8종 생성. art/ui/toy-city-v01/toy-v03-icons에 PNG, prompts, preview.html, manifest, README. 미사일 제외. 밝은 패널·남색 글자·파랑/노랑 기본색 기준 기록.
 - 검증: 생성 이미지 시각 검토, 8개 PNG 1254x1254/코너 alpha=0. 잔색 픽셀 표본 alpha=1. 브라우저 로컬 파일 접근 제한으로 HTML 렌더 검증 미실행. 게임 크기/모바일/Studio 이미지 표시 검증 미실행.
 - Open Cloud asset:read/write 권한 probe 성공. 로컬 PNG 업로드는 directory approved 오류. 사용자 폴더 허용 완료 응답 이후 같은 경로 재시도도 동일. 에셋 ID 미발급, manifest null. 업로드 차단 우회 없음. Studio 수정/Save/Publish 없음.
+
+## 2026-11-09 KST — UI 아이콘 업로드 완료
+- Windows DESKTOP-RLF93FA, C:\ProjectMS. fetch/status 원격 동기화 확인. 사용자 폴더 권한 저장 후 업로드 재시도.
+- 8종 Decal 업로드 모두 HTTP200, operation done=true, moderation Approved. InsertService.LoadAsset로 각 Decal.Texture 실제 이미지 ID 읽고 미부모화 임시 모델 Destroy.
+- art/ui/toy-city-v01/toy-v03-icons/manifest.json 실제 Image ID/Decal ID와 상태 기록, UIAssets.luau 추가, README/TODO 업데이트.
+- 영구 Studio 변경/Save/Publish 없음. UI 연결 및 화면/모바일 표시 검증은 후속.
