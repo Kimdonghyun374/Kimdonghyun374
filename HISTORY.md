@@ -207,3 +207,11 @@
 - 사고와 조치: 스크린샷 하나가 시간 초과되면서 Edit 카메라가 Scriptable로 남아 사용자 카메라가 움직이지 않았음 → CameraType Fixed로 복구, 광장 위로 위치. 문서 스크린샷 동안 UI 미리보기 Enabled를 잠시 끄고 다시 켬.
 - 문서: `docs/LEVEL_DESIGN_v0.3.md`(머리말, 0절, 2절 재작성 + 2-1 기지 구획 + 2-2 레이드 자리, 4·5·9·10·11·12·13절 수치), `docs/GDD_v0.3.md`(변경 요약, 4절 맵, 7절 공간 구조, 12절 후순위), 스크린샷 `docs/big-bases-top.jpg`·`docs/big-bases-closeup.jpg`. Notion 두 페이지 같은 내용 반영(첫 시도 1곳 미일치 → 다시 읽고 반영). 시트 WORLDS 탭 대로 거리 갱신 + 기지 구획 표 추가.
 - 미검증: 2인 이상, 모바일, 탈것 대로 주행. Save 안 함.
+
+## 2026-11-09 — 기지 차고 연결
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. TODO에 "Studio 사용 중" 표시 후 작업.
+- 백업: `ServerStorage.ProjectMSBackups.BeforeBaseGarage_1794161957` (VehicleService, 기지 8개 VehiclePad).
+- Studio 변경: Base_1~8의 `Layout.VehiclePad`를 불투명·두께 0.3으로 바꾸고 ProximityPrompt `OpenGarage`(E, 즉시, 거리 14, "기지 N 차고") 추가, 표지 "기지 차고 · E". `ServerScriptService.PetMissiles.VehicleService.Start`에 기지 차고 프롬프트 연결: 16 이내 + 그 기지 `OwnerUserId`가 본인이면 기존 공용 차고와 같은 메뉴 열기(`sendState(player, nil, true)`), 아니면 "내 기지의 차고에서만 열 수 있습니다". 공용 차고 코드는 그대로.
+- 검증(실제 실행, Play 1인 Mock): 기지 3 차지 후 Base_3 차고에서 프롬프트 실행 → Garage 패널 표시. Base_4 차고 → 패널 안 열림 + 안내 문구. 탈것 없이 소환 → "먼저 정찰 버기를 구매하세요"(기존 동작). Stop 후 Edit 복귀.
+- 미검증: 탈것 구매 후 발판 위 소환(부품 50 필요, 이번엔 확인 안 함), 2인 동시, 모바일 프롬프트 터치.
+- 문서: LEVEL_DESIGN_v0.3 2-1절 기지 차고 행을 구현으로, 2절 공용 차고 설명 수정. 시트 WORLDS 기지 차고 행 상태 구현. TODO 갱신.
