@@ -14,7 +14,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 기준일: 2026-11-09 KST · 기준 커밋: `8fb3fd0`
 
 ## 진행 중
-- [ ] 현재 Studio UI 기준 개별 투명 PNG 16종 제작 및 업로드 매핑 (Codex, 2026-11-09). art/ui/toy-city-v01/production-v03. 게임 코드 수정 없음.
+- [ ] 현재 Studio UI 기준 메뉴·재화·탈것 PNG 제작 및 업로드 매핑 (미사일 이미지 생성 제외 — 사용자 2026-11-09 지시) (Codex, 2026-11-09). art/ui/toy-city-v01/production-v03. 게임 코드 수정 없음.
 - [ ] UI 색·모양을 Codex 시트(simple-scifi-ui-sheet-v02) 스타일로: 테마 LocalScript 추가 — **Studio 사용 중** (Claude, 2026-11-09)
 
 ## 사용자가 직접 할 일
