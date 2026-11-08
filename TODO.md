@@ -15,7 +15,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
-- [ ] 미사일 시뮬레이터 홍보 아트 16:9 + 1:1 아이콘 제작 (Codex, 2026-11-09), art/marketing/launch-v01
+
 
 (없음)
 - [ ] 큰 기지(타이쿤) 재배치: 제작기 여러 대·미사일 전시장·AFK 연구시설·기지별 차고 자리, 광장 중앙 공동 레이드 구역 — **Studio 사용 중** (Claude, 2026-11-09)
@@ -52,6 +52,8 @@ n- [ ] UI 미리보기는 2026-11-09 캡처 시점 사본이다. UI 스크립트
 - [ ] 미검증: 2인 이상 동시 접속, 버기 대로 주행, 월드2 실제 진입, 모바일 실기기, 게시 서버 저장·재접속.
 
 ## 완료
+
+- [x] 미사일 시뮬레이터 홍보 아트 가로형·1:1 아이콘 2종 (Codex, 2026-11-09; 시작 1bcffdd, 완료 커밋 Git 이력 참조), art/marketing/launch-v01. 원본 해상도 README 참고.
 
 - [x] 사용자 수정 방향의 단순 SF UI 시트 및 Claude 인수인계 (Codex, 2026-11-09; 시작 bf0beec, 완료 커밋 Git 이력 참조), art/ui/toy-city-v01. 입체 아이콘안 미채택.
 - [x] 현재 UI Edit 미리보기: `StarterGui.UIPreview_*` 5개 (Play 캡처 사본, Play 시 자동 삭제), 스크린샷 `docs/ui-preview-edit.jpg` (Claude, 2026-11-09)
