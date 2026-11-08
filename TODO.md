@@ -16,6 +16,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 ## 진행 중
 
 - [ ] 실사용 UI 이미지·Roblox 에셋 매핑·Claude 인수인계 제작 (Codex, 2026-11-09), art/ui/toy-city-v01
+- [ ] 현재 UI를 Edit 화면에서 미리 보기 (StarterGui 미리보기 사본, Play 시 자동 제거) — **Studio 사용 중** (Claude, 2026-11-09)
 
 ## 사용자가 직접 할 일
 
