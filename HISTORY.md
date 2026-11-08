@@ -110,3 +110,10 @@
 - 내용 출처: LEVEL_DESIGN_v0.3 11·14·15절, GDD_v0.3, 이 HISTORY의 미검증·남은 작업.
 - 미적용: `agent.md`는 "AGENTS.md 자동 지침으로 간주하지 않는다"고 명시돼 있어 수정하지 않았고, `AGENTS.md`도 만들지 않음. Codex가 TODO.md를 자동으로 읽게 하려면 사용자 결정 필요.
 - 검증: 작업 전 fetch → 원격 변경 없음. 문서 작업이라 실행 검증 대상 없음.
+
+## 2026-11-09 — AGENTS.md 추가 (에이전트 자동 시작 안내)
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`.
+- 목적(사용자 지시): Codex 등이 작업 시작 시 TODO.md를 자동으로 읽도록 `AGENTS.md` 작성.
+- 내용: 시작 전 확인(hostname·경로·git fetch/pull), 읽는 순서(TODO → HISTORY 끝 → CLAUDE.md 2~4절 → v0.3 기획서), TODO 진행 중 표시로 동시 작업 충돌 방지, Studio 백업·Save/Publish 금지, 작업 후 HISTORY·TODO 갱신과 커밋·푸시, 올리지 않는 파일. 상세 규칙은 `agent.md` 원문을 따르도록 명시(agent.md는 수정 안 함).
+- 변경 파일: `AGENTS.md`(신규), `TODO.md`(완료 항목 추가), `HISTORY.md`.
+- 검증: 작업 전 fetch → 원격 변경 없음. Codex가 실제로 AGENTS.md를 읽는지는 Codex 세션에서 확인 필요(미검증).
