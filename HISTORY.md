@@ -247,3 +247,9 @@
 - Studio 변경: `ReplicatedStorage.PetMissiles.UITheme` 소스 교체 — 흰 패널+연한 파랑 테두리, 남색 글자, 파랑 알약 버튼(테두리 없음), 초록/주황/빨강/연회색, 모서리 12, 버튼 글자색을 배경 밝기에 따라 흰색/남색으로, 표에 없는 밝은 글자(희귀도 색)는 같은 색조로 45% 어둡게, 스크롤바 색. `UIThemeClient`는 그대로. Edit 미리보기 5개는 테마 전 원본(`BeforeUITheme_1794162905`)에서 다시 복제해 v03 적용.
 - 검증(실제 실행, Play 1인 Mock): 기지 1 차지·제작 후 Inventory 흰색+남색 제목, Roll(부족) 연회색+남색 글자, Close 빨강+흰 글자, 아이템 카드 연파랑, 희귀도 글자 (105,116,124), 장착 해제 밝은 보조색+남색 글자, Focus 파랑, 부품 (215,135,0)·연구자료 (20,140,210), 차고 버튼 밝은 보조색. 화면 `docs/ui-theme-play.jpg`(v03로 교체). Stop 후 Edit 카메라 정상.
 - 문서: GDD_v0.3 11절 UI 단락을 v03 기준으로 수정. TODO 갱신. Save 안 함.
+
+## 2026-11-09 KST — 토이 v03 UI 아이콘 재제작
+- Windows DESKTOP-RLF93FA, C:\ProjectMS. fetch/status 동기화 확인. 기존 Claude UI 작업 보존.
+- 사용자 지정 art/references/toy-city-v03/ui/01-gameplay-hud.png 기반 메뉴·재화 8종 생성. art/ui/toy-city-v01/toy-v03-icons에 PNG, prompts, preview.html, manifest, README. 미사일 제외. 밝은 패널·남색 글자·파랑/노랑 기본색 기준 기록.
+- 검증: 생성 이미지 시각 검토, 8개 PNG 1254x1254/코너 alpha=0. 잔색 픽셀 표본 alpha=1. 브라우저 로컬 파일 접근 제한으로 HTML 렌더 검증 미실행. 게임 크기/모바일/Studio 이미지 표시 검증 미실행.
+- Open Cloud asset:read/write 권한 probe 성공. 로컬 PNG 업로드는 directory approved 오류. 사용자 폴더 허용 완료 응답 이후 같은 경로 재시도도 동일. 에셋 ID 미발급, manifest null. 업로드 차단 우회 없음. Studio 수정/Save/Publish 없음.

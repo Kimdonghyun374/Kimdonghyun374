@@ -1,0 +1,37 @@
+# Toy City v03 UI 아이콘
+
+2026-11-09 KST · 현재 사용자 채택 기준은 art/references/toy-city-v03/ui/01-gameplay-hud.png.
+기존 simple-scifi-ui-sheet-v02의 남색 패널안보다 이 밝은 UI 기준을 우선한다.
+
+## 파일
+
+- scrap.png → SalvageHUD.Resources.Scrap
+- research.png → SalvageHUD.Resources.ResearchData
+- base.png → WorldProgressHUD.Panel.Home
+- inventory.png → MissileBaseHUD.BaseBanner.OpenInventory
+- world.png → WorldProgressHUD.Panel.World1 / World2
+- focus.png → PetMissileHUD.Panel.Focus
+- garage.png → ScoutBuggyHUD.OpenGarage
+- craft.png → MissileBaseHUD.Inventory.Roll
+
+8개 모두 1254×1254 RGBA PNG, 투명 배경. 미사일·탈것 이미지 없음. preview.html에서 흰 패널과 32px 표시 예시를 열 수 있다. 생성 원본을 수정 없이 복사했다.
+
+## Roblox 적용 기준
+
+- 패널 #FAFCFF, 텍스트 #10275E, 경계 #C3D5FA, 주요 버튼 #2479F7, 확인 #29B928, 닫기 #F14D60. 레퍼런스를 바탕으로 정한 구현용 근사값.
+- 패널/버튼은 Frame/TextButton + UICorner + UIStroke. 텍스트, 가격, 상태, 단축키, 수량은 네이티브 UI.
+- 아이콘은 ImageLabel.BackgroundTransparency=1, ScaleType=Fit, ImageColor3=white. 기본 표시 32~48px, 터치 버튼 영역은 48px 이상 권장.
+- 흰 패널과 남색 글자, 파랑 기본 행동, 초록 확인/장착, 빨강 닫기. 큰 모서리 반경과 얕은 그림자. HUD 위치/동작/Remote는 별도 승인 없이 변경하지 않는다.
+- 보관함 기호는 미사일 이미지 제외 지시에 따라 파란 장비 상자로 대체했다.
+
+## 업로드 상태 / 검증
+
+8종 생성 결과 시각 검토 및 PNG 크기/알파 확인. 브라우저 도구의 로컬 파일 접근 제한으로 preview.html 렌더 검증은 미실행. 원본 확대 미리보기의 일부 잔색은 알파 1/255 표본으로 확인했으며, 실제 게임 크기의 최종 표시는 Studio 적용 후 확인해야 한다.
+
+asset:read / asset:write 권한 확인 성공. Open Cloud 업로드는 폴더 미허용 오류로 차단됨. 사용자의 허용 완료 응답 후 같은 경로를 재시도했으나 동일 오류. 업로드된 에셋 없음, manifest.json assetId는 null. 임의 ID/미사일 매핑 생성 없음.
+
+업로드 경로: C:\\ProjectMS\\art\\ui\\toy-city-v01\\toy-v03-icons
+
+## Claude 인수인계
+
+사용자는 이번 밝은 토이 v03 UI를 채택했다. TODO의 simple-scifi 테마 작업에는 이 디자인 변경을 반영할 것. 본 작업은 Studio 코드/화면을 변경하지 않았다. 위 target은 이전 실제 UI 소스 조사 기준이므로 현재 UI 생성부를 재확인 후 이미지 배치. 등록 완료 시 manifest에 실제 ID를 기록하고 ImageLabel.Image에 연결한다. 기존 서버 검증·저장·경제·버튼 Activated 연결은 보존한다. Save/Publish 없음.

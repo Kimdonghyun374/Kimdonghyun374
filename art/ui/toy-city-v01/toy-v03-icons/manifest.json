@@ -1,0 +1,71 @@
+{
+  "version": "toy-v03-icons",
+  "reference": "art/references/toy-city-v03/ui/01-gameplay-hud.png",
+  "status": "upload_blocked_directory_permission",
+  "assets": [
+    {
+      "key": "scrap",
+      "file": "scrap.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": null,
+      "target": "SalvageHUD.Resources.Scrap"
+    },
+    {
+      "key": "research",
+      "file": "research.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": null,
+      "target": "SalvageHUD.Resources.ResearchData"
+    },
+    {
+      "key": "base",
+      "file": "base.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": null,
+      "target": "WorldProgressHUD.Panel.Home"
+    },
+    {
+      "key": "inventory",
+      "file": "inventory.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": null,
+      "target": "MissileBaseHUD.BaseBanner.OpenInventory"
+    },
+    {
+      "key": "world",
+      "file": "world.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": null,
+      "target": "WorldProgressHUD.Panel.World1 / World2"
+    },
+    {
+      "key": "focus",
+      "file": "focus.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": null,
+      "target": "PetMissileHUD.Panel.Focus"
+    },
+    {
+      "key": "garage",
+      "file": "garage.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": null,
+      "target": "ScoutBuggyHUD.OpenGarage"
+    },
+    {
+      "key": "craft",
+      "file": "craft.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": null,
+      "target": "MissileBaseHUD.Inventory.Roll"
+    }
+  ]
+}
