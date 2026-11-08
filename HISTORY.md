@@ -160,3 +160,12 @@
 - 검증: MISSILES_CURRENT·MISSILES·PLAYERDATA를 다시 읽어 값 확인. Studio·게임 코드 변경 없음.
 - ② 방식: 사용자가 시트 값을 고치고 "시트 반영"을 요청하면 백업 후 Studio 설정에 옮기고 Play 확인(README에 명시). 아직 반영 요청 없음.
 - 남은 일: MISSILES 1맵 숫자 의미, InfrastructureLevel 용도, 6맵 채택 여부 사용자 결정(TODO).
+
+## 2026-11-09 KST — 기본색 토이 시티 v03 및 탈것 제안
+- 실행 컴퓨터 Windows DESKTOP-RLF93FA, C:\ProjectMS. 시작 전 fetch 및 HEAD/origin 동일(0/0), 깨끗한 상태 확인. 시작 기록 d98e12a.
+- 사용자 선택인 푸른빛 보정 전 기본색 시안을 참조하여 환경2/UI1/건물1/미사일1/이펙트1 재제작, 추가 요청 탈것 비교1 생성. 내장 ImageGen 사용. art/references/toy-city-v03에 PNG 7종 + 승인 스타일 기준 PNG, 갤러리, 전체 프롬프트, 조사·학습 메모 보관. 이전 버전 보존.
+- 시각 검토 후 광장 버기를 호버보드로, 이펙트 번개 보상을 너트·볼트로 수정. 생성 원본/저장본 SHA256 대조 성공. 치수·UI 수치·랙 개수는 구현 명세가 아님을 README 기록.
+- Google Sheets: 사용자 지정 MS_MASTER 메타데이터 및 Vehicles(gid 680897878) A1:N15/A16:Z40 조회 성공, 해당 범위 값 없음. MISSILES A1:L8 값 읽기 성공. 문서 전체 빈 상태로 단정하지 않음. 시트 쓰기 없음.
+- Pet Simulator 99/Skateboard Obby/Jailbreak 공식 페이지 조사 후 낮은 호버보드·짧은 점프·대시를 제안. 직접 플레이·인기순위·물리 성능 검증 아님. 호버보드부터 시작하는 아트 후보만 반영. 버기 교체 구현/수치/해금 확정 아님.
+- 학습 제안: Luau 기본, Explorer 구조, 호버보드 작은 값 변경 실험, 클라이언트/서버, 구매·보상·저장·Remote 검증. 별도 learning-next.md.
+- Studio·게임 코드·GDD 수정, Save/Publish, 실행 테스트 없음. Mac 레포 동기화는 별도 pull 필요.
