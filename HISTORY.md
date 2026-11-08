@@ -117,3 +117,8 @@
 - 내용: 시작 전 확인(hostname·경로·git fetch/pull), 읽는 순서(TODO → HISTORY 끝 → CLAUDE.md 2~4절 → v0.3 기획서), TODO 진행 중 표시로 동시 작업 충돌 방지, Studio 백업·Save/Publish 금지, 작업 후 HISTORY·TODO 갱신과 커밋·푸시, 올리지 않는 파일. 상세 규칙은 `agent.md` 원문을 따르도록 명시(agent.md는 수정 안 함).
 - 변경 파일: `AGENTS.md`(신규), `TODO.md`(완료 항목 추가), `HISTORY.md`.
 - 검증: 작업 전 fetch → 원격 변경 없음. Codex가 실제로 AGENTS.md를 읽는지는 Codex 세션에서 확인 필요(미검증).
+
+## 2026-11-09 KST — 아트 콘셉트 3종 제작
+- 실행 Windows DESKTOP-RLF93FA, C:\ProjectMS. v0.3 기획에 기반해 토이 시티·인더스트리얼 프런티어·네온 리액터 비교 이미지 3종을 내장 ImageGen으로 생성.
+- art/references/concepts-v01에 PNG 3개, README와 전체 프롬프트 저장. 원본/복사본 SHA256 일치 확인 및 생성 이미지 시각 검토.
+- 승인 전 제안이며 정확한 배치도·게임 구현 완료로 간주하지 않음. 사용자 스타일 선택이 남음. 게임/Studio 변경·실행 테스트 없음.
