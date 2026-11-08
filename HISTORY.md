@@ -102,3 +102,11 @@
 - 사용자 요청으로 C:\ProjectMS의 origin과 main 연결을 재확인하고 이 기록을 테스트 커밋 대상으로 추가.
 - origin: https://github.com/Kimdonghyun374/Kimdonghyun374.git. 작업 시작 시 fetch 성공, 로컬 HEAD 및 origin/main 모두 8fb3fd0, ahead/behind 0/0, 미커밋 변경 없음.
 - 이번 변경은 이력 문서 한 건이며 게임 코드와 Studio는 변경하지 않음. 이 커밋의 push 성공 여부는 실행 결과 및 원격 main의 커밋 ID 대조로 별도 확인.
+
+## 2026-11-09 — 공용 할 일 목록 TODO.md 추가
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`.
+- 목적(사용자 지시): Claude·Codex가 같은 할 일 목록을 보도록 `TODO.md` 작성.
+- 변경 파일: `TODO.md`(신규: 사용 방법, 진행 중, 사용자가 직접 할 일, 다음 후보 5개, 보류, 완료), `CLAUDE.md`(4절 끝에 TODO.md 기준 안내 한 줄), `HISTORY.md`.
+- 내용 출처: LEVEL_DESIGN_v0.3 11·14·15절, GDD_v0.3, 이 HISTORY의 미검증·남은 작업.
+- 미적용: `agent.md`는 "AGENTS.md 자동 지침으로 간주하지 않는다"고 명시돼 있어 수정하지 않았고, `AGENTS.md`도 만들지 않음. Codex가 TODO.md를 자동으로 읽게 하려면 사용자 결정 필요.
+- 검증: 작업 전 fetch → 원격 변경 없음. 문서 작업이라 실행 검증 대상 없음.
