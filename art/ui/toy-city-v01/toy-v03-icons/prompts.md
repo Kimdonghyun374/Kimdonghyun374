@@ -29,3 +29,6 @@ One standalone GARAGE menu icon matching attached Toy City UI. A single simple c
 # craft
 
 ONE standalone crafting menu icon matching attached Toy City UI concept: A single chunky cobalt blue wrench with small golden yellow gear next to it, simple readable silhouette. Bold blue wrench angled upward right beside a small solid golden gear at lower right, modest rounded bevels, smooth toy-plastic, simple shapes and restrained shine. Clearly legible at 32px. Square true transparent background, 20% clear margins. No text no missiles no frame no panel no particles no glow no floor shadow.
+# coin
+
+Create one standalone currency icon for Roblox ProjectMS Toy City UI. A single bright golden yellow toy coin, thick smooth rounded edge and an inset ring, with a big simple embossed four-point sparkle or star centered on the face. Same smooth lightly beveled plastic material, strong yellow and orange accents and upper-left light as the attached gear icon; change silhouette to a coin. Mostly front-on, slight tilt just enough to see the rim on the right. Bold instantly recognizable at 24px. Square canvas, centered with clear margin on every side, true transparent background. No lettering, no currency text, no numbers, no external sparkle particles, no shadows outside the object, no stack, no card, no UI. One coin only.

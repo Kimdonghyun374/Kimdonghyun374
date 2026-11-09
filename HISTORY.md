@@ -334,3 +334,7 @@
 - Studio 변경: BaseConfig·SalvageService·BaseDomain·BaseWorld·BaseService·VehicleRules·SalvageClient·MissileBaseClient·ScoutBuggyClient 소스의 "부품" 24곳 → "코인"(BaseWorld 주석 "지형/기지 부품"은 재화 뜻이 아니라 유지). 이미 만들어진 글자 21곳(기지 생산기 간판 6, 공용 차고 간판, UI 미리보기, 프롬프트) 교체. 저장 키 `Scrap`·변수명·RemoteEvent 변경 없음.
 - 검증(실제 실행, Play 1인 Mock): 자원 "코인 20", 기지 안내 "제작 · 코인 20개 · 5초", 탈것 버튼·차고 구매 "코인 50개", 생산기 간판·프롬프트 "코인 20개", PlayerGui에 "부품" 0개. 실제 미사일로 상가 파괴 → 드롭 이름표 "■ 코인 ×12/12/11". (체력 0 직접 파괴는 피해 기여자가 없어 드롭이 생기지 않음 — 기존 동작.) Stop 후 Edit 복귀.
 - 문서: 시트 전체 "부품"→"코인" 9곳(findReplace, 사용자 탭에는 해당 없음) + README 용어 행. GDD·LEVEL_DESIGN 맨 위 용어 안내(본문 "부품"=코인), GDD 결정 표 "결정·적용", CLAUDE.md 3절 재화 이름 줄. TODO: 동전 아이콘 Codex 요청 항목.
+
+## 2026-11-10 KST — 토이 v03 코인 아이콘
+- Windows DESKTOP-RLF93FA, C:\ProjectMS. 기존 노란 아이콘과 같은 재질의 별 문양 금색 동전 제작. art/ui/toy-city-v01/toy-v03-icons/coin.png, 1254×1254 RGBA. 모서리 알파 0~1/255, 중앙 알파 253/255 표본 확인.
+- Roblox Decal 79230387751043 업로드 및 심사 Approved, Studio에서 Decal.Texture rbxassetid://72200879387099 확인. 저장소 UIAssets/manifest/미리보기 매핑 갱신. Studio HUD 연결은 후속.

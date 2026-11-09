@@ -1,6 +1,6 @@
 -- Toy City v03 UI icons; ImageLabel.Image에 사용
 return {
-    scrap = "rbxassetid://77913723342034",
+    scrap = "rbxassetid://72200879387099",
     research = "rbxassetid://77079576253238",
     base = "rbxassetid://110510289052386",
     inventory = "rbxassetid://138263092777994",

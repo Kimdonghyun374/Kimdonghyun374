@@ -5,13 +5,13 @@
   "assets": [
     {
       "key": "scrap",
-      "file": "scrap.png",
+      "file": "coin.png",
       "width": 1254,
       "height": 1254,
-      "assetId": "77913723342034",
+      "assetId": "72200879387099",
       "target": "SalvageHUD.Resources.Scrap",
-      "decalAssetId": "110707870561853",
-      "image": "rbxassetid://77913723342034",
+      "decalAssetId": "79230387751043",
+      "image": "rbxassetid://72200879387099",
       "moderation": "Approved"
     },
     {
