@@ -388,3 +388,4 @@
   - Codex 아이콘: UIAssets focusSkill=rbxassetid://109239933150633(미사일 3발), research=rbxassetid://105888631454719(평면 설계도).
 - 검증(실제 실행, Play 1인 Mock): 시작 때 Base_1 Layout 0/249 보임·생산기 숨김·차고 프롬프트 꺼짐 → E 차지 후 238개 보임·생산기·차고 프롬프트 켜짐·보관함 계속 숨김, 알림 "기지를 차지했습니다!…"(docs/base-built-after-claim.jpg). 프롬프트 카드 생성(기지 차지/빈 기지 1/E) — 화면 캡처는 AlwaysOnTop 표시를 못 찍어 잠시 끄고 확인. 제작 1회 → "내 미사일 1개 · 장착 1/10"(docs/hud-layout-v2.jpg). Win 글자 0개. 낮 ClockTime 14 유지 → 밤 되는 순간 0(docs/night-instant.jpg). 버기 미보유 시 소환 버튼 숨김. 새 아이콘 두 개 표시(집중 공격 아이콘은 첫 Play에서 빈 칸, 다시 Play하니 표시 — 새 이미지 첫 요청 현상). Stop 후 Edit 복귀.
 - 미검증: 버기 구매 후 소환 버튼, 휴대폰 터치로 프롬프트 카드 누르기, 2인 이상에서 남의 기지 표시, 왼쪽 패널과 코인 칸이 작은 화면에서 겹치는지. 콘솔의 rbxassetid://203785492 형식 오류는 이번 변경 전부터 있던 것(출처 미확인).
+- 추가(같은 날): Codex 최종안으로 Studio UIAssets focusSkill을 rbxassetid://72548406471009(화살표 2개 + 미사일 3발 = 전탄 재장전)로 교체, PetMissileHUD 미리보기 아이콘도 교체. Play에서 6시 버튼에 표시 확인. Stop 후 Edit 복귀.
