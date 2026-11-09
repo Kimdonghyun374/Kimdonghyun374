@@ -93,13 +93,13 @@
     },
     {
       "key": "focusSkill",
-      "file": "focus-skill.png",
+      "file": "focus-reload.png",
       "width": 1254,
       "height": 1254,
-      "assetId": "109239933150633",
+      "assetId": "72548406471009",
       "target": "PetMissileClient focusIcon",
-      "decalAssetId": "114650319734560",
-      "image": "rbxassetid://109239933150633",
+      "decalAssetId": "122460028099487",
+      "image": "rbxassetid://72548406471009",
       "moderation": "Approved"
     }
   ]

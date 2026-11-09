@@ -367,3 +367,7 @@
 ## 2026-11-10 KST — 연구자료·집중 공격 아이콘
 - C:\ProjectMS. 평면 설계도 수정안과 집중 공격 투명 PNG 저장, 원본 SHA256 일치 및 1254×1254/코너 alpha=0 확인.
 - Roblox 두 Decal 심사 Approved, Studio에서 실제 Image ID 연구자료 rbxassetid://105888631454719, 집중 공격 rbxassetid://109239933150633 확인. 저장소 매핑과 미리보기 갱신. Studio 적용과 흰색/주황색·모바일 검증은 Claude TODO에 등록.
+
+## 2026-11-10 KST — 필수 효과음 10종 및 전탄 재장전 아이콘
+- C:\ProjectMS. 현재 Studio의 임시 획득음과 전투·제작 이벤트 확인. art/audio/core-sfx-v01에 10개 원본 합성 WAV와 연결/검증 안내 저장. 44.1kHz·모노·16비트, 비어 있지 않고 클리핑 및 중복 없음 확인. 오디오 업로드 폴더 허용 오류, SoundId/게임 청취 미검증.
+- 화살표 두 개·미사일 세 발 PNG 저장, Decal 122460028099487 Approved 및 실제 Image ID rbxassetid://72548406471009 확인. 저장소 focusSkill 매핑과 TODO의 Claude 연결 항목 갱신.
