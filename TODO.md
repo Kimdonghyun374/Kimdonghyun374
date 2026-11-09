@@ -14,7 +14,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 기준일: 2026-11-09 KST · 기준 커밋: `8fb3fd0`
 
 ## 진행 중
-- [ ] **집중 공격 게이지 + 6시 UI 축소** — 접속 시 가득, 사용 시 전탄 즉시 재장전 후 일제 발사, 명중으로 충전. 6시 UI는 F 버튼+아이콘만. (Claude 진행 중, Studio 사용 중, 2026-11-10)
+
+- [ ] **집중 공격 버튼 아이콘 (Codex 요청)** — 프롬프트: art/ui/toy-city-v01/toy-v03-icons/prompts.md 맨 아래 `focusSkill`. 제작·업로드 후 UIAssets(레포·Studio)에 `focusSkill` 키 추가만 하면 됨. 흰 바탕·주황 바탕 둘 다에서 보이는지 확인. (Codex, 2026-11-10)
 
 ## 사용자가 직접 할 일
 

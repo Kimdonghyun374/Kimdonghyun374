@@ -351,3 +351,15 @@
 - Studio 변경: ReplicatedStorage.PetMissiles.UIAssets `scrap` 값 77913723342034(톱니) → 72200879387099(동전), StarterGui.UIPreview_SalvageHUD 코인 아이콘 Image 교체. 옛 ID를 쓰는 곳 0개(백업 제외).
 - 검증(실제 실행, Play 1인): 첫 Play에서 HUD 코인 아이콘이 빈 칸(새로 승인된 이미지의 첫 요청 실패로 보임, Image 다시 지정하자 표시) → Play를 새로 시작하니 처음부터 "코인 20" 옆에 동전 표시(docs/coin-icon-hud.jpg). Stop 후 Edit 복귀.
 - 남은 일: 게시 서버·휴대폰에서 첫 접속 때 빈 칸이 다시 생기는지 확인.
+
+## 2026-11-10 KST — 집중 공격 게이지 + 6시 UI 축소 (Claude)
+- 컴퓨터 DESKTOP-RLF93FA, C:\ProjectMs. 사용자 지시: 집중 공격은 접속 시 가득, 사용 시 전탄 재장전. 6시 UI는 F와 아이콘 하나만 남기고 삭제. 아이콘은 Codex가 생성(프롬프트 작성).
+- 백업: ServerStorage.ProjectMSBackups.BeforeFocusGauge_1794243976 (Service, Config, UITheme, PetMissileClient, UIThemeClient, UIPreview_PetMissileHUD).
+- Studio 변경:
+  - Config: FocusChargeMax 100, FocusChargePerHit 2.
+  - Service: 플레이어 상태에 focusCharge(처음 가득), 상태 동기화에 focusCharge/focusMax. RequestFocus는 게이지 가득·미사일 있음·목표 유효일 때만 → 모든 슬롯 즉시 재장전 → 전탄 일제 발사 → 게이지 0. 자동 발사 중이면 끊고 집중 공격으로 바꿈. 일반 공격 명중만 충전(flight.focus로 구분).
+  - PetMissileClient: 6시 큰 패널(상태·목표·안내 글자, 긴 버튼) 삭제 → 지름 84px 동그란 버튼(아이콘, 키보드일 때 F 배지, CanvasGroup 게이지 아래→위 채움, 가득 차면 주황+테두리 깜빡임). 서버 거절 안내는 버튼 위에 2초만. 아이콘은 UIAssets.focusSkill이 있으면 그것, 없으면 기존 focus.
+  - UIThemeClient 대상에서 PetMissileHUD 제외(동그란 모양 유지), UITheme IconTargets의 PetMissileHUD.Panel.Focus 줄 삭제. StarterGui 미리보기 UIPreview_PetMissileHUD를 새 버튼으로 다시 만듦(RemoveInPlay 유지).
+- 검증(실제 실행, Play 1인 Mock): 기지 차지·제작 1발 장착 → 개인 도시 옆. 처음 게이지 100/100, 재장전 중(준비 0발)에도 집중 공격 발사(launched 3→4), 게이지 0. 바로 다시 누르면 거절 "집중 게이지 충전 중". 8초 자동 공격 후 4/100(명중 2발). 화면: 6시에 동그란 버튼+F 배지만 표시(docs/focus-button-play.jpg). Stop 후 Edit 복귀.
+- 문서: GDD 결정 표 1행, 시트 COMBAT 3행(FocusChargeMax, FocusChargePerHit, 피해 보너스 미정), Codex 아이콘 프롬프트(art/ui/toy-city-v01/toy-v03-icons/prompts.md `focusSkill`), TODO에 Codex 요청.
+- 미검증: 10발 장착 상태 일제 사격, 휴대폰 터치 위치(TouchEnabled면 아래에서 140), 게이지 가득 상태의 깜빡임 화면.
