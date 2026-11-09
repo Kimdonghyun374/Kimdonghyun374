@@ -338,3 +338,9 @@
 ## 2026-11-10 KST — 토이 v03 코인 아이콘
 - Windows DESKTOP-RLF93FA, C:\ProjectMS. 기존 노란 아이콘과 같은 재질의 별 문양 금색 동전 제작. art/ui/toy-city-v01/toy-v03-icons/coin.png, 1254×1254 RGBA. 모서리 알파 0~1/255, 중앙 알파 253/255 표본 확인.
 - Roblox Decal 79230387751043 업로드 및 심사 Approved, Studio에서 Decal.Texture rbxassetid://72200879387099 확인. 저장소 UIAssets/manifest/미리보기 매핑 갱신. Studio HUD 연결은 후속.
+
+## 2026-11-10 KST — 재화 역할 결정 정리 (Claude)
+- 컴퓨터 DESKTOP-RLF93FA, C:\ProjectMs. 사용자 결정: "레벨업은 연구자료, 그 외 시설 확대는 코인", 고급 뽑기도 코인.
+- 문서: GDD_v0.3 6절에 "재화 역할 결정" 표(얻는 곳·쓰는 곳), 14절 "연구자료 소비=레벨업 전용", "지역 해금 재화=코인(월드는 보스 격파)", "고급 뽑기 재화=코인" 결정 행. TODO 완료 항목, 줄머리 오타(n- [ ]) 수정.
+- 시트 MS_MASTER: ECONOMY 탭 새로 추가(재화·구분·항목·값·상태·메모 19행, 상태 색 규칙), README 탭 목록에 ECONOMY 행. 사용자 탭은 건드리지 않음.
+- Studio 변경 없음(문서만). 남은 일: 비용 숫자는 밸런스 계산표에서, 버기 업그레이드(현재 코인)를 연구자료로 바꾸는 것은 구현 때.
