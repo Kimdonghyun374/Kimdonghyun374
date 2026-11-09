@@ -296,3 +296,9 @@
 - 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`.
 - 사용자 확인: 타이쿤 전시장 좌우·2층 개편을 완료로 처리.
 - 변경 파일: `TODO.md`(시작 알림 항목 삭제, 완료 항목에 확인 표시), `AGENTS.md`·`agent.md`(시작 알림 문단에서 전시장 항목 삭제, 프로토타입 식별성 알림은 유지). Studio 변경 없음.
+
+## 2026-11-10 — 월드2(2맵) 해금 동작 확인
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. Studio 변경 없음(Play 시험만).
+- 조건(코드 확인, `ProgressionRules.CanEnter`): Wins ≥ 1 그리고 WorldClears["1"] ≥ 1. 월드1 건물 4개를 같은 낮 주기에 모두 파괴하면 `RecordDestroyed`가 Win+1·WorldClears+1을 함께 기록.
+- 검증(실제 실행, Play 1인 Mock): 기지 1 차지 → 낮에 서버에서 개인 건물 4개 Humanoid.Health=0(실제 사망 경로로 파괴 처리) → 패널 "누적 Win 1 / 입문 도시 파괴 4/4 · 완파!", World2 버튼 "2월드로 바로 이동", 메시지 "월드 완파! Win +1". ProgressionRequest enter 2 → (1720,3,25) 월드2 입구 도착, "산업 도시 파괴 0/4", 월드2 건물 4개 섬 위 생성. enter 1 → Lane_1 입구 (0,-240) 복귀. Stop.
+- 참고: 시험은 미사일 공격 대신 체력 0으로 파괴. 실제 미사일로 월드2 건물(HP 4배) 공격과 월드2의 레벨 구조(링·대로 미적용)는 별도 결정 항목(TODO 보류).
