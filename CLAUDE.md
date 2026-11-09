@@ -57,6 +57,7 @@ Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현
 - **전투** (`ReplicatedStorage.PetMissiles.Config`, `ServerScriptService.PetMissiles.Service`):
   슬롯 Min/Max 10 (사용자 설정, 보존), 자동 탐색 1.6초, 연사 0.1초, 슬롯 재장전 3초, 사거리 90, 기본 피해 15.
   클릭/터치로 목표 선택, F 또는 버튼으로 집중 발사. 서버가 대상·거리·Raycast·피해를 검증.
+- **재화 이름**: 일반 재화 화면 이름은 **코인**(2026-11-10, 예전 "부품", 저장 키 `Scrap`). 아래의 "부품"은 코인.
 - **기지/제작** (`BaseConfig`, `BaseDomain`, `BaseService`, `BaseWorld`):
   `Workspace.ProjectMS_Bases` Base_1~6 링 광장 60° 배치(2026-11-10, PlotCount 6, 서버 정원 목표 6. 처음 8에서 축소), 1인 1기지. 제작비 부품 20, 5초 후 지급, 완료 후 2초 쿨다운,
   시작 부품 20개 1회. 희귀도 60/25/10/4/1%, 피해 배율 1/1.3/1.8/2.5/4. 보관함 100칸(초과 정리 기능 없음).

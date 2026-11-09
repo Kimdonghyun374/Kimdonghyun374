@@ -326,3 +326,11 @@
 - 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`.
 - 사용자 결정: 부품을 코인(골드)으로 교체(직관성). 권장 구현: 화면 표시만 바꾸고 저장 키 `Scrap` 유지, 아이콘을 동전으로 교체. 지역 해금 재화는 추천안(구역=완파+코인, 월드=보스 격파) 기록, 확정 대기.
 - 변경 파일: `docs/GDD_v0.3.md` 14절 결정 표, `TODO.md`, `HISTORY.md`. Studio·코드 변경 없음.
+
+## 2026-11-10 — 일반 재화 "부품" → "코인" 화면 글자 교체
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. TODO에 "Studio 사용 중" 표시.
+- 사용자 결정: 화면 이름 "코인".
+- 백업: `ServerStorage.ProjectMSBackups.BeforeCoinRename_1794240472` (스크립트 9개).
+- Studio 변경: BaseConfig·SalvageService·BaseDomain·BaseWorld·BaseService·VehicleRules·SalvageClient·MissileBaseClient·ScoutBuggyClient 소스의 "부품" 24곳 → "코인"(BaseWorld 주석 "지형/기지 부품"은 재화 뜻이 아니라 유지). 이미 만들어진 글자 21곳(기지 생산기 간판 6, 공용 차고 간판, UI 미리보기, 프롬프트) 교체. 저장 키 `Scrap`·변수명·RemoteEvent 변경 없음.
+- 검증(실제 실행, Play 1인 Mock): 자원 "코인 20", 기지 안내 "제작 · 코인 20개 · 5초", 탈것 버튼·차고 구매 "코인 50개", 생산기 간판·프롬프트 "코인 20개", PlayerGui에 "부품" 0개. 실제 미사일로 상가 파괴 → 드롭 이름표 "■ 코인 ×12/12/11". (체력 0 직접 파괴는 피해 기여자가 없어 드롭이 생기지 않음 — 기존 동작.) Stop 후 Edit 복귀.
+- 문서: 시트 전체 "부품"→"코인" 9곳(findReplace, 사용자 탭에는 해당 없음) + README 용어 행. GDD·LEVEL_DESIGN 맨 위 용어 안내(본문 "부품"=코인), GDD 결정 표 "결정·적용", CLAUDE.md 3절 재화 이름 줄. TODO: 동전 아이콘 Codex 요청 항목.
