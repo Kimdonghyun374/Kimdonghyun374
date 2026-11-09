@@ -24,3 +24,20 @@
 5. Play에서 첫 제작, 전탄 재장전, 10발 연사, 동시 명중·붕괴, 코인 묶음 획득, 연구자료 획득, 거리 감쇠, 다른 플레이어의 개인 도시를 확인한다. 모바일 스피커와 헤드폰에서 붕괴 소리가 UI를 덮는지도 듣고 초기 볼륨을 조정한다.
 
 현행 Studio 확인 결과는 Workspace의 기존 Acid Factory 음원과 SalvageClient의 임시 획득음이다. 배경음과 미구현 보스 음향은 후속 범위다.
+
+## Roblox Audio ID (2026-11-10 Claude 업로드, 크리에이터 = 게임 소유자 계정)
+
+업로드 직후 심사 상태는 모두 Reviewing. Studio 연결: `ReplicatedStorage.PetMissiles.GameSounds`.
+
+| 파일 | Audio ID |
+|---|---|
+| missile-launch.wav | 94657847914345 |
+| missile-impact.wav | 77079096464259 |
+| building-collapse.wav | 72243191624765 |
+| focus-reload.wav | 126163575722020 |
+| craft-start.wav | 116872432641263 |
+| craft-ready.wav | 111699975181294 |
+| coin-pickup.wav | 82821946308198 |
+| research-pickup.wav | 109467954291666 |
+| ui-confirm.wav | 79822285221419 |
+| ui-denied.wav | 94748098678438 |

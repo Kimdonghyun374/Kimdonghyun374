@@ -395,3 +395,16 @@
 - Studio 변경: Play(기지 1 차지 + 제작 1회 + 차고 열기) 상태의 실제 PlayerGui를 기본값과 다른 속성만 읽어 Edit의 StarterGui에 다시 만듦. 메인 6개(켜짐): UIPreview_MissileBaseHUD, _SalvageHUD, _ScoutBuggyHUD(버기 소환 버튼 보이게), _WorldProgressHUD, _DayNightHUD, _PetMissileHUD. 팝업 6개(Enabled 꺼짐, 켜면 보임): UIPreview_Popup_Inventory, _Toast, _Garage, _PickupNotice, _FocusHint, _PromptCard. 모두 RemoveInPlay·EditPreviewOnly·CapturedAt·Note 속성.
 - 검증(실제 실행): Edit 화면에 12시 낮·밤, 11시 패널, 왼쪽 코인·연구자료, 오른쪽 내 미사일·버기 소환·테스트 이동, 6시 집중 공격 버튼 표시 확인. Play 시작 후 PlayerGui에 UIPreview 0개(중복 없음). Stop 후 Edit 복귀.
 - 규칙: agent.md에 "UI는 항상 Edit에서 보이게" 절 추가. Claude 메모리에도 기록.
+
+## 2026-11-10 KST — 필수 효과음 10종 연결 + 화면 UI 1.2배 (Claude)
+- 컴퓨터 DESKTOP-RLF93FA, C:\ProjectMs. 사용자: 효과음 연결 승인(업로드 폴더 허용), "UI가 전체적으로 작습니다 전체적으로 다 조금씩 키워주세요".
+- 업로드: Open Cloud Assets API로 art/audio/core-sfx-v01의 WAV 10개를 게임 소유자 계정 Audio로 올림. ID는 그 폴더 README 표. 심사 상태 Reviewing.
+- 백업: ServerStorage.ProjectMSBackups.BeforeSoundsUIScale_1794245925 (클라이언트 스크립트 6개 + StarterGui 사본).
+- Studio 변경:
+  - 새 ModuleScript ReplicatedStorage.PetMissiles.GameSounds: 소리별 ID·초기 볼륨(Codex README 값)·최소 간격, Play(내 화면)·PlayAt(위치, 거리 감쇠 12~160).
+  - PetMissileClient: 새 비행(0.3초 이내 시작)만 발사음, 명중 시 명중음, 게이지 가득→감소 순간 전탄 재장전음, 서버 거절 안내 때 거절음.
+  - SalvageClient: 임시 volume_slider.ogg 제거 → 코인/연구자료 획득음(연구자료 우선, 0.12초 묶음), BuildingCollapse 이벤트 때 건물 위치에서 붕괴음 1회.
+  - MissileBaseClient: 제작 예약이 새로 생길 때 제작 시작음(접속 직후 진행 중은 제외), 제작 결과 때 완료음, 내 미사일 창 열기/닫기 확인음. ScoutBuggyClient: 차고 창 열림/닫기 확인음.
+  - UI 크기: UITheme.HudScale = 1.2, 새 LocalScript UIScaleClient가 6개 HUD 맨 위 요소마다 UIScale. 오른쪽 버튼 간격(버기 소환 196→206, 테스트 이동 248→268), 안내 알림 58→66. 프롬프트 카드도 1.2배. StarterGui 사본 12개에도 같은 UIScale·위치 적용.
+- 검증(실제 실행, Play 1인 Mock): 기지 차지·제작 → 제작 시작·완료음 생성, 개인 도시에서 집중 공격 → 발사·명중·붕괴(위치 소리) 재생 기록, 전탄 재장전음·거절음 생성, 잔해 수집 → 코인 0→95와 코인 획득음. 1.2배 화면 캡처(Play·Edit) 확인, 오른쪽 버튼 겹침 없음. Stop 후 Edit 복귀.
+- 미검증: 실제 귀로 들은 볼륨·믹스(사용자 확인 필요), 심사 승인 후 다른 계정에서 들리는지, 휴대폰 화면에서 1.2배 UI가 넘치는지.
