@@ -58,7 +58,7 @@ Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현
   슬롯 Min/Max 10 (사용자 설정, 보존), 자동 탐색 1.6초, 연사 0.1초, 슬롯 재장전 3초, 사거리 90, 기본 피해 15.
   클릭/터치로 목표 선택, F 또는 버튼으로 집중 발사. 서버가 대상·거리·Raycast·피해를 검증.
 - **기지/제작** (`BaseConfig`, `BaseDomain`, `BaseService`, `BaseWorld`):
-  `Workspace.ProjectMS_Bases` Base_1~8 링 광장 배치(2026-11-09, PlotCount 8, 서버 정원 목표 8), 1인 1기지. 제작비 부품 20, 5초 후 지급, 완료 후 2초 쿨다운,
+  `Workspace.ProjectMS_Bases` Base_1~6 링 광장 60° 배치(2026-11-10, PlotCount 6, 서버 정원 목표 6. 처음 8에서 축소), 1인 1기지. 제작비 부품 20, 5초 후 지급, 완료 후 2초 쿨다운,
   시작 부품 20개 1회. 희귀도 60/25/10/4/1%, 피해 배율 1/1.3/1.8/2.5/4. 보관함 100칸(초과 정리 기능 없음).
 - **도시 파괴/회수** (`SalvageService/Rules`, `SalvageClient`, `BuildingCollapse`):
   피해 기여도로 잔해 분배, 개인 드롭, 수집거리 8, 90초 만료, 연구자료 15%. 정육면체 붕괴 연출(클라이언트 전용).
@@ -66,7 +66,7 @@ Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현
 - **월드 진행** (`WorldConfig`, `ProgressionRules/Service`, `WorldProgressClient`):
   개인 도시, 공유 낮 180초/밤 25초(밤엔 공격 거절, 새 낮에 수리). 1월드 HP 배율 0.25, 완파 시 Win+1,
   Win1 + 1월드 완파 1회로 2월드 해금(소비 없음). 각 월드 건물 4개.
-- **맵 (2026-11-09 Claude 적용)**: 링 광장(반지름 108, 가운데 공동 레이드 자리 반지름 60) + 큰 기지 80×110(제작 라인·전시장·기지 차고·AFK 연구 자리, 기지 차고만 작동) + 기지별 진격 대로 `Workspace.ProjectMS_Lanes.Lane_1~8`(d 225~1140).
+- **맵 (2026-11-09 Claude 적용)**: 링 광장(반지름 108, 가운데 공동 레이드 자리 반지름 60) + 큰 기지 6개 80×110(60° 간격)(제작 라인·전시장·기지 차고·AFK 연구 자리, 기지 차고만 작동) + 기지별 진격 대로 `Workspace.ProjectMS_Lanes.Lane_1~6`(d 225~1140).
   월드1 개인 도시는 `Lane_N.Entry` 기준으로 자기 기지 대로에 복제(템플릿 `ProjectMS_City`는 Lane_1 좌표로 편집).
   기지 없으면 월드1 도시 없음. 구역2·3은 바닥·표지만. UI는 `UITheme`+`UIThemeClient`로 v03 밝은 테마. 월드2는 X+1720 섬, TravelRoad는 백업으로 이동.
   상세: `docs/LEVEL_DESIGN_v0.3.md`.
@@ -83,7 +83,7 @@ Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현
 - v0.2 기획서(`outputs/gdd-v02/GDD_v0.2.md`, `LEVEL_DESIGN_v0.2.md`, `CODE_ANALYSIS.md`)의 새 수치·도시 구조·보스·3월드는 **제안이며 미구현**.
   2026-11-03 Claude가 Notion `미사일 시뮬레이터 DRAFT` 아래에 3개 페이지로 업로드함 (HISTORY.md 참고).
 - 2026-11-09 v0.3 문서: `docs/GDD_v0.3.md`, `docs/LEVEL_DESIGN_v0.3.md` (Notion의 v0.2 두 페이지를 v0.3으로 갱신).
-  다음 후보는 LEVEL_DESIGN_v0.3 15절(B0 기록, 8명 대비 비행·드롭 상한, 신규 이용자 테스트). 서버 정원 8은 사용자가 게시 설정에서 변경해야 함.
+  다음 후보는 LEVEL_DESIGN_v0.3 15절(B0 기록, 6명 대비 비행·드롭 상한(검토 완료), 신규 이용자 테스트). 서버 정원 6은 사용자가 게시 설정에서 변경해야 함.
 - Codex 미러 `outputs/studio-audit/REVIEW_KO.md`에 2026-10-26 코드 감사 결과(정원 60/기지 6, 10슬롯 설정과 기존 테스트 불일치 등)가 있음.
 
 **현재 할 일의 기준 목록은 [TODO.md](TODO.md)** (모든 에이전트 공용). 작업을 맡거나 끝내면 TODO.md도 갱신한다.

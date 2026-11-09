@@ -307,3 +307,12 @@
 - Windows DESKTOP-RLF93FA, C:\ProjectMS. fetch/status 동기화 확인.
 - 사용자 범위 확인 후 MS_MASTER PLAYERDATA!A1:B20에 기존 키 포함 기본값 19개와 B열 셀 메모 입력. 시트 재조회 19개 대조 완료. 코드와 기획 단계 값은 메모에서 구분.
 - 처음에 Studio 코드로 오해하여 수정했다가 자체 테스트를 종료하고 BaseDomain/BaseService 원본 일치와 신규 모듈 제거를 검증했다.
+
+## 2026-11-10 — 서버 정원·기지 8 → 6
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. TODO에 "Studio 사용 중" 표시. 시작 알림(프로토타입 식별성): 시설 모양·이름표 유지.
+- 사용자 결정: 6명으로 줄임(기지 사이가 너무 좁아 보여서).
+- 백업: `ServerStorage.ProjectMSBackups.BeforeSixBases_1794237772` (ProjectMS_Bases, ProjectMS_Lanes, BaseConfig) + 같은 폴더 `RemovedBase7_8`에 Base_7·8, Lane_7·8 이동(삭제 아님).
+- Studio 변경: Base_2~6과 Lane_2~6을 광장 중심 기준으로 회전해 60° 간격(Base_1·Lane_1·월드1 템플릿은 그대로). BaseConfig `PlotCount = 6` + 주석. Config·SalvageConfig 상한 근거 주석을 6명 기준(60 / 96)으로. 기지 크기 80×110 유지, 앞 끝 간격 약 8 → 약 35.
+- 검증(실제 실행, Play 1인 Mock): 기지 6개 인식. 회전한 Base_2 차지 → Lane_2에 도시 4개 생성, 제작 → Display 미리보기, 월드1 진입 → Lane_2 입구 (208,-120), 자동 공격으로 주택 파괴, 기지 차고 E → 탈것 메뉴. Stop 후 Edit 복귀. 위에서 본 화면 `docs/six-bases-top.jpg`.
+- 문서: LEVEL_DESIGN_v0.3(정원·기지 수·각도·간격 공식 d×1.0·파트 수·성능 표·상한 계산·작업 순서·아트 표), GDD_v0.3(머리말·변경 요약·맵·공간 구조·실행 순서·결정 표), CLAUDE.md, TODO(정원 6명 변경 항목). 시트 BASE_CRAFT PlotCount 6, WORLDS 기지 크기, COMBAT·SALVAGE 상한 설명. Notion 레벨디자인 맨 위에 변경 안내, 게임 기획서 정원 행·결정 표 수정.
+- 남은 일: 서버 정원 6 게시 설정(사용자). Save는 사용자 자동저장.
