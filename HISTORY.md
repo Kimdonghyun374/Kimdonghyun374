@@ -424,3 +424,10 @@
 ## 2026-11-10 KST — 보스 구역 비행 진입 결정
 - C:\ProjectMS, GitHub 동기화 확인. 탈것을 업그레이드해 비행을 해금하고 지상에서 갈 수 없는 보스 구역에 직접 날아가는 사용자 결정 기록.
 - GDD·레벨디자인·TODO 반영. 월드 진행용 개인 보스에 적용하는 해석, 협곡/공중 단차는 배치 제안. 기존 기지 앞 요격 배치는 참고로 보존. 비행 해금 단계·비용·거리·핵미사일 경로 미정.
+
+## 2026-11-10 KST — 1구역 건물 4개 추가 + 구역2·3 벽/E 해금 (Claude, 진행 중 — 사용량 한도로 중단)
+- 사용자: 1구역 건물 4개 추가, 구역2·3 벽(해금 전 통과 불가), 가까이 가서 E로 해금.
+- 백업: ServerStorage.ProjectMSBackups.BeforeZoneUnlock_1794246900 (ProjectMS_City, ProgressionService/Rules, BaseService, BaseDomain, WorldConfig).
+- Studio 변경: ProjectMS_City에 주택B·상가B·사무실B·창고 추가(원본 복제 + 색 틴트, 이름표 수정) → 1구역 8채. WorldConfig.Zones(구역2 경계 560·코인 200·월드1 완파 1회, 구역3 경계 800·코인 500·구역2 해금). ProgressionRules: UnlockedZones 저장(주기 초기화 안 됨), CanUnlockZone/UnlockZone. BaseDomain:Spend + BaseService.SpendScrap(서버 전용). Lane_1~6에 Gate_Zone2/3 벽(150×26, 빨간 ForceField, 표지, E 0.5초 프롬프트) 12개. ProgressionService: 벽 E → 내 대로·조건·코인 확인 후 해금, 주인 상태에 따라 벽 열림/닫힘, 잠긴 경계 넘으면 벽 앞으로 되돌림, 완파 문구에서 "Win" 제거.
+- 검증(실제 실행, Play 1인 Mock): 파괴 0/8 표시, 완파 전 E → "먼저 1구역 건물을 모두 부수세요", 벽 너머로 이동 → -550으로 되돌림·안내, 완파 후 코인 부족 → "코인이 부족합니다". **해금 성공 → 벽 열림 → 통과는 아직 확인 못 함**: 시험용으로 건물 체력을 1로 낮춰 부쉈더니 코인 드롭이 0이라 코인을 못 모음(테스트 비용 5로 임시 변경했다가 200/500으로 되돌림).
+- 남은 일: 실제 피해로 1구역 완파·코인 200 모아 해금 성공 경로 확인, StarterGui 사본에 변화 없음(새 UI 없음), 문서(GDD·LEVEL_DESIGN)·시트(WORLDS/BUILDINGS) 갱신.
