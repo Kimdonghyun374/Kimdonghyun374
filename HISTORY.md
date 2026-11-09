@@ -408,3 +408,8 @@
   - UI 크기: UITheme.HudScale = 1.2, 새 LocalScript UIScaleClient가 6개 HUD 맨 위 요소마다 UIScale. 오른쪽 버튼 간격(버기 소환 196→206, 테스트 이동 248→268), 안내 알림 58→66. 프롬프트 카드도 1.2배. StarterGui 사본 12개에도 같은 UIScale·위치 적용.
 - 검증(실제 실행, Play 1인 Mock): 기지 차지·제작 → 제작 시작·완료음 생성, 개인 도시에서 집중 공격 → 발사·명중·붕괴(위치 소리) 재생 기록, 전탄 재장전음·거절음 생성, 잔해 수집 → 코인 0→95와 코인 획득음. 1.2배 화면 캡처(Play·Edit) 확인, 오른쪽 버튼 겹침 없음. Stop 후 Edit 복귀.
 - 미검증: 실제 귀로 들은 볼륨·믹스(사용자 확인 필요), 심사 승인 후 다른 계정에서 들리는지, 휴대폰 화면에서 1.2배 UI가 넘치는지.
+
+## 2026-11-10 KST — 내 미사일 아이콘 버튼 + 테스트 이동 버튼 위치 (Claude)
+- 사용자: "내 미사일 버튼은 아이콘이랑 단축키만", "내 기지로 이동은 낮 UI 밑에".
+- Studio 변경: MissileBaseClient의 OpenInventory를 56px 흰 정사각 아이콘 버튼(보관함 아이콘 + 오른쪽 위 남색 "B" 배지, 키보드일 때만)으로, 글자 제거. UITheme IconTargets의 MissileBaseHUD.OpenInventory 줄 삭제(자체 아이콘). Studio 전용 TestTravel을 12시 낮·밤 표시 바로 밑(가운데, y 62, 200×30)으로. 서버 안내 알림 66→104, 버기 소환 206→216. StarterGui 사본(UIPreview_MissileBaseHUD, _ScoutBuggyHUD, _Popup_Toast)도 같게 수정.
+- 검증(실제 실행, Play 1인): 내 미사일 버튼 67×67(1.2배), 글자 없음·테마 아이콘 중복 없음, 테스트 이동 버튼이 낮 표시 아래 표시. Edit 화면 사본도 같은 모습 확인. Stop 후 Edit 복귀.
