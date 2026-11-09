@@ -344,3 +344,10 @@
 - 문서: GDD_v0.3 6절에 "재화 역할 결정" 표(얻는 곳·쓰는 곳), 14절 "연구자료 소비=레벨업 전용", "지역 해금 재화=코인(월드는 보스 격파)", "고급 뽑기 재화=코인" 결정 행. TODO 완료 항목, 줄머리 오타(n- [ ]) 수정.
 - 시트 MS_MASTER: ECONOMY 탭 새로 추가(재화·구분·항목·값·상태·메모 19행, 상태 색 규칙), README 탭 목록에 ECONOMY 행. 사용자 탭은 건드리지 않음.
 - Studio 변경 없음(문서만). 남은 일: 비용 숫자는 밸런스 계산표에서, 버기 업그레이드(현재 코인)를 연구자료로 바꾸는 것은 구현 때.
+
+## 2026-11-10 KST — 코인 동전 아이콘 Studio 연결 (Claude)
+- 컴퓨터 DESKTOP-RLF93FA, C:\ProjectMs. Codex가 올린 동전(Decal 79230387751043 → 이미지 rbxassetid://72200879387099, InsertService로 Decal.Texture 일치 확인)을 HUD에 연결.
+- 백업: ServerStorage.ProjectMSBackups.BeforeCoinIcon_1794241300 (UIAssets).
+- Studio 변경: ReplicatedStorage.PetMissiles.UIAssets `scrap` 값 77913723342034(톱니) → 72200879387099(동전), StarterGui.UIPreview_SalvageHUD 코인 아이콘 Image 교체. 옛 ID를 쓰는 곳 0개(백업 제외).
+- 검증(실제 실행, Play 1인): 첫 Play에서 HUD 코인 아이콘이 빈 칸(새로 승인된 이미지의 첫 요청 실패로 보임, Image 다시 지정하자 표시) → Play를 새로 시작하니 처음부터 "코인 20" 옆에 동전 표시(docs/coin-icon-hud.jpg). Stop 후 Edit 복귀.
+- 남은 일: 게시 서버·휴대폰에서 첫 접속 때 빈 칸이 다시 생기는지 확인.
