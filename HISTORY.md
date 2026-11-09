@@ -281,3 +281,13 @@
 - Windows DESKTOP-RLF93FA, C:\ProjectMS. fetch/status 동기화 확인.
 - TODO 사용자 할 일에 전시 공간 좌우 분리/2층 구조 변경, 프로토타입 모델 식별성 등록. AGENTS.md와 agent.md에 시작 알림 명시.
 - 문서만 변경, Studio 모델 수정 없음.
+
+## 2026-11-10 — 타이쿤 전시장 좌우·2층 개편과 기지 모델 식별성
+- 실행 컴퓨터: Windows `DESKTOP-RLF93FA`. 작업 폴더: `C:\ProjectMS`. 대상: Studio Place 122289987934213. TODO에 "Studio 사용 중" 표시.
+- 시작 알림(AGENTS.md): 전시장 좌우·2층 개편, 프로토타입 모델 식별성 — 둘 다 이번 작업 범위.
+- 사용자: Studio 자동저장을 쓰므로 저장 걱정 말 것 → TODO 저장 항목 완료 처리. Studio가 다시 열려 MCP studio id가 바뀜(`프로젝트MS` 외에 다른 Place `자산` 127014821326220도 열려 있었으나 손대지 않음). 다시 열린 Place에서 2026-11-09 변경(큰 기지·대로·레이드·UI 테마/아이콘·손상 연출·Label 수정·기지 차고·백업 8개)이 모두 남아 있음 확인.
+- 백업: `ServerStorage.ProjectMSBackups.BeforeGalleryTwoFloor_1794235490` (ProjectMS_Bases 전체).
+- Studio 변경(기지 8개 동일): `Layout`을 VehiclePad만 남기고 재구성 — `Gallery`(좌우 가장자리 x ±28~40, z -21~52, 1층 바닥 표시 + 2층 바닥 높이 12.65, 안쪽 난간·뒤 난간·기둥, 앞쪽 경사로 z -44→-21 약 28°, 받침 95개 + Display 1개 = 96칸, 흰 받침+파란 테두리, 각 층·측면 첫 칸 미사일 견본, 이름표), `Production`(제작 라인 x ±8/±16/±24, 예정 5칸 반투명 기계 + 6칸 모두 굴뚝·신호등), `Garage`(노란 문틀 게이트, VehiclePad 22×18로 이동), `AFKLab`(유리 건물+돔+안테나), 보관함·출구 이름표. 기존 부품 `Generator`(-8,-32), `Display`(왼쪽 1층 1번, 3×3), `Storage`(-15,+24) 위치 이동. 코드 변경 없음. 기지 파트 합계 2,032.
+- 검증(실제 실행, Play 1인 Mock): 기지 1 차지 → 제작 후 Display 위 미리보기 생성. 경사로 낮은 끝에서 MoveTo로 걸어 올라 2층 도착(root y 15.9 > 2층 윗면 12.9). 첫 시도는 시험 코드가 경사로 위아래를 반대로 잡아 실패한 것으로 확인. 기지 차고 E → 탈것 메뉴 열림. Stop 후 Edit 복귀·카메라 정상·런타임 폴더 없음.
+- 문서: LEVEL_DESIGN_v0.3 2-1절 재작성(그림·표·식별 방법), 스크린샷 `docs/gallery-two-floor.jpg`. 시트 WORLDS 제작 라인·전시장·차고·AFK 행 갱신. TODO: 전시장 알림은 "사용자 완료 확인 대기"로 표시.
+- 미검증: 모바일에서 경사로·2층 이동, 2인 이상, 2층 난간 사이 낙하 위험(뒤·안쪽만 난간, 바깥쪽은 기지 가장자리).
