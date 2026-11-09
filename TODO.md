@@ -15,7 +15,6 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
-- [ ] **집중 공격 버튼 아이콘 (Codex 요청)** — 프롬프트: art/ui/toy-city-v01/toy-v03-icons/prompts.md 맨 아래 `focusSkill`. 제작·업로드 후 UIAssets(레포·Studio)에 `focusSkill` 키 추가만 하면 됨. 흰 바탕·주황 바탕 둘 다에서 보이는지 확인. (Codex, 2026-11-10)
 
 ## 사용자가 직접 할 일
 
@@ -28,6 +27,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 - [ ] **Codex에 기록 요청** — 옮긴 `Kimdonghyun374` 폴더의 백업 위치를 `HISTORY.md`에 남기기.
 
 ## 다음 후보 (위에서부터 우선)
+
+- [ ] **Claude — 연구자료·집중 공격 아이콘 연결**: Studio ReplicatedStorage.PetMissiles.UIAssets의 research를 rbxassetid://105888631454719로 교체하고 focusSkill=rbxassetid://109239933150633 추가. PetMissileClient의 focusSkill 우선 선택은 확인됨. 연구자료 HUD와 집중 공격 버튼을 Play에서 확인하고 흰색/주황색 배경 및 모바일 크기에서 가독성 점검.
 
 1. [ ] **B0 기록: 링 광장 첫 반복 측정** — 광장 스폰 → 기지 차지 → 제작 → 대로 입구 → 주택 파괴 → 회수 → 재제작 → 연구동 완파의 사건별 시각, 기지 찾기·대로 인지 시간. (근거: `docs/LEVEL_DESIGN_v0.3.md` 6절)
 2. [ ] **신규 이용자 테스트 (PC·모바일, 5명)** — 사용자 주관. 막힌 원인 1가지를 골라 수정. (근거: 같은 문서 14·15절)
@@ -59,6 +60,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 - [ ] 미검증: 2인 이상 동시 접속, 버기 대로 주행, 모바일 실기기, 게시 서버 저장·재접속. (월드2 진입은 2026-11-10 확인)
 
 ## 완료
+- [x] 평면 설계도 연구자료 및 미사일 3발 집중 공격 투명 PNG 제작, Roblox 심사 Approved, 이미지 ID 확인 (Codex, 2026-11-10).
 - [x] 코인 동전 아이콘 Studio 연결: UIAssets scrap → rbxassetid://72200879387099, UI 미리보기 아이콘도 교체, Play HUD 표시 확인 (Claude, 2026-11-10)
 - [x] 재화 역할 결정 정리: 레벨업(능력치 기술 노드·탈것 레벨업) = 연구자료, 그 외(기본·고급 뽑기, 구역 해금, 탈것 구매, 시설 확대) = 코인. GDD 6절·14절, 시트 ECONOMY 탭 (Claude, 2026-11-10)
 - [x] 토이 v03 코인 동전 PNG 제작 및 Roblox 업로드·심사 확인. rbxassetid://72200879387099, 저장소 UIAssets의 scrap 매핑 갱신 (Codex, 2026-11-10).

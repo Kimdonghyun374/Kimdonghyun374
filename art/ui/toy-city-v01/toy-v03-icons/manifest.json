@@ -16,13 +16,13 @@
     },
     {
       "key": "research",
-      "file": "research.png",
+      "file": "research-blueprint.png",
       "width": 1254,
       "height": 1254,
-      "assetId": "77079576253238",
+      "assetId": "105888631454719",
       "target": "SalvageHUD.Resources.ResearchData",
-      "decalAssetId": "112188822303494",
-      "image": "rbxassetid://77079576253238",
+      "decalAssetId": "118095495139544",
+      "image": "rbxassetid://105888631454719",
       "moderation": "Approved"
     },
     {
@@ -89,6 +89,17 @@
       "target": "MissileBaseHUD.Inventory.Roll",
       "decalAssetId": "107063857990857",
       "image": "rbxassetid://114415018886740",
+      "moderation": "Approved"
+    },
+    {
+      "key": "focusSkill",
+      "file": "focus-skill.png",
+      "width": 1254,
+      "height": 1254,
+      "assetId": "109239933150633",
+      "target": "PetMissileClient focusIcon",
+      "decalAssetId": "114650319734560",
+      "image": "rbxassetid://109239933150633",
       "moderation": "Approved"
     }
   ]

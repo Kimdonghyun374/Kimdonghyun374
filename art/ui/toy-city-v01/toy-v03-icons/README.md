@@ -6,7 +6,7 @@
 ## 파일
 
 - coin.png → SalvageHUD.Resources.Scrap (표시 이름 코인, 매핑 키 scrap)
-- research.png → SalvageHUD.Resources.ResearchData
+- research-blueprint.png → SalvageHUD.Resources.ResearchData
 - base.png → WorldProgressHUD.Panel.Home
 - inventory.png → MissileBaseHUD.BaseBanner.OpenInventory
 - world.png → WorldProgressHUD.Panel.World1 / World2
@@ -14,7 +14,7 @@
 - garage.png → ScoutBuggyHUD.OpenGarage
 - craft.png → MissileBaseHUD.Inventory.Roll
 
-8개 모두 1254×1254 RGBA PNG, 투명 배경. 미사일·탈것 이미지 없음. preview.html에서 흰 패널과 32px 표시 예시를 열 수 있다. 생성 원본을 수정 없이 복사했다.
+현재 매핑의 9개 모두 1254×1254 RGBA PNG, 투명 배경. 미사일·탈것 이미지 없음. preview.html에서 흰 패널과 32px 표시 예시를 열 수 있다. 생성 원본을 수정 없이 복사했다.
 
 ## Roblox 적용 기준
 
@@ -35,3 +35,5 @@
 ## Claude 인수인계
 
 사용자는 이번 밝은 토이 v03 UI를 채택했다. TODO의 simple-scifi 테마 작업에는 이 디자인 변경을 반영할 것. 본 작업은 Studio 코드/화면을 변경하지 않았다. 위 target은 이전 실제 UI 소스 조사 기준이므로 현재 UI 생성부를 재확인 후 이미지 배치. 등록된 UIAssets.luau / manifest.json의 image 값을 ImageLabel.Image에 연결한다. 기존 서버 검증·저장·경제·버튼 Activated 연결은 보존한다. Save/Publish 없음.
+
+2026-11-10 변경: 연구자료는 평면 파란 설계도(rbxassetid://105888631454719), 집중 공격 버튼은 일제사격 아이콘(rbxassetid://109239933150633). Studio UIAssets의 research를 갱신하고 focusSkill 키를 추가한다. PetMissileClient는 focusSkill을 우선 사용하며 focus는 기본 조준 아이콘으로 남는다. 흰색/주황색 배경과 모바일 크기는 적용 후 확인.

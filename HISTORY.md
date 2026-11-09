@@ -363,3 +363,7 @@
 - 검증(실제 실행, Play 1인 Mock): 기지 차지·제작 1발 장착 → 개인 도시 옆. 처음 게이지 100/100, 재장전 중(준비 0발)에도 집중 공격 발사(launched 3→4), 게이지 0. 바로 다시 누르면 거절 "집중 게이지 충전 중". 8초 자동 공격 후 4/100(명중 2발). 화면: 6시에 동그란 버튼+F 배지만 표시(docs/focus-button-play.jpg). Stop 후 Edit 복귀.
 - 문서: GDD 결정 표 1행, 시트 COMBAT 3행(FocusChargeMax, FocusChargePerHit, 피해 보너스 미정), Codex 아이콘 프롬프트(art/ui/toy-city-v01/toy-v03-icons/prompts.md `focusSkill`), TODO에 Codex 요청.
 - 미검증: 10발 장착 상태 일제 사격, 휴대폰 터치 위치(TouchEnabled면 아래에서 140), 게이지 가득 상태의 깜빡임 화면.
+
+## 2026-11-10 KST — 연구자료·집중 공격 아이콘
+- C:\ProjectMS. 평면 설계도 수정안과 집중 공격 투명 PNG 저장, 원본 SHA256 일치 및 1254×1254/코너 alpha=0 확인.
+- Roblox 두 Decal 심사 Approved, Studio에서 실제 Image ID 연구자료 rbxassetid://105888631454719, 집중 공격 rbxassetid://109239933150633 확인. 저장소 매핑과 미리보기 갱신. Studio 적용과 흰색/주황색·모바일 검증은 Claude TODO에 등록.
