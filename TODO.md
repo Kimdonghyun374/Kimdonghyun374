@@ -15,7 +15,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
-- [ ] PlayerData 기본값·기존 저장 호환 검증, PROFILE_SCHEMA 갱신 — **Studio 사용 중** (Codex, 2026-11-09)
+
 
 ## 사용자가 직접 할 일
 
@@ -57,6 +57,7 @@ n- [ ] 아이콘 표시 품질 확인(사용자): 특히 집중 공격 버튼의
 - [ ] 미검증: 2인 이상 동시 접속, 버기 대로 주행, 모바일 실기기, 게시 서버 저장·재접속. (월드2 진입은 2026-11-10 확인)
 
 ## 완료
+- [x] MS_MASTER PLAYERDATA 기본값 19개 및 셀 설명 작성, 시트 재조회 확인 (Codex, 2026-11-09). Studio 코드 변경분 원복 검증.
 - [x] 타이쿤 전시장 좌우·2층 개편(96칸, 경사로) + 기지 모델 식별성(기계·게이트·돔 건물·미사일 견본·이름표) (Claude, 2026-11-10) — 사용자 완료 확인 2026-11-10, 시작 알림 삭제
 - [x] v03 UI 아이콘 8종 화면 연결: UIAssets 모듈 + UITheme.IconTargets, 9곳, 색값 Codex README 기준 (업로드 Codex, 연결 Claude, 2026-11-09)
 - [x] "Label" 기본 글자 버그: WorldProgressClient·ScoutBuggyClient 글자 칸을 빈 글자로 시작 (Claude, 2026-11-09)

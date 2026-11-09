@@ -302,3 +302,8 @@
 - 조건(코드 확인, `ProgressionRules.CanEnter`): Wins ≥ 1 그리고 WorldClears["1"] ≥ 1. 월드1 건물 4개를 같은 낮 주기에 모두 파괴하면 `RecordDestroyed`가 Win+1·WorldClears+1을 함께 기록.
 - 검증(실제 실행, Play 1인 Mock): 기지 1 차지 → 낮에 서버에서 개인 건물 4개 Humanoid.Health=0(실제 사망 경로로 파괴 처리) → 패널 "누적 Win 1 / 입문 도시 파괴 4/4 · 완파!", World2 버튼 "2월드로 바로 이동", 메시지 "월드 완파! Win +1". ProgressionRequest enter 2 → (1720,3,25) 월드2 입구 도착, "산업 도시 파괴 0/4", 월드2 건물 4개 섬 위 생성. enter 1 → Lane_1 입구 (0,-240) 복귀. Stop.
 - 참고: 시험은 미사일 공격 대신 체력 0으로 파괴. 실제 미사일로 월드2 건물(HP 4배) 공격과 월드2의 레벨 구조(링·대로 미적용)는 별도 결정 항목(TODO 보류).
+
+## 2026-11-09 KST — PLAYERDATA 기준값 정리
+- Windows DESKTOP-RLF93FA, C:\ProjectMS. fetch/status 동기화 확인.
+- 사용자 범위 확인 후 MS_MASTER PLAYERDATA!A1:B20에 기존 키 포함 기본값 19개와 B열 셀 메모 입력. 시트 재조회 19개 대조 완료. 코드와 기획 단계 값은 메모에서 구분.
+- 처음에 Studio 코드로 오해하여 수정했다가 자체 테스트를 종료하고 BaseDomain/BaseService 원본 일치와 신규 모듈 제거를 검증했다.
