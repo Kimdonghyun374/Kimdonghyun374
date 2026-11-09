@@ -413,3 +413,10 @@
 - 사용자: "내 미사일 버튼은 아이콘이랑 단축키만", "내 기지로 이동은 낮 UI 밑에".
 - Studio 변경: MissileBaseClient의 OpenInventory를 56px 흰 정사각 아이콘 버튼(보관함 아이콘 + 오른쪽 위 남색 "B" 배지, 키보드일 때만)으로, 글자 제거. UITheme IconTargets의 MissileBaseHUD.OpenInventory 줄 삭제(자체 아이콘). Studio 전용 TestTravel을 12시 낮·밤 표시 바로 밑(가운데, y 62, 200×30)으로. 서버 안내 알림 66→104, 버기 소환 206→216. StarterGui 사본(UIPreview_MissileBaseHUD, _ScoutBuggyHUD, _Popup_Toast)도 같게 수정.
 - 검증(실제 실행, Play 1인): 내 미사일 버튼 67×67(1.2배), 글자 없음·테마 아이콘 중복 없음, 테스트 이동 버튼이 낮 표시 아래 표시. Edit 화면 사본도 같은 모습 확인. Stop 후 Edit 복귀.
+
+## 2026-11-10 KST — 밤에는 도시 출입 금지 (Claude)
+- 사용자: "밤에는 도시에 못가게 해주셔야죠".
+- 백업: ServerStorage.ProjectMSBackups.BeforeNightLock_1794246553 (ProgressionService, WorldProgressClient).
+- Studio 변경: ProgressionService — EnterWorld가 밤이면 거절("밤에는 도시에 갈 수 없습니다. 낮이 되면 출격하세요", 월드 입구 E 프롬프트도 같은 경로). 매 0.1초 점검에서 밤에 광장 중심 반지름 232 밖(대로·월드2 섬 = 도시 구역)에 있으면 내 기지 생산기 앞으로 돌려보내고 안내. 기지 귀환 코드를 sendHome 함수로 묶어 재사용. 거절 문구의 "Win" 제거("이전 월드를 먼저 완파하세요"). WorldProgressClient — 밤에는 1·2월드 버튼 회색 "밤 · 출격 불가".
+- 검증(실제 실행, Play 1인 Mock): 낮에 대로 안(0,-300)에 서 있다가 밤이 되자 기지(8,-144)로 이동·안내 표시, 버튼 "밤 · 출격 불가"(Active false), 밤에 출격 요청 → 거절 문구·위치 그대로, 밤에 대로 안으로 순간이동해도 다시 기지로. Stop 후 Edit 복귀.
+- 미검증: 버기를 타고 밤에 들어갈 때(PrepareTravel로 하차 후 이동 예상), 2인 이상.
