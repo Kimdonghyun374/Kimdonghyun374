@@ -389,3 +389,9 @@
 - 검증(실제 실행, Play 1인 Mock): 시작 때 Base_1 Layout 0/249 보임·생산기 숨김·차고 프롬프트 꺼짐 → E 차지 후 238개 보임·생산기·차고 프롬프트 켜짐·보관함 계속 숨김, 알림 "기지를 차지했습니다!…"(docs/base-built-after-claim.jpg). 프롬프트 카드 생성(기지 차지/빈 기지 1/E) — 화면 캡처는 AlwaysOnTop 표시를 못 찍어 잠시 끄고 확인. 제작 1회 → "내 미사일 1개 · 장착 1/10"(docs/hud-layout-v2.jpg). Win 글자 0개. 낮 ClockTime 14 유지 → 밤 되는 순간 0(docs/night-instant.jpg). 버기 미보유 시 소환 버튼 숨김. 새 아이콘 두 개 표시(집중 공격 아이콘은 첫 Play에서 빈 칸, 다시 Play하니 표시 — 새 이미지 첫 요청 현상). Stop 후 Edit 복귀.
 - 미검증: 버기 구매 후 소환 버튼, 휴대폰 터치로 프롬프트 카드 누르기, 2인 이상에서 남의 기지 표시, 왼쪽 패널과 코인 칸이 작은 화면에서 겹치는지. 콘솔의 rbxassetid://203785492 형식 오류는 이번 변경 전부터 있던 것(출처 미확인).
 - 추가(같은 날): Codex 최종안으로 Studio UIAssets focusSkill을 rbxassetid://72548406471009(화살표 2개 + 미사일 3발 = 전탄 재장전)로 교체, PetMissileHUD 미리보기 아이콘도 교체. Play에서 6시 버튼에 표시 확인. Stop 후 Edit 복귀.
+
+## 2026-11-10 KST — Edit에서 보이는 UI 사본 복구 + 팝업 꺼내기 (Claude)
+- 컴퓨터 DESKTOP-RLF93FA, C:\ProjectMs. 사용자 지적: "UI 다 어디감?? UI는 항상 볼 수 있도록 밖에 있어야 한다", "팝업이나 숨겨진 UI도 생긴 걸 볼 수 있도록 밖에 꺼내놔". 원인: 직전 개편에서 낡은 UIPreview 4개를 지우고 다시 만들지 않음(규칙 위반).
+- Studio 변경: Play(기지 1 차지 + 제작 1회 + 차고 열기) 상태의 실제 PlayerGui를 기본값과 다른 속성만 읽어 Edit의 StarterGui에 다시 만듦. 메인 6개(켜짐): UIPreview_MissileBaseHUD, _SalvageHUD, _ScoutBuggyHUD(버기 소환 버튼 보이게), _WorldProgressHUD, _DayNightHUD, _PetMissileHUD. 팝업 6개(Enabled 꺼짐, 켜면 보임): UIPreview_Popup_Inventory, _Toast, _Garage, _PickupNotice, _FocusHint, _PromptCard. 모두 RemoveInPlay·EditPreviewOnly·CapturedAt·Note 속성.
+- 검증(실제 실행): Edit 화면에 12시 낮·밤, 11시 패널, 왼쪽 코인·연구자료, 오른쪽 내 미사일·버기 소환·테스트 이동, 6시 집중 공격 버튼 표시 확인. Play 시작 후 PlayerGui에 UIPreview 0개(중복 없음). Stop 후 Edit 복귀.
+- 규칙: agent.md에 "UI는 항상 Edit에서 보이게" 절 추가. Claude 메모리에도 기록.
