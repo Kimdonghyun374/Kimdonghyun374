@@ -371,3 +371,20 @@
 ## 2026-11-10 KST — 필수 효과음 10종 및 전탄 재장전 아이콘
 - C:\ProjectMS. 현재 Studio의 임시 획득음과 전투·제작 이벤트 확인. art/audio/core-sfx-v01에 10개 원본 합성 WAV와 연결/검증 안내 저장. 44.1kHz·모노·16비트, 비어 있지 않고 클리핑 및 중복 없음 확인. 오디오 업로드 폴더 허용 오류, SoundId/게임 청취 미검증.
 - 화살표 두 개·미사일 세 발 PNG 저장, Decal 122460028099487 Approved 및 실제 Image ID rbxassetid://72548406471009 확인. 저장소 focusSkill 매핑과 TODO의 Claude 연결 항목 갱신.
+
+## 2026-11-10 KST — 화면·기지 개편 9가지 + Codex 아이콘 연결 (Claude)
+- 컴퓨터 DESKTOP-RLF93FA, C:\ProjectMs. 사용자 지시 1~9 + "코덱스 이미지 끝나면 적용".
+- 백업: ServerStorage.ProjectMSBackups.BeforeUIBaseRework_1794244413 (BaseWorld, BaseService, BaseDomain, MissileBaseClient, ScoutBuggyClient, WorldProgressClient, SalvageClient, UITheme, UIAssets, 옛 UIPreview 4개, 프롬프트 원래 Style 목록).
+- Studio 변경:
+  1. 기지 차지: ClaimPad.Touched 차지 제거, Claim 프롬프트 E·0.4초·거리 12, BaseConfig.ClaimDistance 10→13. 새 LocalScript StarterPlayerScripts.PromptClient: Style=Custom 프롬프트에 밝은 카드(남색 키 배지, 행동·대상 글자, 누르기 게이지, 터치 시 카드 누르기). Workspace 프롬프트 27개 Style Custom. OwnerSign 높이 5→8.
+  2. 빈 기지: BaseWorld가 Layout(보관함 표지 제외)·Generator·Display를 Play 시작 때 숨기고(투명·충돌 끔·프롬프트/표지 끔), 차지하면 0.6초에 걸쳐 나타남. 주인이 나가면 다시 숨김. Edit 배치는 그대로.
+  3. 보관함: Storage·Label_Storage 항상 숨김, Inventory 프롬프트 연결 제거. 화면 오른쪽 "내 미사일 [B]" 버튼(어디서나). 글자 "보관함" → "내 미사일"/"내 데이터"(서버 메시지 11곳).
+  4. Win: WorldProgressClient의 "누적 Win" 줄 삭제, 2월드 버튼 "2월드 · 1월드 완파 필요". (서버 Win 규칙은 그대로 — 제거 구현은 밸런스 작업 때)
+  5·6. 낮·밤: 12시 알약 표시(☀ 낮 / 🌙 밤 · 도시 수리 + 남은 시간, 밤엔 남색). Lighting.ClockTime을 단계가 바뀌는 순간 14 / 0으로 바로 바꿈(서서히 바뀌는 계산 제거).
+  7. 버기: 항상 보이던 "정찰 버기" 버튼 제거 → 보유 시에만 오른쪽 "버기 소환"(타는 중이면 "하차 [E]"). 구매 창은 기지 차고 E로.
+  8. 11시 UI 이동 예정은 TODO 보류 맨 위와 WorldProgressClient 머리 주석에 기록.
+  9. 코인·연구자료: 왼쪽 옆 세로 가운데, 글자 15→19, 아이콘 22→28.
+  - 기타: 12시 기지 안내띠 삭제(서버 안내는 12시 아래 3초 알림), 남아 있던 서버 "부품" 글자 5곳 → 코인, 집중 공격 게이지를 동그라미 안 채우기(화면에서 네모로 보임) → 버튼 아래 둥근 막대. UIPreview 4개(옛 배치) 삭제, PetMissileHUD 미리보기 갱신.
+  - Codex 아이콘: UIAssets focusSkill=rbxassetid://109239933150633(미사일 3발), research=rbxassetid://105888631454719(평면 설계도).
+- 검증(실제 실행, Play 1인 Mock): 시작 때 Base_1 Layout 0/249 보임·생산기 숨김·차고 프롬프트 꺼짐 → E 차지 후 238개 보임·생산기·차고 프롬프트 켜짐·보관함 계속 숨김, 알림 "기지를 차지했습니다!…"(docs/base-built-after-claim.jpg). 프롬프트 카드 생성(기지 차지/빈 기지 1/E) — 화면 캡처는 AlwaysOnTop 표시를 못 찍어 잠시 끄고 확인. 제작 1회 → "내 미사일 1개 · 장착 1/10"(docs/hud-layout-v2.jpg). Win 글자 0개. 낮 ClockTime 14 유지 → 밤 되는 순간 0(docs/night-instant.jpg). 버기 미보유 시 소환 버튼 숨김. 새 아이콘 두 개 표시(집중 공격 아이콘은 첫 Play에서 빈 칸, 다시 Play하니 표시 — 새 이미지 첫 요청 현상). Stop 후 Edit 복귀.
+- 미검증: 버기 구매 후 소환 버튼, 휴대폰 터치로 프롬프트 카드 누르기, 2인 이상에서 남의 기지 표시, 왼쪽 패널과 코인 칸이 작은 화면에서 겹치는지. 콘솔의 rbxassetid://203785492 형식 오류는 이번 변경 전부터 있던 것(출처 미확인).
