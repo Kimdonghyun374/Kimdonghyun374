@@ -431,3 +431,11 @@
 - Studio 변경: ProjectMS_City에 주택B·상가B·사무실B·창고 추가(원본 복제 + 색 틴트, 이름표 수정) → 1구역 8채. WorldConfig.Zones(구역2 경계 560·코인 200·월드1 완파 1회, 구역3 경계 800·코인 500·구역2 해금). ProgressionRules: UnlockedZones 저장(주기 초기화 안 됨), CanUnlockZone/UnlockZone. BaseDomain:Spend + BaseService.SpendScrap(서버 전용). Lane_1~6에 Gate_Zone2/3 벽(150×26, 빨간 ForceField, 표지, E 0.5초 프롬프트) 12개. ProgressionService: 벽 E → 내 대로·조건·코인 확인 후 해금, 주인 상태에 따라 벽 열림/닫힘, 잠긴 경계 넘으면 벽 앞으로 되돌림, 완파 문구에서 "Win" 제거.
 - 검증(실제 실행, Play 1인 Mock): 파괴 0/8 표시, 완파 전 E → "먼저 1구역 건물을 모두 부수세요", 벽 너머로 이동 → -550으로 되돌림·안내, 완파 후 코인 부족 → "코인이 부족합니다". **해금 성공 → 벽 열림 → 통과는 아직 확인 못 함**: 시험용으로 건물 체력을 1로 낮춰 부쉈더니 코인 드롭이 0이라 코인을 못 모음(테스트 비용 5로 임시 변경했다가 200/500으로 되돌림).
 - 남은 일: 실제 피해로 1구역 완파·코인 200 모아 해금 성공 경로 확인, StarterGui 사본에 변화 없음(새 UI 없음), 문서(GDD·LEVEL_DESIGN)·시트(WORLDS/BUILDINGS) 갱신.
+
+## 2026-11-13 KST — 도시 밀집 배치·전시장 단계 해금 (Codex)
+- DESKTOP-RLF93FA, C:\ProjectMS. 시작 전 fetch/status 동기화 확인. 파티클 플러그인 삭제는 사용자 취소로 변경 없음.
+- 백업 ServerStorage.ProjectMSBackups.BeforeGalleryUnlockDensity_1794500165. 8채의 X/Z만 조정, 앞뒤 중심 분포 230→156 stud(약32% 축소), 도로22·건물 HP/보상 유지.
+- 6개 기지 전시장: 왼쪽 1층 첫 칸 시작, 나머지95칸 반투명0.82/비충돌. E 0.5초로 코인50(임시)·한 칸 확장. L1→R1→L2→R2, 2층 해금 시 경사로 활성화. GallerySlots 저장값 추가(기존 프로필 기본1), 원자적 결제·소유권/거리/상한/잔액 검사.
+- Studio 변경: BaseConfig, BaseDomain, BaseService, BaseWorld, 신규 GalleryWorld; Workspace.ProjectMS_City/ProjectMS_Bases. 검토 사본 docs/studio-changes/2026-11-13-gallery-density.
+- 검증: 도메인 저장 직렬화·이전/비정상 값·소유권·거리·잔액·중복단계·상한, 9단계 시각 상태·경사로, 8건물 비겹침·도로 확보. Play Mock에서 차지1칸→서버확장2칸→실제 클라이언트 프롬프트3칸, 정확한 결제와 거절 확인. 직접 MCP require의 서비스 상태는 실행 스크립트와 달라 정상 서버 임시 Script로 검증. 러너 제거 후 Edit 복귀.
+- 미검증/후속: 게시 서버 재접속 저장·모바일·다인, 추가 슬롯의 미사일 전시/도감/수익. Save/Publish 하지 않음.
