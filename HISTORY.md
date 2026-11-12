@@ -566,3 +566,10 @@
 - 시트: MISSILES_CURRENT 1~5행 삭제, 자산 23행에 희귀도·희귀도 안 비율·배율·피해·색·모델 위치·판매가·구현 상태, 참고 2줄 갱신. CRAFT_POOL을 희귀도 기준으로 다시 작성(종류 수·종당 확률 수식, 요약 수식). InfrastructureLevel CRAFT_TIER 메모 갱신.
 - 실제 검증(Play 1인 Mock, 임시 러너): 등급별 20000회 희귀도 분포가 표와 일치, 1등급 커먼 6종 각 약 2000회(균등). 옛 데이터(standard·solar·nova 대기·확정 solar) Normalize → asset_spark·asset_sun_breaker·대기 asset_nebula_fang·확정 legendary. 제작대 4대 제작 → 자산 key 미사일, 2등급 업그레이드 후 첫 제작 PHANTOM(에픽) 확정. 클라이언트 ReadyMissile이 자산 모델(길이 1.9), 전시 1칸 TIDAL 모델·완성 미리보기 모델 확인, 보관함 이름·희귀도·확률 줄 화면 확인. 콘솔 오류 없음, 러너 제거·Edit 복귀. 미검증: 실제 공격 비행 모습(자산 모델 비행), 3~5등급 실제 제작. Save/Publish 하지 않음.
 - 남은 결정: 사용자 MISSILES 탭(레벨별 종류 수, 퀀텀·아토믹 등)과 자산 희귀도(미스틱·코스믹)의 대응, 레벨별로 어떤 종류를 넣을지. 지금은 등급에 나오는 희귀도의 자산 미사일이 모두 나옴.
+
+## 2026-11-13 KST — 자산 Place 미사일 VFX 미리보기 (Codex)
+- DESKTOP-RLF93FA, C:\ProjectMS. 대상 자산 Place85812975859267(게임 Place 변경 없음). 백업 ServerStorage.ProjectMSBackups.BeforeMissileVFXPreview_1794511278: MissileVFX 원본·23종 원본모델.
+- Edit 원본 미사일23종에 기존 MissileVFX.attach로 추진 효과 배치, VFXEditPreview=true. StarterGui.MissileVFXPreviewHUD(Play)·UIPreview_MissileVFXPreview(Edit 사본+RemoveInPlay) 설치. 이전/다음·비행·폭발·자동재생·시점복귀 버튼, 클라이언트 복제 미사일만 이동.
+- 첫 Play: 스트리밍된 빈 모델 복제로 attach 실패. 자산 전시모델 ModelStreamingMode=Persistent로 수정. 재Play에서 FlightsStarted2/ExplosionsPlayed2 확인, 실제 이전 버튼 클릭으로23→22·카운터9/8 확인. Edit 추진 효과와 Play 비행 파티클 화면 확인. Stop 후 Edit 복귀, 테스트 러너 없음. Save/Publish 미실행.
+- 사본 docs/studio-changes/2026-11-13-vfx-preview/PreviewController.client.luau. Part_Icles 플러그인·런타임 변경/재배포 없음.
+- 후속 사용자 추가 요청: 기지·잠금·권총 랙돌·구역1~3 개발 후 실제 상태 기반 시트/Notion 리뷰·업데이트. 이어서 진행하며, 내일 시작 안내(보스레이드→플레이테스트→실제 비주얼 제작)는 유지.
