@@ -493,3 +493,23 @@
 - 실제 검증: Edit 전후 화면 확인, 기지6개 시설2종·고정·중앙통로·전시장 범위 검사(각37파트). Play 1인 Mock에서 차지 전 두 시설 투명, 실제 E 차지 후 두 시설/간판 표시, 빈 Base_2 시설 숨김, 옛 보관함 숨김 확인. 중앙 통로(0,-179→0,-216) Humanoid 도보 통과. Stop 후 Edit 복귀. 임시 러너 없음.
 - 변경 로컬 파일: docs/studio-changes/2026-11-13-research-facilities/ApplyResearchFacilities.luau(검토·재현용, 중복 실행 방지), docs/GDD_v0.3.md, docs/LEVEL_DESIGN_v0.3.md, TODO.md, HISTORY.md.
 - 후속: AFK 보상·시간, 기술 메뉴·강화 결제/저장, 패시브 장치·제작대 등급 단말은 미구현. 모바일·다인 미검증. Save/Publish 하지 않음. Notion 문서는 이번 요청에서 수정하지 않음.
+
+## 2026-11-13 KST — 기지 단계 해금·제작대 등급 단말·전시장 4칸·차고→러닝머신 시험 구현 (Claude)
+- 실행 컴퓨터 DESKTOP-RLF93FA, C:\ProjectMs. 시작 fetch/status 깨끗함. TODO "진행 중"에 Studio 사용 표시 535d745 커밋·푸시. 기획서(GDD/Notion)는 사용자 테스트 후 결정이라 고치지 않음.
+- 백업: ServerStorage.ProjectMSBackups.BeforeBaseStageTrial_1794506197 — 스크립트 7개(BaseConfig·BaseDomain·BaseService·BaseWorld·GalleryWorld·VehicleController·ScoutBuggyClient) + 6개 기지의 Layout.Garage/VehiclePad 원본(Workspace에서 옮김) + 광장 공용 차고 ProjectMS_Garage(옮김).
+- 주의(도구): MCP `script_read`가 Codex 수정 전 옛 소스를 돌려줌(GallerySlots 없는 판). 이번엔 `execute_luau`로 `.Source`를 직접 읽고 문자열 치환으로 수정함. 다른 에이전트도 script_read 결과를 그대로 믿지 말 것.
+- BaseConfig(시험값, 모두 여기서 조정): GalleryStartSlots=4, CraftTiers 1~5등급(2등급 코인60+연구자료1, 3등급 150+2, 4등급 400+4, 5등급 900+8, 등급별 제작대 색·재질·표시등 색), FacilityUnlocks 표(TechLab=1구역 완파 WorldClears["1"]≥1, AFKLab=제작대 2등급), Treadmill(SaveKey RunSpeedBonus, 기본 16, 초당 +0.25, 상한 +34=최대 50, 벨트 10stud/s, 앞 입력 0.5, 벨트 재질 Fabric, 판정 0.25초).
+- BaseDomain: 저장 키 CraftTier(1)·RunSpeedBonus(0, 소수 허용·상한 자름)·GalleryDisplays(칸 번호 문자열→미사일 id, 잘못된 항목은 버림) 정규화. 저장된 GallerySlots가 4보다 작으면 4로 올림. UpgradeCraftTier/AddRunSpeed/CycleGalleryDisplay 추가(소유권·거리·기대 등급·잔액 검증).
+- BaseWorld: FacilityUnlocks에 있는 Layout 시설은 차지와 별도로 숨김/표시(SetFacilities), SetCraftTier가 생산기+제작 라인 6칸+표시등+단말 화살표를 한 번에 바꿈, 러닝머신 화면 속도 표시, 전시 모형. 벨트 AssemblyLinearVelocity로 뒤로 미는 컨베이어.
+- GalleryWorld: 칸 번호→전시대 파트(1칸 Display, Pedestal_L1_02…), 열린 칸마다 "미사일 전시" E 프롬프트(ShowMissile), 확장 프롬프트(코인 50)는 다음 잠긴 반투명 칸으로 옮김. 전시대 위 작은 미사일 모형+희귀도·이름표. 같은 칸 E 반복 = 다음 미전시 미사일로 교체, 마지막 다음은 비움.
+- BaseService: 단말 프롬프트 연결, ShowMissile은 ProximityPromptService로 받음, 0.25초 러닝머신 판정(내 기지 벨트 위·FloorMaterial Fabric·MoveDirection이 벨트 앞쪽), 정수 단위로 "달리기 속도 N (+1)" 알림, 접속·리스폰 시 WalkSpeed 적용, 0.5초마다 해금 조건 확인해 새 시설 등장+알림. GetState에 craftTier·walkSpeed 추가(클라이언트 UI는 아직 사용 안 함).
+- 맵(6개 기지 같은 로컬 좌표): Layout.ProductionUpgrade(로컬 9,-24: 청록 단말+기울어진 파란 설계도 화면+초록 위쪽 화살표+제작 라인으로 이어지는 바닥 배선+표지), Layout.Treadmill(옛 차고 자리 -15,-9.5: 회색 데크·검은 Fabric 벨트·주황 옆 발판·높은 앞 후드·손잡이·초록 속도 화면·뒤 롤러+표지). 가운데 8stud 통로 비움.
+- 탈것: VehicleController·ScoutBuggyClient Disabled(코드 보존), StarterGui.UIPreview_ScoutBuggyHUD Enabled=false(삭제 안 함). 다른 UI 미리보기는 변경 없음(화면 UI 수정 안 함).
+- 실제 검증(Play 1인 Mock, 서버 임시 Script+BindableFunction 러너 사용, 끝난 뒤 자동 제거 확인):
+  ① 실제 차지 후 TechLab 0/19·AFKLab 0/18 파트 보임(숨김), 차고·발판·공용 차고·차량 폴더 없음. 빈 Base_2 시설도 숨김.
+  ② 1구역 완파: **실제 미사일로 8채를 부수지는 않음.** 진행 서비스가 쓰는 ProgressionRules.RecordDestroyed로 8건물 완파 기록(WorldClears["1"]=1)을 만든 뒤 0.5초 확인 루프가 기술 개발실을 표시(18/19, 1개는 원래 투명 표지 파트). 실제 파괴→기록 경로는 이전 구역 해금 검증(같은 날)에서 확인된 것.
+  ③ 코인 20일 때 단말 거절. 코인·연구자료 지급 후 2등급 업그레이드 성공: 코인 320→260·연구자료 5→4, 생산기+라인 6칸 초록 Metal·표시등 초록 Neon, AFK 연구동 등장(17/18), 표지 "2등급 → 3등급 / 코인 150 · 연구자료 2". 3등급 이상은 실행 안 함.
+  ④ 실제 미사일 2개 제작 후 2칸 전시대 옆에서 **실제 E 키 입력**으로 전시(일반·스탠더드) → 같은 칸 E 다시 → 고급·스파크로 교체 → 3칸 E → 남은 미사일 전시. 확장 프롬프트는 5칸에 "이 칸 열기 · 코인 50"으로 1개만 있음(첫 Play에서 중복 생성 버그 발견 → Configure가 기지 전체에서 찾게 고친 뒤 재확인). 확장 결제 자체는 이번에 다시 누르지 않음.
+  ⑤ 러닝머신: 벨트에 가만히 있으면 3초 동안 증가 없음·뒤 롤러로 밀려남. 클라이언트 Humanoid:Move로 앞으로 8초 달리기 → 16.0→18.0(초당 +0.25), 후드에서 막혀 제자리 달리기, 화면 "속도 18.0". 리스폰(LoadCharacter) 후 WalkSpeed 18 유지. 저장값은 같은 세션 프로필 데이터(RunSpeedBonus=2 → GetState walkSpeed 18)로만 확인, Mock이라 재접속 유지·게시 서버 저장은 미검증. 첫 판정(벨트 대비 속도)은 서 있어도 올라가는 버그가 있어 FloorMaterial+이동 입력 방식으로 바꿈.
+- Stop 후 Edit 복귀, ClaudeTempRunner·ClaudeTestHook·GalleryShowcase 잔존 없음. 콘솔 오류 없음(기존 203785492 경고만). Save/Publish 하지 않음.
+- 범위 밖·남은 일: 등급별 미사일 풀(MISSILES 탭), 등급 상승 안내 UI(NEW 배지 등), HUD에 달리기 속도·등급 표시, 기술 개발실·AFK 연구동 기능, 전시 해제 전용 조작·전시 보상, 3등급 이상 해금 대상(표에 AFKLab까지만), 2인 이상·모바일. 사용자가 테스트 후 기획 반영 여부 결정.
