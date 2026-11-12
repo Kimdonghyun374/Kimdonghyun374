@@ -484,3 +484,12 @@
 - docs/GDD_v0.3.md 5-1절 "연구 관련 시설 배치와 화면 구성" 신설, 재화 원칙 문장·5-2절 비용 문장 갱신. docs/LEVEL_DESIGN_v0.3.md 2-1절 표에 단말 3종 제안 행과 연구 구역 메모(옛 보관함 자리 활용, 출구 통로 비움).
 - Notion: 게임 기획서 v0.3 같은 내용 반영(경고 없음). 레벨디자인 v0.3 Notion 페이지는 저장소보다 오래된 판이라 표 수정 대신 끝에 "추가: 기지 연구 구역 배치" 절을 덧붙임.
 - Studio 변경 없음. 남은 일: 패시브 뽑기 재화·목록, 갈림길 단계·연구자료 양, 단말 좌표 그레이박스 확정. Notion 레벨디자인 페이지 전체 최신화는 별도.
+
+## 2026-11-13 KST — AFK 연구시설·기술 개발실 맵 분리 (Codex)
+- 실행 컴퓨터 DESKTOP-RLF93FA, C:\ProjectMS. 시작 fetch/status 깨끗함 확인. 최신 Claude 기획(제작 구역/연구 구역 분리, HUD 연구 탭)을 읽고 맵 외형만 반영. TODO 작업 선점 d1c4d8f 커밋·푸시.
+- Studio Place 122289987934213 Edit 원본 백업: ServerStorage.ProjectMSBackups.BeforeResearchFacilitiesSplit_1794505391 (기지별 AFKLab/Storage/Label_Storage).
+- 기지6개 Layout.AFKLab: 기존 위치(로컬 +15,+24) 유지, 유리 상자를 낮은 대기 바닥·열린 지붕으로 수정, 휴식 의자2개·시계·대기 영역·AFK 표지. 기존 돔/안테나 유지. Layout.TechLab: 옛 보관함 자리(-15,+24)에 청록 프레임·작업대·미사일 설계도 화면·개발 단말·별도 표지. 시설 사이8stud 통로와 전시장 보존. 옛 Storage 원본·필수 경로 유지, 겹치는 보관함 외형/간판만 숨김.
+- 기존 BaseWorld의 Layout 시각 처리에 연결되므로 새 런타임 스크립트 변경 없음. Edit 항상 보임, Play 기지 차지 시 표시·빈 기지에서 숨김. 기능 없는 E 프롬프트는 추가하지 않음. 월드 내 시설 간판은 맵 부품이며 StarterGui 게임 UI 변경 없음.
+- 실제 검증: Edit 전후 화면 확인, 기지6개 시설2종·고정·중앙통로·전시장 범위 검사(각37파트). Play 1인 Mock에서 차지 전 두 시설 투명, 실제 E 차지 후 두 시설/간판 표시, 빈 Base_2 시설 숨김, 옛 보관함 숨김 확인. 중앙 통로(0,-179→0,-216) Humanoid 도보 통과. Stop 후 Edit 복귀. 임시 러너 없음.
+- 변경 로컬 파일: docs/studio-changes/2026-11-13-research-facilities/ApplyResearchFacilities.luau(검토·재현용, 중복 실행 방지), docs/GDD_v0.3.md, docs/LEVEL_DESIGN_v0.3.md, TODO.md, HISTORY.md.
+- 후속: AFK 보상·시간, 기술 메뉴·강화 결제/저장, 패시브 장치·제작대 등급 단말은 미구현. 모바일·다인 미검증. Save/Publish 하지 않음. Notion 문서는 이번 요청에서 수정하지 않음.
