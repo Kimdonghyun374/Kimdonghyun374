@@ -573,3 +573,25 @@
 - 첫 Play: 스트리밍된 빈 모델 복제로 attach 실패. 자산 전시모델 ModelStreamingMode=Persistent로 수정. 재Play에서 FlightsStarted2/ExplosionsPlayed2 확인, 실제 이전 버튼 클릭으로23→22·카운터9/8 확인. Edit 추진 효과와 Play 비행 파티클 화면 확인. Stop 후 Edit 복귀, 테스트 러너 없음. Save/Publish 미실행.
 - 사본 docs/studio-changes/2026-11-13-vfx-preview/PreviewController.client.luau. Part_Icles 플러그인·런타임 변경/재배포 없음.
 - 후속 사용자 추가 요청: 기지·잠금·권총 랙돌·구역1~3 개발 후 실제 상태 기반 시트/Notion 리뷰·업데이트. 이어서 진행하며, 내일 시작 안내(보스레이드→플레이테스트→실제 비주얼 제작)는 유지.
+
+## 2026-11-13 KST — 기지 확장·방문 잠금·장난 권총·구역1~3·구현 리뷰 (Codex)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMS. 게임 Place122289987934213. 백업 ServerStorage.ProjectMSBackups.BeforeSocialZonesBase_1794511854(서버/설정/클라이언트/StarterGui·기지6개·도시·대로). 자산 미리보기 완료 후 사용자 추가 요청으로 진행.
+- 맵: 기지80×110→96×120, 기술실22×20→16×14·AFK22×24→16×16(높이0.85), 양옆 전시장8stud 바깥 이동, 중앙 바닥선·화살표·출구프레임. 제작대 등급 단말 로컬(32,-14) 독립 배치. 부지6개 SAT 비겹침·도시22건물 XZ 비겹침·도로22stud 확보 검사.
+- 구역1 기존8채 HP/보상 보존, 입구2/중간3/끝3 재배치. 구역2 상업가6채(z590~738), 구역3 산업연구8채(z833~1012). 구역2=구역1완파+코인200, 구역3=구역2완파+코인500. 해금 전 미생성, 해금 때 추가만 생성(기존 손상HP 유지). 신규 HP/보상은 BUILDINGS 시험값.
+- ProgressionRules/Service/WorldConfig: ZoneClears·FullWorldClears·LegacyWorldAccess, 구역별 완료·주기 보상·기존 월드2권한 보존. WorldClears[1] 의미는 구역1 완파로 유지해 기존 시설 조건 보존. 신규 월드2는 세 구역 각각 완료 필요. 구역 완파 확정 연구4/6/10(시험), 첫 구역 완료 후 기술실 위치 Highlight·안내. 확대 부지 밤 안전 반경246.
+- SocialConfig/Service/Controller·SocialClient·StarterPack 권총·HUD/Edit 미리보기 추가. 입구 E 방문 잠금(기지/진입로): 주인 통과, 방문자 클라이언트 문 충돌+서버 우회 진입 되돌림, 잠금 세션 설정. 잠긴 구역 장난 사격 보호. 권총 자동 지급/장착, G/HUD 장착 전환·클릭/짧은 터치 발사, 기존 건물 선택 유지. 서버 raycast160·간격1.5초, 피해0·랙돌1.2초·피격보호6초·밀림12/상향6/각속도4. 금색0.35+흰색0.12stud 이중Beam0.4초·발광 탄환0.55stud·명중 섬광. 드래그 발사 제외·스트리밍 누락 방어.
+- 실제 Play 1인 Mock: 첫 주택 실제 미사일로 파괴(발사카운터 증가). 나머지는 서버 Humanoid 피해로 완파흐름 검증. 8→14→22 건물, 구역3 선행완료 거절·구역별 완료·연구총20·FullWorldClears 확인. 잠금 주인통과 판단·가상 방문자 위치 되돌림·타인 잠금설정 거절. NPC 권총 적중·클라이언트 궤적수신·랙돌·1.2초 후 회복·체력100보존·연사/연속피격 방지·추가 관절 제거 확인. 기존 아바타 관절을 임시 관절로 센 검증 오류 수정 후 재검증 통과. 격리 규칙: 중복 보상·주기초기화·정규화/기존 접근권한 보존 통과.
+- 미검증: 실제2인·PC 클릭/모바일 입력 최종·실기기 탄도 가독성·게시 저장/재접속·전체 자연 공략시간. 입력/화면 도구 지연, native 앱 접근 승인 시간 초과. 자연 플레이 전 구역 성공으로 쓰지 않음. 기존203785492 에셋 경고 외 실행 오류 없음. 임시 CodexSocialZoneTestRunner/Remote 제거·두 Studio Edit 복귀. Save/Publish 미실행.
+- 시트: 최초 자동 승인 검토가 정확한 목적지 승인을 요구해 거절. 사용자 명시 승인 후 MS_MASTER README·COMBAT·BASE_CRAFT·WORLDS·BUILDINGS·PROFILE_SCHEMA·CODEX_PLAN 7탭 갱신, 대상 범위 재읽기 오류0 확인. 원본 MISSILES 값·CRAFT_POOL 수식 보존. 현재 자산23종·기본3/최대10·타이쿤/판매·22건물·권총·저장구조 반영. 과거5종 도감안은 삭제 대신 이전안 표시. 추가 행은 기존 서식 복사·줄바꿈. Google 실제 화면검증은 앱 접근 문제로 미완료, API 값·서식 기반 확인.
+- Notion Knowledge Capture 사용: 기존 게임 기획서 v0.3(40c8abb506128166ba6cf47fe0f2d745)·레벨디자인 v0.3(40c8abb5061281228d59de6d5b9e02bc) 표 갱신과 상단 구현 리뷰 추가. 저장 성공·경고없음. 기존 내용 보존, 기획서 패널 요청 성공. 로컬 GDD/LEVEL_DESIGN 및 docs/audits/2026-11-13-development-review.md 동기화.
+- 소스 사본 docs/studio-changes/2026-11-13-social-zones, 재현용 Mock 검증 verification/2026-11-13-social-zones/MockRunner.server.luau(게시 금지·Studio Mock 전용). 보스/AFK지급/패시브/연구HUD탭은 후속. 다음 시작 전 보스레이드→플레이테스트→실제비주얼 제작 안내 유지.
+
+- 마지막 추가 Play: 실제 G키로 해제, HUD 버튼으로 장착, 화면 클릭으로 발사 → 서버 → 클라이언트 TracesSeen=1 확인. 권총 HUD 표시·Edit 사본 Play 제거·기본 권총 지급·임시 테스트 Remote 부재 확인. 새 오류 없음(기존 에셋 경고만), Stop 후 Edit 복귀. 이 추가 결과를 Notion 두 페이지·시트 COMBAT G32·로컬 리뷰에 반영.
+
+- 시설 축소 후 내부 E 간섭을 줄이도록 BaseWorld 시설 구매/확장·연구 프롬프트 거리를4stud로 줄임(기존8/기본값). 제작대 등급 단말은 라인에서19stud 이상 분리. BaseWorld 검토 사본 추가.
+
+- 추가 프롬프트 검증: 최종 Play에서 UpgradeFacility/Research MaxActivationDistance=4 모두 확인, Stop 후 Edit 복귀. Notion 두 페이지·시트 BASE_CRAFT G8·로컬 리뷰에 범위 반영.
+
+- AGENTS.md·agent.md 다음 재개 안내를 최신 완료 상태로 보완. 보스레이드→플레이테스트→실제 비주얼 제작을 먼저 안내. GitHub 최종 커밋·푸시 명령은 자동 검토가 이번 구현 소스 묶음의 정확한 목적지/페이로드 승인을 확인하지 못해 실행 전에 거절. 로컬 변경과 승인된 시트/Notion 업데이트는 완료, 원격 공유만 사용자 명시 승인 대기.
+
+- 후속 사용자 명시 승인: 이번 구현/검증/기획20개 파일을 https://github.com/Kimdonghyun374/Kimdonghyun374 main에 커밋·푸시하도록 승인받음. 두 Studio 모드 재확인 중 게임 Play 잔류를 발견해 다시 Stop하고 get_studio_state로 Edit 확인.
