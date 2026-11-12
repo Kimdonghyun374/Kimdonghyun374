@@ -513,3 +513,9 @@
   ⑤ 러닝머신: 벨트에 가만히 있으면 3초 동안 증가 없음·뒤 롤러로 밀려남. 클라이언트 Humanoid:Move로 앞으로 8초 달리기 → 16.0→18.0(초당 +0.25), 후드에서 막혀 제자리 달리기, 화면 "속도 18.0". 리스폰(LoadCharacter) 후 WalkSpeed 18 유지. 저장값은 같은 세션 프로필 데이터(RunSpeedBonus=2 → GetState walkSpeed 18)로만 확인, Mock이라 재접속 유지·게시 서버 저장은 미검증. 첫 판정(벨트 대비 속도)은 서 있어도 올라가는 버그가 있어 FloorMaterial+이동 입력 방식으로 바꿈.
 - Stop 후 Edit 복귀, ClaudeTempRunner·ClaudeTestHook·GalleryShowcase 잔존 없음. 콘솔 오류 없음(기존 203785492 경고만). Save/Publish 하지 않음.
 - 범위 밖·남은 일: 등급별 미사일 풀(MISSILES 탭), 등급 상승 안내 UI(NEW 배지 등), HUD에 달리기 속도·등급 표시, 기술 개발실·AFK 연구동 기능, 전시 해제 전용 조작·전시 보상, 3등급 이상 해금 대상(표에 AFKLab까지만), 2인 이상·모바일. 사용자가 테스트 후 기획 반영 여부 결정.
+
+## 2026-11-13 KST — Studio·MS_MASTER 미사일 읽기 전용 대조 (Codex)
+- DESKTOP-RLF93FA, C:\ProjectMS. 시작 fetch/status 깨끗함. Claude TycoonData 구현 진행 표시를 확인해 Studio 수정·Play 전환 없이 Edit .Source와 연결 시트만 읽음.
+- MS_MASTER MISSILES/MISSILES_CURRENT/COMBAT/CODEX_PLAN 및 GDD 5-2절 비교. 현재5종 key·이름·희귀도·가중치·배율·피해·색 일치(합100). 기획6묶음은 각8종이나 실제 공통5종 추첨에 미반영. 3·5단계 등장 희귀도7개와 기획5~6개 제한 충돌, 레벨/맵 의미 미정.
+- COMBAT B2:B3은10/10으로 기본3과 불일치. CODEX_PLAN B6:B9는 텍스트가 formulaValue로 저장된 #ERROR!, C5:C9 합계 미정도 원본8종과 다름. 자산 모델23행은 실제 제작5종과 구분. 등급별 풀·신규 보장·신규 피해 배율은 후속.
+- 보고서 docs/audits/2026-11-13-missile-sheet-audit.md. Studio/시트/GDD 값 수정·동작 테스트 없음. 읽기 시점 스냅샷이며 Claude 구현 중 결과와 구분. TODO 점검 완료 및 후속 시트 정리 등록.
