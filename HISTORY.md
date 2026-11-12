@@ -549,3 +549,8 @@
 - TycoonData.CraftTiers에 pool·rollCost·duration·newKey, PoolOrder. BaseDomain: 시작 시 풀 검증(카탈로그 key·합 100·newKey), DrawFromPool, CraftSettings(등급별 비용·시간·풀), Roll이 등급 비용·시간·풀 사용, 등급업 시 CraftGuarantee=newKey 저장 → 다음 제작 1회 확정 후 해제(저장 키 CraftGuarantee). BaseService: 상태에 craftOdds·craftGuarantee·등급별 rollCost/productionDuration, 등급업 메시지에 "새로 등장 … (다음 제작 1회 확정)". BaseWorld: 제작대 안내판·프롬프트에 등급별 비용·시간·등급 이름, 업그레이드 단말에 "새로 등장" 표시, 등급이 바뀌면 안내판 갱신. MissileBaseClient: 보관함에 "제작대 N등급 확률: …"(희귀도 색, 다음 제작 확정 표시). UIPreview_Popup_Inventory에 확률 줄 추가.
 - 실제 검증(Play 1인 Mock, 임시 러너): 등급별 10000회 뽑기 분포가 표와 일치(최대 오차 약 1%p). 1등급 프롬프트 "제작 · 코인 20개 · 1등급", 2등급 업그레이드 → 비용 25·6초·노바 확정 → 첫 제작 노바, 3등급(제작대 3대는 데이터로 맞춤) → 30·7초 → 첫 제작 솔라. 보관함 확률 줄 표시 화면 확인. 쿨다운 중 두 번째 제작 요청은 정상 거절. 콘솔 오류 없음, 러너 제거·Edit 복귀. 4·5등급 실제 업그레이드·제작은 미검증(분포만). Save/Publish 하지 않음.
 - 남은 일: 미사일 종류·피해 배율 확장(GDD 5-2절 5번, MISSILES 탭 등급 체계) 후 표 재설계, 등장 목록 전용 화면·NEW 배지·완료 연출, 제작대 프롬프트 옆 "등장 목록" 버튼.
+
+## 2026-11-13 KST — 다음 작업 시작 안내·인수인계 기록 (Codex)
+- DESKTOP-RLF93FA, C:\ProjectMS. 사용자 요청: Claude 작업 완료 후 이 채팅에서 이어가며, 내일(2026-11-14) 시작 전에 보스 레이드 구현·플레이테스트로 부족한 부분 확인·실제 사용할 비주얼 에셋 제작 필요를 먼저 안내.
+- AGENTS.md·agent.md·TODO.md에 시작 안내와 인수인계 기록. 맵은 부지 소폭 확장·기술 개발실/AFK 축소·기지 방문 잠금 방향, 약한 상호 방해는 미확정 후보로 보존. 다층 확장 보류, 제시된 크기 숫자 미확정. 보스 공동/개인 구분은 착수 때 확인.
+- 검증: 문서 재읽기·git diff --check. Studio·Blender·게임 설정 변경 없음. 시간 예약 알림이 아닌 다음 작업 시작 시 안내하는 프로젝트 규칙으로 기록.
