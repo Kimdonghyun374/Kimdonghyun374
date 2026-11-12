@@ -541,3 +541,11 @@
 - BaseDomain:SellMissiles(id 목록, 장착·전시 중이면 거절, 보유 확인, 코인 상한)·SellableIds(희귀도). BaseService 요청 sell(id)·sellRarity(희귀도), 상태 항목에 displayed·sellPrice.
 - MissileBaseClient: 보관함 줄마다 "판매 +N" 버튼(3초 안에 한 번 더 눌러 확정, 장착·전시 중이면 "판매 불가"), 위쪽 "일반 모두 판매"(장착·전시 제외, 개수·코인 확인 후 두 번째 클릭). UIPreview_Popup_Inventory에 판매 버튼·일괄 버튼 추가.
 - 실제 검증(Play 1인 Mock, 임시 러너로 미사일 제작 후 실제 마우스 클릭): 고급 스파크 판매 → 코인 +8·목록에서 사라짐, 장착 중 미사일 판매 버튼 → 안내만, "일반 모두 판매" → 장착·전시 아닌 일반 3개 +12, 장착·전시 2개 유지, 클라이언트에서 장착 미사일 판매 요청 직접 보냄 → 서버 거절. 일괄 버튼 글자가 판매 후 "확인?"으로 남는 버그 발견 → 수정 후 재확인(이번엔 팔 일반이 없어 안내 문구 경로만 확인). 화면 1장 확인. 콘솔 오류 없음. 임시 러너 제거·Edit 복귀. Save/Publish 하지 않음.
+
+## 2026-11-13 KST — 제작대 등급별 미사일 풀·확률 (시트 CRAFT_POOL + Studio) (Claude)
+- 사용자 요청: 현재 미사일 5종을 제작대 등급별로 어떻게·어떤 확률로 나오게 할지 표를 정해 시트에 넣고 Studio에 실제 대입. GDD 5-2절 규칙(가장 낮은 등급 50~60%·가장 높은 등급 약 1% 모양, 등급이 오르면 범위가 위로 이동, 등급업 직후 새 미사일 보장, 진행 중 제작 결과 유지)을 따름.
+- 시트 새 탭 CRAFT_POOL: 1등급 일반60/고급30/희귀10 · 2등급 50/30/15/영웅5(노바 새로 등장) · 3등급 45/28/17/8/전설2(솔라 새로 등장) · 4등급 고급50/희귀30/영웅15/전설5(일반 빠짐) · 5등급 희귀55/영웅33/전설12(고급 빠짐). 제작비 20/25/30/45/70, 제작 시간 5/6/7/8/10초 — 기대 판매가(6.8/9.9/14.4/25/45.5)가 제작비보다 낮게 유지(팔아서 이득 금지). 요약 열은 수식(확률 합·기대 피해 배율 1.17/1.29/1.40/1.77/2.30·기대 판매가). README·InfrastructureLevel CRAFT_TIER 메모 갱신.
+- 백업: ServerStorage.ProjectMSBackups.BeforeCraftPool_1794510033 (BaseDomain·BaseService·BaseWorld·TycoonData·MissileBaseClient).
+- TycoonData.CraftTiers에 pool·rollCost·duration·newKey, PoolOrder. BaseDomain: 시작 시 풀 검증(카탈로그 key·합 100·newKey), DrawFromPool, CraftSettings(등급별 비용·시간·풀), Roll이 등급 비용·시간·풀 사용, 등급업 시 CraftGuarantee=newKey 저장 → 다음 제작 1회 확정 후 해제(저장 키 CraftGuarantee). BaseService: 상태에 craftOdds·craftGuarantee·등급별 rollCost/productionDuration, 등급업 메시지에 "새로 등장 … (다음 제작 1회 확정)". BaseWorld: 제작대 안내판·프롬프트에 등급별 비용·시간·등급 이름, 업그레이드 단말에 "새로 등장" 표시, 등급이 바뀌면 안내판 갱신. MissileBaseClient: 보관함에 "제작대 N등급 확률: …"(희귀도 색, 다음 제작 확정 표시). UIPreview_Popup_Inventory에 확률 줄 추가.
+- 실제 검증(Play 1인 Mock, 임시 러너): 등급별 10000회 뽑기 분포가 표와 일치(최대 오차 약 1%p). 1등급 프롬프트 "제작 · 코인 20개 · 1등급", 2등급 업그레이드 → 비용 25·6초·노바 확정 → 첫 제작 노바, 3등급(제작대 3대는 데이터로 맞춤) → 30·7초 → 첫 제작 솔라. 보관함 확률 줄 표시 화면 확인. 쿨다운 중 두 번째 제작 요청은 정상 거절. 콘솔 오류 없음, 러너 제거·Edit 복귀. 4·5등급 실제 업그레이드·제작은 미검증(분포만). Save/Publish 하지 않음.
+- 남은 일: 미사일 종류·피해 배율 확장(GDD 5-2절 5번, MISSILES 탭 등급 체계) 후 표 재설계, 등장 목록 전용 화면·NEW 배지·완료 연출, 제작대 프롬프트 옆 "등장 목록" 버튼.
