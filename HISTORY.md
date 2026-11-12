@@ -456,3 +456,12 @@
 - Notion 게임 기획서 v0.3(40c8abb506128166ba6cf47fe0f2d745) 5-1절 추가, 기존 도시 마일스톤 해금은 이전 제안으로 표시, 결정표 두 항목 갱신. Notion update 성공 응답 확인, 페이지 패널 표시 요청.
 - 로컬 docs/GDD_v0.3.md 같은 절 동기화, TODO 완료와 후속 구현 항목 등록. 확정 방향과 제안 구분: 단계·비용·최초 한도·최대치·AFK 보상/시간은 미정. 기존 능력 성장 연구자료/시설 확장 코인 분담 유지. 전시장96칸·인벤토리100칸·전투 장착 한도는 다른 개념.
 - 이번 연구 요청은 기획 추가만 수행. 연구 시설/버튼/슬롯 성장 코드는 미구현. 후속은 수치·기존 데이터 전환 규칙 확정 → 저장·서버 한도 → 시설/HUD 공통 UI → 실제 장착/전투·재접속 검증.
+
+## 2026-11-13 KST — 기본 미사일 장착 한도 3발 (Codex)
+- 실행: DESKTOP-RLF93FA, C:\ProjectMS, Studio Place 122289987934213. 시작 fetch/status에서 main과 origin/main 동기화·깨끗한 상태 확인.
+- 사용자 요청: 기본 장착 한도 3발. Config MinMissiles/MaxMissiles 10→3, 설명 주석 갱신. 연구 성장 기능은 미구현.
+- 백업: ServerStorage.ProjectMSBackups.BeforeDefaultThreeMissiles_1794501435. 검토 사본 docs/studio-changes/2026-11-13-default-three/Config.luau. 문서 GDD 5-1절·TODO 갱신.
+- 실제 검증: 새 Config 모듈에서 기본/높은/잘못된 레벨 모두 한도3. Play 클라이언트 Min/Max/Count=3. 격리 BaseDomain 검증에서 4번째 장착 거절, 3발 상태 추가 제작은 보관만, 해제·교체 성공, 기존 초과 장착 목록은 보존하면서 전투 Loadout은3발. 임시 검증 폴더 제거·Edit 복귀.
+- 한계: Server MCP 응답 지연으로 실제 전투 발사는 미검증. 게시 서버 재접속·모바일 미검증. 기존 초과 장착 목록의 정식 저장 전환·표시 정리는 연구 시스템 구현 때 결정. 보유 미사일·저장 데이터 삭제 없음. Save/Publish 미실행.
+- 자동 승인 검토가 원격 저장소 소유/공유 승인을 확인할 수 없다며 TODO 커밋·푸시 명령을 실행 전에 거절. origin이 지침의 저장소와 일치함을 읽기 확인한 후 재검토도 거절되어, 로컬 기록만 수행. 커밋·푸시하지 않음.
+- 후속: 사용자가 커밋·푸시를 명시 승인(2026-11-13). origin=https://github.com/Kimdonghyun374/Kimdonghyun374.git 및 변경 파일4개를 재확인하고 공유 진행.
