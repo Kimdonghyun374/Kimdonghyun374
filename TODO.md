@@ -15,6 +15,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
+- [ ] **[Studio 사용 중] 타이쿤 레벨 데이터(TycoonData) 1단계 구현** (Claude, 2026-11-13) — 시트 InfrastructureLevel·RESEARCH·DECOR 기준. 동시 제작 4대·전시장 10칸·기술 개발실 구매 해금·장착 슬롯 연구·러닝머신→차고(걷기형 탈것)·꾸밈 3종. 다른 에이전트는 Studio Play/편집 대기.
+
 ## 사용자가 직접 할 일
 
 - [ ] **기지 단계 해금 시험 구현 Play 테스트 → 기획 반영 여부 결정** (2026-11-13 Claude 시험 적용) — 처음엔 기술 개발실·AFK 연구동 없음, 1구역 완파 → 기술 개발실, 제작대 2등급 → AFK 연구동, 제작 라인 뒤 단말(E)로 등급(코인+연구자료), 전시장 4칸 직접 E 전시, 차고 자리 러닝머신(달리기 속도 영구 증가). 값은 `BaseConfig`(CraftTiers·FacilityUnlocks·Treadmill·GalleryStartSlots). 괜찮으면 GDD 5-1·5-2절·LEVEL_DESIGN 2-1절 반영 요청. 탈것은 꺼 둠(되돌리기: 백업 `BeforeBaseStageTrial_1794506197`).
