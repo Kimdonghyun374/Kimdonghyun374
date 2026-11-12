@@ -554,3 +554,15 @@
 - DESKTOP-RLF93FA, C:\ProjectMS. 사용자 요청: Claude 작업 완료 후 이 채팅에서 이어가며, 내일(2026-11-14) 시작 전에 보스 레이드 구현·플레이테스트로 부족한 부분 확인·실제 사용할 비주얼 에셋 제작 필요를 먼저 안내.
 - AGENTS.md·agent.md·TODO.md에 시작 안내와 인수인계 기록. 맵은 부지 소폭 확장·기술 개발실/AFK 축소·기지 방문 잠금 방향, 약한 상호 방해는 미확정 후보로 보존. 다층 확장 보류, 제시된 크기 숫자 미확정. 보스 공동/개인 구분은 착수 때 확인.
 - 검증: 문서 재읽기·git diff --check. Studio·Blender·게임 설정 변경 없음. 시간 예약 알림이 아닌 다음 작업 시작 시 안내하는 프로젝트 규칙으로 기록.
+
+## 2026-11-13 KST — 미사일 카탈로그 → 자산 미사일 23종 (Claude)
+- 사용자 요청: 시트의 Claude 임의 미사일 1~5(standard·spark·comet·nova·solar) 삭제, 그 아래 asset 미사일부터 연결, 게임 수정 + 시트 반영.
+- 확인: 자산 23종 모델이 이미 이 Place의 ReplicatedStorage.MissileAssets에 있음(01_SPARK~23_SINGULARITY, 각 모델 Rarity 속성 common·uncommon·rare·epic·legendary·mythic·cosmic, 탄두 -Z). 시트의 "자산 Place" 표기는 옛 위치.
+- 백업: ServerStorage.ProjectMSBackups.BeforeAssetMissiles_1794510659 (BaseDomain·BaseService·BaseWorld·GalleryWorld·Service·MissileCatalog·TycoonData·PetMissileClient·MissileBaseClient).
+- MissileCatalog: 23종(key asset_*, 이름 SPARK 등, rarityId·화면 희귀도 커먼/언커먼/레어/에픽/레전더리/미스틱/코스믹, model, 희귀도별 배율 1/1.3/1.8/2.5/4/6/10·판매가 4/8/20/50/150/400/1200·색), LegacyKeys(옛 5종 → 같은 희귀도 첫 자산: SPARK·HOPPER·FROST LANCE·NEBULA FANG·SUN BREAKER), RarityOrder·RarityLabels. 미스틱·코스믹 배율·판매가는 시험값.
+- TycoonData.CraftTiers: rarityPool(1 커먼60/언커먼30/레어10 · 2 50/30/15/에픽5 · 3 42/28/18/9/레전더리3 · 4 언커먼45/레어30/에픽16/레전더리7/미스틱2 · 5 레어45/에픽30/레전더리16/미스틱7/코스믹2), newRarity, 제작비 20/25/30/55/120·시간 5/6/7/8/12초(기대 판매가 6.8/9.9/16.5/36.1/100 < 제작비).
+- BaseDomain: byRarity, 2단계 뽑기(희귀도 → 그 안 균등, 난수 하나 재사용), 확정 지급은 희귀도 id(CraftGuarantee), 저장 데이터 이전(보관함·제작 대기·확정 값의 옛 key), 장착 정보에 model. BaseService 확률 표시(희귀도·종류 수), 등급업 메시지. BaseWorld 단말 "새로 등장: 에픽" 등.
+- 새 모듈 ReplicatedStorage.PetMissiles.MissileModels(자산 복제·길이 맞춤·충돌 끔). PetMissileClient: 따라다니는 미사일(1.9)·비행 미사일(2.4)을 자산 모델로(없으면 기존 모양), 전투 Service 비행 정보에 asset. GalleryWorld 전시대·BaseWorld 완성 미리보기도 자산 모델을 세워서 표시. MissileBaseClient "일반 모두 판매" → "커먼 모두 판매". UIPreview_Popup_Inventory 글자 갱신.
+- 시트: MISSILES_CURRENT 1~5행 삭제, 자산 23행에 희귀도·희귀도 안 비율·배율·피해·색·모델 위치·판매가·구현 상태, 참고 2줄 갱신. CRAFT_POOL을 희귀도 기준으로 다시 작성(종류 수·종당 확률 수식, 요약 수식). InfrastructureLevel CRAFT_TIER 메모 갱신.
+- 실제 검증(Play 1인 Mock, 임시 러너): 등급별 20000회 희귀도 분포가 표와 일치, 1등급 커먼 6종 각 약 2000회(균등). 옛 데이터(standard·solar·nova 대기·확정 solar) Normalize → asset_spark·asset_sun_breaker·대기 asset_nebula_fang·확정 legendary. 제작대 4대 제작 → 자산 key 미사일, 2등급 업그레이드 후 첫 제작 PHANTOM(에픽) 확정. 클라이언트 ReadyMissile이 자산 모델(길이 1.9), 전시 1칸 TIDAL 모델·완성 미리보기 모델 확인, 보관함 이름·희귀도·확률 줄 화면 확인. 콘솔 오류 없음, 러너 제거·Edit 복귀. 미검증: 실제 공격 비행 모습(자산 모델 비행), 3~5등급 실제 제작. Save/Publish 하지 않음.
+- 남은 결정: 사용자 MISSILES 탭(레벨별 종류 수, 퀀텀·아토믹 등)과 자산 희귀도(미스틱·코스믹)의 대응, 레벨별로 어떤 종류를 넣을지. 지금은 등급에 나오는 희귀도의 자산 미사일이 모두 나옴.
