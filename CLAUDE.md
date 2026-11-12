@@ -55,12 +55,15 @@ Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현
 핵심 루프: 기지 차지 → 부품으로 미사일 제작 → 장착 → 자동 공격/집중 발사로 개인 도시 파괴 → 부품·연구자료 회수 → 재제작.
 
 - **전투** (`ReplicatedStorage.PetMissiles.Config`, `ServerScriptService.PetMissiles.Service`):
-  장착 한도 기본 3발 (2026-11-13 사용자 결정, Config Min/Max 3. 이전 10. 연구로 늘리는 기능은 미구현), 자동 탐색 1.6초, 연사 0.1초, 슬롯 재장전 3초, 사거리 90, 기본 피해 15.
+  장착 한도 기본 3발, 기술 개발실 '장착 슬롯' 연구로 4·5·6·8·10발 (2026-11-13, `TycoonData.Research`, Config Max 10은 전체 상한), 자동 탐색 1.6초, 연사 0.1초, 슬롯 재장전 3초, 사거리 90, 기본 피해 15.
   클릭/터치로 목표 선택, F 또는 버튼으로 집중 발사. 서버가 대상·거리·Raycast·피해를 검증.
 - **재화 이름**: 일반 재화 화면 이름은 **코인**(2026-11-10, 예전 "부품", 저장 키 `Scrap`). 아래의 "부품"은 코인.
 - **기지/제작** (`BaseConfig`, `BaseDomain`, `BaseService`, `BaseWorld`):
   `Workspace.ProjectMS_Bases` Base_1~6 링 광장 60° 배치(2026-11-10, PlotCount 6, 서버 정원 목표 6. 처음 8에서 축소), 1인 1기지. 제작비 부품 20, 5초 후 지급, 완료 후 2초 쿨다운,
   시작 부품 20개 1회. 희귀도 60/25/10/4/1%, 피해 배율 1/1.3/1.8/2.5/4. 보관함 100칸(초과 정리 기능 없음).
+- **타이쿤 레벨** (2026-11-13, `ReplicatedStorage.PetMissiles.TycoonData` = 시트 InfrastructureLevel·RESEARCH·DECOR 사본, 조건·결제 `TycoonRules`):
+  제작 라인 1→6대 **동시 제작**(다음 반투명 칸 E), 제작대 등급 1~5(제작 라인 뒤 단말), 전시장 4칸 시작→칸별 코인, 기술 개발실(1구역 완파 후 반투명 → E로 짓기, 작업대 E로 연구),
+  AFK 연구동(제작대 2등급 후 짓기, 보상 기능 없음), 꾸밈 3종(깃발·입구 조명·미사일 동상). 값은 시트에서 고치고 "시트 반영" 요청.
 - **도시 파괴/회수** (`SalvageService/Rules`, `SalvageClient`, `BuildingCollapse`):
   피해 기여도로 잔해 분배, 개인 드롭, 수집거리 8, 90초 만료, 연구자료 15%. 정육면체 붕괴 연출(클라이언트 전용).
   최신 변경: SalvageClient 이름표(110stud AlwaysOnTop)·Highlight 24개·연구자료 빛기둥·획득 알림 1.8초·효과음.
@@ -71,8 +74,9 @@ Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현
   월드1 개인 도시는 `Lane_N.Entry` 기준으로 자기 기지 대로에 복제(템플릿 `ProjectMS_City`는 Lane_1 좌표로 편집).
   기지 없으면 월드1 도시 없음. 구역2·3은 바닥·표지만. UI는 `UITheme`+`UIThemeClient`로 v03 밝은 테마. 월드2는 X+1720 섬, TravelRoad는 백업으로 이동.
   상세: `docs/LEVEL_DESIGN_v0.3.md`.
-- **정찰 버기** (`Vehicle*`, `ScoutBuggyClient`): 부품 50 구매, 100/200 업그레이드, 속도 32/44/58,
-  1인 1대, 재호출 5초, WASD/E, 월드 이동 시 하차. 템플릿 `ServerStorage.ProjectMS_VehicleTemplates.ScoutBuggy`.
+- **탈것(차고)** (`Vehicle*`, `ScoutBuggyClient`): 2026-11-13 걷기형으로 교체 — 보드 모형을 발밑에 붙이고 WalkSpeed만 올림(조작은 기본 캐릭터 그대로).
+  호버보드 50 / 추진기 보드 100+연구1 / 호버바이크 200+연구3, 속도 32/44/58(`TycoonData.Garage`). 기지·광장 차고 E로 창, 화면 '타기/내리기' 버튼, 월드 이동 시 내림.
+  옛 버기 템플릿 `ServerStorage.ProjectMS_VehicleTemplates.ScoutBuggy`는 보존(미사용).
 - **저장**: ProfileStore, 저장소 `ProjectMS_ManualBases_v1`. Studio에서는 Mock만 검증됨.
 - **백업**: 변경 때마다 `ServerStorage.ProjectMSBackups.Before*_<timestamp>`에 원본 보관. 옛 MissileSimulator 코드는 Disabled 상태로 보존.
 
