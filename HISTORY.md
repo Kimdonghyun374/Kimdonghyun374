@@ -595,3 +595,12 @@
 - AGENTS.md·agent.md 다음 재개 안내를 최신 완료 상태로 보완. 보스레이드→플레이테스트→실제 비주얼 제작을 먼저 안내. GitHub 최종 커밋·푸시 명령은 자동 검토가 이번 구현 소스 묶음의 정확한 목적지/페이로드 승인을 확인하지 못해 실행 전에 거절. 로컬 변경과 승인된 시트/Notion 업데이트는 완료, 원격 공유만 사용자 명시 승인 대기.
 
 - 후속 사용자 명시 승인: 이번 구현/검증/기획20개 파일을 https://github.com/Kimdonghyun374/Kimdonghyun374 main에 커밋·푸시하도록 승인받음. 두 Studio 모드 재확인 중 게임 Play 잔류를 발견해 다시 Stop하고 get_studio_state로 Edit 확인.
+
+## 2026-11-14 KST — 되돌아간 게임 스크립트 6개 복구 (Claude)
+- 시작 확인: DESKTOP-RLF93FA, C:\ProjectMs, git 최신(Codex 88653a9 VFX 미리보기·93b324a 기지 확장/권총/구역1~3 받음), TODO 진행 중 없음. Studio를 다시 연 뒤 게임 Place 122289987934213에서 BaseWorld(9807자, 2026-11-13 오전 수준)·BaseDomain·BaseService·MissileCatalog(옛 5종)·VehicleService(옛 버기)·VehicleConfig가 옛 버전이었고, 맵·나머지 스크립트(TycoonData·전투 Service·GalleryWorld·Progression·Social 등)는 최신.
+- 원인(추정, 근거 있음): 되돌아간 6개가 정확히 Studio에 열려 있던 스크립트 탭과 같고, 탭의 편집기 글(GetEditorSource)이 옛 글이었다. 우리 둘은 .Source만 바꿔 왔으므로 저장·재실행 때 탭의 옛 초안이 덮어쓴 것으로 보인다. 복구 중 UpdateSourceAsync가 편집기만 바꾸고 .Source는 그대로인 것도 확인(초안과 저장본이 따로임).
+- 백업: 복구 전 상태 ServerStorage.ProjectMSBackups.RevertedScripts_1794599611.
+- 복구: 5개는 Codex 작업 직전 백업 BeforeSocialZonesBase_1794511854의 최신본(판매·동시 제작·연구·자산 23종·걷기형 탈것 표시 확인), BaseWorld는 같은 백업에 Codex 최종 변경(시설·연구 프롬프트 거리 4) 2곳을 적용 → 저장소 사본 docs/studio-changes/2026-11-13-social-zones/BaseWorld.luau와 길이(26758)·체크섬 일치 확인. UpdateSourceAsync + .Source 둘 다 넣고 6개 모두 편집기=Source·구문 정상 확인.
+- 실제 검증(Play 1인 Mock, 임시 러너): 차지 → 제작대 2대째 열기(코인 80) → 2대 동시 제작(자산 VIPER·PEBBLE) → 제작대 2등급(제작비 25, 에픽 확정 대기, 확률 4줄) → 보관함 판매(VIPER +8) → 호버보드 구매·타기(WalkSpeed 32)·내리기(16), 장난 권총 장착, 방문 잠금 프롬프트(ToggleVisitLock)·꾸밈·시설·전시 프롬프트 활성, 따라다니는 미사일 자산 모델. 콘솔 오류 없음(기존 203785492 경고만). Stop 후 Edit, 러너 제거, 열린 탭 17개 모두 편집기=Source.
+- 재발 방지: agent.md에 "Studio 스크립트 수정 방법" 절 추가(UpdateSourceAsync + .Source, 시작·종료 때 탭 점검). 사용자에게 열린 스크립트 탭을 닫아 달라고 요청.
+- 미검증: 구역1~3·권총의 Codex 세부 시나리오 전체 재실행(이번엔 존재·동작 일부만), 3등급 이상. Save/Publish 하지 않음.

@@ -48,3 +48,8 @@
 - Claude 작업 완료 후 이 Codex 채팅에서 이어갈 예정. 최신 TODO/HISTORY와 Studio 사용 상태를 확인한 뒤 맡는다. 진행 중인 Claude 작업에 겹쳐 Studio를 수정하거나 Play를 전환하지 않는다.
 - 2026-11-13 별도 사용자 지시로 기지96×120·기술실16×14/AFK16×16·방문 잠금·발광 권총/짧은 랙돌·구역1~3(8/6/8채) 구현 및 시트/Notion 리뷰 완료. 현재 상태는 HISTORY 최신 항목과 docs/audits/2026-11-13-development-review.md 참조. 물감탄 후보는 권총 방식으로 구체화했으므로 중복 구현하지 않는다. 다층 확장 보류. 실제2인·모바일·게시저장·자연 공략시간은 후속 검증.
 - 보스 레이드의 대상(광장 공동 레이드 / 월드 진행 개인 보스)과 최소 규칙은 구현 시작 시 구분한다. 시작 안내 기록만으로 보스·최종 에셋을 자동 착수하지 않는다. 기지·권총·구역1~3은 완료 상태를 먼저 확인해 중복 작업하지 않는다. 사용자가 다른 작업을 먼저 지시하면 최신 지시를 따른다.
+
+## Studio 스크립트 수정 방법 (2026-11-14, 스크립트 되돌아감 사고 후)
+- Studio는 스크립트 탭(편집기 초안)과 저장된 Source를 따로 가진다. `.Source`만 바꾸면 열린 탭에는 옛 글이 남고, Studio 저장·재실행 때 그 옛 글이 덮어써 작업이 사라질 수 있다(2026-11-14 BaseWorld·BaseDomain·BaseService·MissileCatalog·VehicleService·VehicleConfig가 이렇게 되돌아감).
+- 스크립트를 고칠 때는 `ScriptEditorService:UpdateSourceAsync`로 편집기 내용을 바꾸고, 같은 글을 `.Source`에도 넣은 뒤 `GetEditorSource(script) == script.Source`를 확인한다. 작업 시작·종료 때 열린 탭 전체의 편집기 글과 Source가 같은지 점검한다.
+- MCP `script_read`는 열린 탭의 옛 글을 돌려줄 수 있으므로 `.Source`와 다르면 그대로 믿지 않는다.
