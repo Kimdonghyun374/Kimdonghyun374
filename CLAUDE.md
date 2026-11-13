@@ -77,6 +77,8 @@ Windows에는 Mac의 `src/`·설치기·패키지가 복사되지 않았다. 현
 - **탈것(차고)** (`Vehicle*`, `ScoutBuggyClient`): 2026-11-13 걷기형으로 교체 — 보드 모형을 발밑에 붙이고 WalkSpeed만 올림(조작은 기본 캐릭터 그대로).
   호버보드 50 / 추진기 보드 100+연구1 / 호버바이크 200+연구3, 속도 32/44/58(`TycoonData.Garage`). 기지·광장 차고 E로 창, 화면 '타기/내리기' 버튼, 월드 이동 시 내림.
   옛 버기 템플릿 `ServerStorage.ProjectMS_VehicleTemplates.ScoutBuggy`는 보존(미사용).
+- **광장 공동 레이드** (2026-11-14, `RaidConfig`·`RaidService`·`RaidController`·`RaidClient`, 시트 RAID): 10분마다 예고 30초 → 보스 하강, 제한 5분, 체력 3000×인원,
+  경고 원 공격(넘어짐, Codex `SocialService.Ragdoll` 재사용), 처치 시 기여도 보상. 전투 `Service.AddDamageObserver`로 피해 집계(잔해 관찰자와 병행).
 - **저장**: ProfileStore, 저장소 `ProjectMS_ManualBases_v1`. Studio에서는 Mock만 검증됨.
 - **백업**: 변경 때마다 `ServerStorage.ProjectMSBackups.Before*_<timestamp>`에 원본 보관. 옛 MissileSimulator 코드는 Disabled 상태로 보존.
 

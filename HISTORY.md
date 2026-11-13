@@ -604,3 +604,16 @@
 - 실제 검증(Play 1인 Mock, 임시 러너): 차지 → 제작대 2대째 열기(코인 80) → 2대 동시 제작(자산 VIPER·PEBBLE) → 제작대 2등급(제작비 25, 에픽 확정 대기, 확률 4줄) → 보관함 판매(VIPER +8) → 호버보드 구매·타기(WalkSpeed 32)·내리기(16), 장난 권총 장착, 방문 잠금 프롬프트(ToggleVisitLock)·꾸밈·시설·전시 프롬프트 활성, 따라다니는 미사일 자산 모델. 콘솔 오류 없음(기존 203785492 경고만). Stop 후 Edit, 러너 제거, 열린 탭 17개 모두 편집기=Source.
 - 재발 방지: agent.md에 "Studio 스크립트 수정 방법" 절 추가(UpdateSourceAsync + .Source, 시작·종료 때 탭 점검). 사용자에게 열린 스크립트 탭을 닫아 달라고 요청.
 - 미검증: 구역1~3·권총의 Codex 세부 시나리오 전체 재실행(이번엔 존재·동작 일부만), 3등급 이상. Save/Publish 하지 않음.
+
+## 2026-11-14 KST — 광장 공동 레이드 1차 구현 (Claude)
+- 사용자 결정: 보스 레이드는 광장 공동 레이드부터, 제한 시간 120초 → 5분. 5분은 낮(180초)보다 길어 낮밤과 무관한 10분 일정·밤에도 진행으로 정하고 체력·보상을 2배로 조정(시험값).
+- 백업: ServerStorage.ProjectMSBackups.BeforeRaid_1794601404 (전투 Service, RaidArena).
+- 전투 Service: AddDamageObserver(추가 피해 관찰자 목록) — 기존 SetDamageObserver(잔해)와 함께 호출. UpdateSourceAsync + .Source로 수정(agent.md 새 규칙).
+- 새: ReplicatedStorage.PetMissiles.RaidConfig·RaidEvent(RemoteEvent), ServerScriptService.PetMissiles.RaidService·RaidController, StarterPlayerScripts.RaidClient, StarterGui.UIPreview_RaidHUD(Edit 미리보기, RemoveInPlay).
+- RaidService: 대기 → 예고 30초 → 보스(workspace.ProjectMS_Raid.RaidBoss: 빨간 네온 코어·회색 원반·주황 테두리·반투명 돔·아래 포대 4개·빨간 장갑판 6개, 이름표 보조, Humanoid 체력) 3초 하강 후 MissileEnemy 태그 → 제한 300초 → 처치(보상)/시간 초과(상승 퇴장·보상 없음) → 예고 시작 기준 600초 뒤 다음. 체력 3000×서버 인원. 6초마다 경고 원 3개(플레이어 근처 우선, 2초 뒤 폭발, 반지름 7 안 플레이어 SocialService.Ragdoll). 처치 보상: 보스 체력 1% 이상 피해 = 참여 코인 200·연구자료 4 + 코인 600 기여 비례 + 최고 피해 연구자료 2(BaseService.GrantResources). 레이드 중 RaidBossMarker 숨김. 서버 전용 StartWarningNow(테스트용, Remote 노출 없음).
+- RaidClient: 화면 위 가운데 패널(예고 카운트다운·보스 이름·남은 시간·체력 막대·내 기여%·결과 8초), 장갑판 회전은 클라이언트에서만.
+- 밤 처리: ProgressionService targetAllowed는 PersonalBuilding만 밤에 막으므로 보스는 밤에도 공격 가능(코드 확인, 실제 밤 Play는 미검증).
+- 실제 검증(Play 1인 Mock, 임시 러너): 미사일 3발 장착 후 StartWarningNow → 예고 HUD → 보스 하강·체력 3000 → 광장에서 실제 미사일 자동 공격으로 피해(기여 기록과 체력 감소 일치) → 경고 원 표시·폭발로 넘어짐·회복·보호 시간 → 체력 40으로 낮춘 뒤 실제 미사일로 처치 → 코인 +800·연구자료 +6(혼자 참여·최고 피해) → "보스 처치! · 최고 피해" 결과. 제한 시간 12초로 줄인 시험에서 보스 퇴장·보상 없음·"보스가 떠났습니다". 화면 2장(HUD·보스·경고 원). 콘솔 오류 없음, Stop 후 Edit, 러너 제거, 열린 탭 편집기=Source.
+- 시트: 새 RAID 탭(값·설명·검증), README 탭 목록. 문서: GDD 공동 콘텐츠 행, LEVEL_DESIGN 2-2절, CLAUDE.md 게임 상태.
+- 미검증: 실제 2인 이상(보상 나눔·경고 원 여러 명), 밤 시간 진행, 자연 처치 시간(체력 3000이 적당한지), 모바일 가독성. Save/Publish 하지 않음.
+- 다음: 플레이테스트로 부족한 부분 확인 → 실제 게임용 비주얼 에셋 제작(오늘 안내 순서).
