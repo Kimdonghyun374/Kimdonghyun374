@@ -85,6 +85,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 완료
 
+- [x] 현재 UI 전체 교체용 이미지 키트72부품(신규60+메뉴12)·PNG7장·최신 맵 HUD컨셉·현재 UI 사용표/실측 좌표/ZIP 준비 (Codex, 2026-11-14, art/ui/toy-city-v04/replacement-kit). 업로드·Studio 적용·모바일 검증 후속.
+
 - [x] 파랑·빨강·노랑 입체 UI 시트·투명 아이콘12종 재제작, 아틀라스 좌표/미리보기/프롬프트 저장 (Codex, 2026-11-14, art/ui/toy-city-v04). 디자인 시안이며 Studio 적용·모바일 검증은 후속.
 
 - [x] Toy City v04 전체 그래픽·23종 자산 미사일 비행/착탄 VFX 연결, Blender5종 제작 키트·Mock Play 검증·시트/Notion 기록 완료 (Codex, 2026-11-14, 본 작업 커밋).

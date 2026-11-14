@@ -1,0 +1,925 @@
+{
+  "version": "replacement-kit-v01",
+  "style": "toy-city-ui-v04",
+  "date": "2026-11-14",
+  "status": "image assets only; not uploaded or applied in Studio",
+  "generator": "built-in image_gen",
+  "coordinateMethod": "alpha >= 32/255 component bounds plus 2px padding; utility fragments grouped by icon center; no fixed-grid assumption",
+  "atlases": {
+    "panels-atlas": {
+      "file": "panels-atlas.png",
+      "width": 1448,
+      "height": 1086,
+      "transparentPixels": 824313,
+      "imageAssetId": ""
+    },
+    "buttons-atlas": {
+      "file": "buttons-atlas.png",
+      "width": 1448,
+      "height": 1086,
+      "transparentPixels": 922767,
+      "imageAssetId": ""
+    },
+    "controls-atlas": {
+      "file": "controls-atlas.png",
+      "width": 1448,
+      "height": 1086,
+      "transparentPixels": 991838,
+      "imageAssetId": ""
+    },
+    "rarity-cards-atlas": {
+      "file": "rarity-cards-atlas.png",
+      "width": 1774,
+      "height": 887,
+      "transparentPixels": 527668,
+      "imageAssetId": ""
+    },
+    "utility-icons-atlas": {
+      "file": "utility-icons-atlas.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentPixels": 805076,
+      "imageAssetId": ""
+    },
+    "core-icons-atlas": {
+      "file": "core-icons-atlas.png",
+      "width": 1448,
+      "height": 1086,
+      "transparentPixels": "verified in parent v04",
+      "imageAssetId": ""
+    }
+  },
+  "assets": {
+    "modal_blue": {
+      "atlas": "panels-atlas",
+      "offset": [
+        39,
+        126
+      ],
+      "size": [
+        307,
+        297
+      ],
+      "mode": "slice_candidate"
+    },
+    "modal_gold": {
+      "atlas": "panels-atlas",
+      "offset": [
+        393,
+        126
+      ],
+      "size": [
+        308,
+        297
+      ],
+      "mode": "slice_candidate"
+    },
+    "modal_red": {
+      "atlas": "panels-atlas",
+      "offset": [
+        747,
+        126
+      ],
+      "size": [
+        308,
+        297
+      ],
+      "mode": "slice_candidate"
+    },
+    "modal_slate": {
+      "atlas": "panels-atlas",
+      "offset": [
+        1102,
+        126
+      ],
+      "size": [
+        307,
+        297
+      ],
+      "mode": "slice_candidate"
+    },
+    "hud_blue": {
+      "atlas": "panels-atlas",
+      "offset": [
+        30,
+        536
+      ],
+      "size": [
+        323,
+        160
+      ],
+      "mode": "slice_candidate"
+    },
+    "hud_slate": {
+      "atlas": "panels-atlas",
+      "offset": [
+        385,
+        535
+      ],
+      "size": [
+        323,
+        159
+      ],
+      "mode": "slice_candidate"
+    },
+    "toast_blue": {
+      "atlas": "panels-atlas",
+      "offset": [
+        737,
+        547
+      ],
+      "size": [
+        326,
+        139
+      ],
+      "mode": "slice_candidate"
+    },
+    "toast_green": {
+      "atlas": "panels-atlas",
+      "offset": [
+        1091,
+        547
+      ],
+      "size": [
+        329,
+        139
+      ],
+      "mode": "slice_candidate"
+    },
+    "toast_red": {
+      "atlas": "panels-atlas",
+      "offset": [
+        28,
+        836
+      ],
+      "size": [
+        329,
+        137
+      ],
+      "mode": "slice_candidate"
+    },
+    "prompt_blue": {
+      "atlas": "panels-atlas",
+      "offset": [
+        389,
+        819
+      ],
+      "size": [
+        317,
+        168
+      ],
+      "mode": "fit"
+    },
+    "boss_banner": {
+      "atlas": "panels-atlas",
+      "offset": [
+        738,
+        816
+      ],
+      "size": [
+        325,
+        172
+      ],
+      "mode": "slice_candidate"
+    },
+    "resource_capsule": {
+      "atlas": "panels-atlas",
+      "offset": [
+        1090,
+        839
+      ],
+      "size": [
+        331,
+        131
+      ],
+      "mode": "fit"
+    },
+    "blue_normal": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        22,
+        130
+      ],
+      "size": [
+        331,
+        164
+      ],
+      "mode": "slice_candidate"
+    },
+    "blue_pressed": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        380,
+        133
+      ],
+      "size": [
+        330,
+        157
+      ],
+      "mode": "slice_candidate"
+    },
+    "blue_disabled": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        737,
+        131
+      ],
+      "size": [
+        330,
+        163
+      ],
+      "mode": "slice_candidate"
+    },
+    "yellow_normal": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        1094,
+        130
+      ],
+      "size": [
+        332,
+        164
+      ],
+      "mode": "slice_candidate"
+    },
+    "yellow_pressed": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        23,
+        470
+      ],
+      "size": [
+        331,
+        157
+      ],
+      "mode": "slice_candidate"
+    },
+    "yellow_disabled": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        379,
+        468
+      ],
+      "size": [
+        332,
+        162
+      ],
+      "mode": "slice_candidate"
+    },
+    "red_normal": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        737,
+        466
+      ],
+      "size": [
+        332,
+        165
+      ],
+      "mode": "slice_candidate"
+    },
+    "red_pressed": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        1094,
+        469
+      ],
+      "size": [
+        332,
+        159
+      ],
+      "mode": "slice_candidate"
+    },
+    "red_disabled": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        22,
+        807
+      ],
+      "size": [
+        332,
+        163
+      ],
+      "mode": "slice_candidate"
+    },
+    "green_normal": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        379,
+        804
+      ],
+      "size": [
+        332,
+        166
+      ],
+      "mode": "slice_candidate"
+    },
+    "green_pressed": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        737,
+        808
+      ],
+      "size": [
+        332,
+        159
+      ],
+      "mode": "slice_candidate"
+    },
+    "green_disabled": {
+      "atlas": "buttons-atlas",
+      "offset": [
+        1093,
+        807
+      ],
+      "size": [
+        334,
+        162
+      ],
+      "mode": "slice_candidate"
+    },
+    "focus_normal": {
+      "atlas": "controls-atlas",
+      "offset": [
+        45,
+        61
+      ],
+      "size": [
+        284,
+        295
+      ],
+      "mode": "fit"
+    },
+    "focus_pressed": {
+      "atlas": "controls-atlas",
+      "offset": [
+        403,
+        61
+      ],
+      "size": [
+        286,
+        295
+      ],
+      "mode": "fit"
+    },
+    "focus_disabled": {
+      "atlas": "controls-atlas",
+      "offset": [
+        756,
+        61
+      ],
+      "size": [
+        288,
+        296
+      ],
+      "mode": "fit"
+    },
+    "gauge_track": {
+      "atlas": "controls-atlas",
+      "offset": [
+        1096,
+        146
+      ],
+      "size": [
+        332,
+        117
+      ],
+      "mode": "fit"
+    },
+    "gauge_blue": {
+      "atlas": "controls-atlas",
+      "offset": [
+        26,
+        496
+      ],
+      "size": [
+        315,
+        91
+      ],
+      "mode": "fit"
+    },
+    "gauge_gold": {
+      "atlas": "controls-atlas",
+      "offset": [
+        385,
+        496
+      ],
+      "size": [
+        316,
+        91
+      ],
+      "mode": "fit"
+    },
+    "gauge_red": {
+      "atlas": "controls-atlas",
+      "offset": [
+        743,
+        496
+      ],
+      "size": [
+        319,
+        91
+      ],
+      "mode": "fit"
+    },
+    "raid_badge_blank": {
+      "atlas": "controls-atlas",
+      "offset": [
+        1124,
+        404
+      ],
+      "size": [
+        277,
+        294
+      ],
+      "mode": "fit"
+    },
+    "tab_active": {
+      "atlas": "controls-atlas",
+      "offset": [
+        27,
+        823
+      ],
+      "size": [
+        314,
+        162
+      ],
+      "mode": "fit"
+    },
+    "tab_inactive": {
+      "atlas": "controls-atlas",
+      "offset": [
+        386,
+        824
+      ],
+      "size": [
+        314,
+        161
+      ],
+      "mode": "fit"
+    },
+    "selection_gold": {
+      "atlas": "controls-atlas",
+      "offset": [
+        756,
+        752
+      ],
+      "size": [
+        294,
+        298
+      ],
+      "mode": "fit"
+    },
+    "keycap_blank": {
+      "atlas": "controls-atlas",
+      "offset": [
+        1142,
+        788
+      ],
+      "size": [
+        240,
+        233
+      ],
+      "mode": "fit"
+    },
+    "card_common": {
+      "atlas": "rarity-cards-atlas",
+      "offset": [
+        106,
+        23
+      ],
+      "size": [
+        328,
+        406
+      ],
+      "mode": "fit"
+    },
+    "card_uncommon": {
+      "atlas": "rarity-cards-atlas",
+      "offset": [
+        519,
+        23
+      ],
+      "size": [
+        327,
+        406
+      ],
+      "mode": "fit"
+    },
+    "card_rare": {
+      "atlas": "rarity-cards-atlas",
+      "offset": [
+        929,
+        23
+      ],
+      "size": [
+        328,
+        406
+      ],
+      "mode": "fit"
+    },
+    "card_epic": {
+      "atlas": "rarity-cards-atlas",
+      "offset": [
+        1340,
+        23
+      ],
+      "size": [
+        329,
+        406
+      ],
+      "mode": "fit"
+    },
+    "card_legendary": {
+      "atlas": "rarity-cards-atlas",
+      "offset": [
+        104,
+        459
+      ],
+      "size": [
+        331,
+        407
+      ],
+      "mode": "fit"
+    },
+    "card_mythic": {
+      "atlas": "rarity-cards-atlas",
+      "offset": [
+        517,
+        459
+      ],
+      "size": [
+        330,
+        407
+      ],
+      "mode": "fit"
+    },
+    "card_cosmic": {
+      "atlas": "rarity-cards-atlas",
+      "offset": [
+        926,
+        459
+      ],
+      "size": [
+        332,
+        407
+      ],
+      "mode": "fit"
+    },
+    "card_locked": {
+      "atlas": "rarity-cards-atlas",
+      "offset": [
+        1339,
+        459
+      ],
+      "size": [
+        331,
+        407
+      ],
+      "mode": "fit"
+    },
+    "world": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        26,
+        34
+      ],
+      "size": [
+        274,
+        272
+      ],
+      "mode": "fit"
+    },
+    "pistol": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        339,
+        65
+      ],
+      "size": [
+        262,
+        220
+      ],
+      "mode": "fit"
+    },
+    "sun": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        643,
+        36
+      ],
+      "size": [
+        282,
+        270
+      ],
+      "mode": "fit"
+    },
+    "moon": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        965,
+        60
+      ],
+      "size": [
+        254,
+        239
+      ],
+      "mode": "fit"
+    },
+    "clock": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        42,
+        337
+      ],
+      "size": [
+        244,
+        297
+      ],
+      "mode": "fit"
+    },
+    "lock": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        356,
+        347
+      ],
+      "size": [
+        228,
+        265
+      ],
+      "mode": "fit"
+    },
+    "unlock": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        663,
+        344
+      ],
+      "size": [
+        256,
+        267
+      ],
+      "mode": "fit"
+    },
+    "close": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        967,
+        352
+      ],
+      "size": [
+        259,
+        256
+      ],
+      "mode": "fit"
+    },
+    "check": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        37,
+        688
+      ],
+      "size": [
+        267,
+        222
+      ],
+      "mode": "fit"
+    },
+    "back": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        344,
+        685
+      ],
+      "size": [
+        254,
+        216
+      ],
+      "mode": "fit"
+    },
+    "equipped": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        649,
+        653
+      ],
+      "size": [
+        260,
+        260
+      ],
+      "mode": "fit"
+    },
+    "sell": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        957,
+        673
+      ],
+      "size": [
+        269,
+        230
+      ],
+      "mode": "fit"
+    },
+    "warning": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        26,
+        974
+      ],
+      "size": [
+        275,
+        243
+      ],
+      "mode": "fit"
+    },
+    "touch": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        354,
+        952
+      ],
+      "size": [
+        225,
+        282
+      ],
+      "mode": "fit"
+    },
+    "jump": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        650,
+        965
+      ],
+      "size": [
+        262,
+        266
+      ],
+      "mode": "fit"
+    },
+    "raid": {
+      "atlas": "utility-icons-atlas",
+      "offset": [
+        959,
+        958
+      ],
+      "size": [
+        272,
+        282
+      ],
+      "mode": "fit"
+    },
+    "icon_shop": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        0,
+        0
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_missiles": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        362,
+        0
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_codex": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        724,
+        0
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_research": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        1086,
+        0
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_craft": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        0,
+        362
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_base": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        362,
+        362
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_garage": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        724,
+        362
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_upgrade": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        1086,
+        362
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_coins": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        0,
+        724
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_research_data": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        362,
+        724
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_focus": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        724,
+        724
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    },
+    "icon_settings": {
+      "atlas": "core-icons-atlas",
+      "offset": [
+        1086,
+        724
+      ],
+      "size": [
+        362,
+        362
+      ],
+      "mode": "fit"
+    }
+  },
+  "componentCount": 72,
+  "notes": [
+    "All labels, balances, prices, timers, key letters and item stats should be native dynamic UI.",
+    "Nine-slice margins and touch bounds must be validated at final on-screen size; no fixed SliceCenter is claimed.",
+    "selection_gold center test region alpha<=2/255, no pixel >64/255; very faint alpha fringe may remain.",
+    "current-map-ui-example.png is a concept based on current neutral concrete/checker map, not a Studio screenshot."
+  ]
+}
