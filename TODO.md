@@ -15,6 +15,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
+- [ ] **관리자(Admin) 흑백 UI + 11시 월드 패널 제거** (Claude, 2026-11-14 20:30, **Studio 게임 Place 사용 중**)
+
 - [x] **HUD 크로스 플랫폼 정리: 화면 기준 배율·탈것 버튼 축소·UI 통일·F/권총 액션 버튼(PC 왼쪽 아래, 모바일 점프 주변)** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [docs/studio-changes/2026-11-14-hud-cross-platform/README.md](docs/studio-changes/2026-11-14-hud-cross-platform/README.md). **실제 휴대폰·기기 에뮬레이터 확인은 사용자 필요.**
 
 - [ ] **[Codex에게] 지금 맵 기준으로 컨셉아트 다시 뽑기** (사용자 요청, 2026-11-14). v03은 더 이상 기준 아님. 바뀐 맵·전후 화면·요청 내용: [docs/studio-changes/2026-11-14-map-color-grade/README.md](docs/studio-changes/2026-11-14-map-color-grade/README.md) 마지막 절. UI 레퍼런스도 이 바탕 위에서.
