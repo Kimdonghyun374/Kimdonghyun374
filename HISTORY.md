@@ -735,3 +735,8 @@
 - docs/UI_BUTTON_INTERACTIONS.md에 공통 호버/눌림/복귀·소리, 비활성/성공, 집중 발사 준비·RPG 체크/모바일 쿨다운·창 등장, 구현 순서·검증 기준 기록. TODO 다음 후보에 [Claude에게] 작업 등록.
 - 최신 Claude 변경인 RPG 아래 중앙·숫자1 장착을 유지하도록 명시. 타이밍 범위는 튜닝 제안으로 구분. 기존 UIAppearance pressed 이벤트와 중복 처리하지 않도록 안내.
 - Studio·게임 코드 변경 없음. 구현·Play 테스트는 수행하지 않음. 전달 문서 작성 완료이며 Claude 구현·검증은 미완료. 프로젝트 미러 참조 파일은 수정하지 않음.
+## 2026-11-15 KST — 좌우 HUD 세로 가운데 정렬 (Claude)
+- 사용자 요청: "왼쪽 오른쪽 UI들은 기본적으로 y는 중앙에". 백업 ServerStorage.ProjectMSBackups.BeforeSideCenter_1794670996(HudLayout).
+- HudLayout: 왼쪽 패널 줄(LeftWorld→LeftResources)은 보이는 것만 한 덩어리로 세로 가운데. 오른쪽 메뉴 버튼 줄(MenuInventory·MenuVehicle)은 보이는 버튼 수만큼 세로 가운데. 0.5초마다 다시 놓으므로 탈것 버튼이 나타나면 자동 재정렬. 집중 발사(왼쪽 아래)·RPG(아래 가운데)·ADMIN(오른쪽 위)·모바일 점프 주변은 그대로.
+- Edit 미리보기 코인 패널·미사일 버튼도 세로 가운데.
+- 검증(Play PC 1918×1080): 코인 패널 중심·미사일 버튼(글자 포함) 중심이 화면 세로 중앙과 일치(±1px), 화면 캡처 확인. 모바일 에뮬레이터·실기기 미확인. Save/Publish 안 함.
