@@ -729,3 +729,9 @@
 - Edit 미리보기 UIPreview_PrankPistolHUD.PistolEquip 아래 가운데·배지 1.
 - 검증(Play 1인 PC 1918×1080): 버튼 중심 x 959, 1키로 장착 → 다시 1키로 해제, UIConfirm 음량 0.39·로드됨, RpgExplosion 음량 1.8·재생 중·로드됨. 콘솔 기존 203785492 경고만. 열린 탭 편집기=Source. Save/Publish 안 함.
 - 미검증: 실제 귀로 듣는 크기(사용자 확인 필요), 모바일 가운데 버튼 실기기, 효과음 에셋 심사 상태(게시 서버에서 들리는지).
+
+## 2026-11-15 KST — Claude용 버튼 인터랙션 명세 전달 (Codex)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMS. 사용자 요청: 승인한 버튼 인터랙션을 Claude가 알 수 있게 전달. 시작 fetch/status 원격과 같음·미커밋 없음.
+- docs/UI_BUTTON_INTERACTIONS.md에 공통 호버/눌림/복귀·소리, 비활성/성공, 집중 발사 준비·RPG 체크/모바일 쿨다운·창 등장, 구현 순서·검증 기준 기록. TODO 다음 후보에 [Claude에게] 작업 등록.
+- 최신 Claude 변경인 RPG 아래 중앙·숫자1 장착을 유지하도록 명시. 타이밍 범위는 튜닝 제안으로 구분. 기존 UIAppearance pressed 이벤트와 중복 처리하지 않도록 안내.
+- Studio·게임 코드 변경 없음. 구현·Play 테스트는 수행하지 않음. 전달 문서 작성 완료이며 Claude 구현·검증은 미완료. 프로젝트 미러 참조 파일은 수정하지 않음.
