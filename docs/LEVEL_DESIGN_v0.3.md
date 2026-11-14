@@ -1,5 +1,7 @@
 # 레벨디자인 실행안 v0.3 — 링 광장 + 기지별 진격 대로
 
+> **2026-11-14 현행 배치:** 공동 보스 구역 반지름120stud·회색 광장168stud. 기지 중심 반경230stud(6개60°), 기존 대비 기지·대로·개인 도시60stud 바깥 이동. 기지96×120 유지. 스폰·공용 차고·월드1 Entry 동반 이동. 밤 안전반경306, 레이드 우선 대상 범위135. 아래 과거 치수보다 이 기록을 우선한다. 재현/검증: docs/studio-changes/2026-11-14-arena-expansion/README.md.
+
 ## 구현 리뷰 — 2026-11-13
 
 게임 Place122289987934213·자산 Place85812975859267의 최신 적용 기준이다. 아래 과거 제안·측정과 다른 현재 상태는 이 리뷰와 [MS_MASTER](https://docs.google.com/spreadsheets/d/1KXg9M3HxbrJ1iijbWS9RGOO7_YAH7ZCa3hdjqQRA-pc/edit)를 따른다.
