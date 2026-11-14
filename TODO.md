@@ -15,6 +15,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
+- [ ] **확정 UI v06 이미지 에셋 정리** (UI 에셋 담당, 2026-11-15). 버튼 바탕·재화 캡슐·호버보드 및 좌표표. Studio 사용 안 함; 다른 Codex 작업 중 동시 수정 금지.
+
 
 
 - [x] **UI 바탕 이미지 연결 2차(버튼 판·코인 캡슐·집중 발사·레이드 배너·창)** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [art/ui/toy-city-v04/UPLOADED_ASSETS.md](art/ui/toy-city-v04/UPLOADED_ASSETS.md). 남은 것: 긴 버튼·탭·희귀도 카드·토스트·낮밤 표시.
