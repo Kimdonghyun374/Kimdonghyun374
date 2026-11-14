@@ -15,7 +15,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
-- [ ] **맵 색감 수정: 밝은 라이팅·차가운 콘크리트·파랑 줄이기** (Claude, 2026-11-14 19:10, **Studio 게임 Place 사용 중**). Codex는 UI 레퍼런스 이미지(레포 art) 담당.
+- [ ] **[Codex에게] 지금 맵 기준으로 컨셉아트 다시 뽑기** (사용자 요청, 2026-11-14). v03은 더 이상 기준 아님. 바뀐 맵·전후 화면·요청 내용: [docs/studio-changes/2026-11-14-map-color-grade/README.md](docs/studio-changes/2026-11-14-map-color-grade/README.md) 마지막 절. UI 레퍼런스도 이 바탕 위에서.
+- [x] **맵 색감 수정: 밝은 하이키 라이팅·차가운 콘크리트·Baseplate 체크 바닥·파랑 축소** (Claude, 2026-11-14) — Studio 사용 끝남. Save/Publish 안 함.
 
 
 - [x] 중앙 공동 레이드 반경60→120·회색 광장108→168, 기지/대로/도시60stud 바깥 이동·Play 확인 완료 (Codex, 2026-11-14, 본 작업 커밋).

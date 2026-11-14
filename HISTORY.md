@@ -645,3 +645,14 @@
 - Blender5.2.3LTS 별도 ProjectMS_ToyCity_v04 장면에 게임 Part 기반 주택/사무실/기술실/AFK/제작기5종 248메시 제작, 기존 Scene/Cube/Camera/Light 보존. .blend/.glb/.png·상대 CFrame JSON·재현 Python 저장. glTF 동적 enum 조회가 빈 값이라 실행 오류의 유효 GLB 값으로 재시도 성공. 최초 내보내기에 기존 Cube가 들어가 active scene/selection으로 다시 내보냄, 최종 GLB248노드·248메시·Cube/StageGround 없음 검사. Blender 베벨 GLB를 게임에 업로드한 것으로 표기하지 않음.
 - 소스 docs/studio-changes/2026-11-14-visual-upgrade, 테스트 verification/2026-11-14-visual-upgrade, Blender art/models/toy-city-v04. 실제 수정한 파일은 모두 이 컴퓨터 C:\ProjectMS이며 프로젝트 미러 sources는 건드리지 않음.
 - 기존 승인 목적지 MS_MASTER README A37:B39에 그래픽/자산VFX/검증 기록 추가(값·줄바꿈 API 재읽기 확인, Google 화면 시각 검증은 미실행), 기존 RAID22~24의 다른 작성 기록 보존. Notion GDD/레벨 두 페이지 상단 dated review 저장 성공·경고 없음. 로컬 GDD/레벨 동기화. 게임 가격/HP·확률·실제 플레이어 데이터 시트 변경 없음.
+
+## 2026-11-14 KST — 맵 색감 수정: 밝은 하이키·차가운 콘크리트·Baseplate 체크 바닥 (Claude)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMs. fetch 최신, TODO에 Studio 사용 중 선점 커밋 후 작업. Codex는 UI 레퍼런스 이미지 담당(Studio 미사용).
+- 사용자 요청: v03 계열이 "푸르딩딩"함 → 사용자 예시 이미지처럼 밝은 바탕·넓은 Baseplate 체크 바닥·색은 물체에만, 벽은 차가운 콘크리트. 측정(Python/Pillow 새로 설치): v03 기준 이미지 파랑 계열 55%·그늘 B-R +22.6·평균 밝기 166, 사용자 예시는 밝기 230·바닥 파랑 2%.
+- 백업 ServerStorage.ProjectMSBackups.BeforeMapColorGrade_1794650905 (Lighting 값·자식, ArtKit 원본, 색 매핑 메모).
+- Lighting: Ambient/OutdoorAmbient 밝고 중립에 가깝게, EnvironmentDiffuseScale 0.7→0.25, 햇빛 살짝 따뜻, Atmosphere 흰빛 안개(Density 0.3·Haze 1.2), ColorCorrection MapColorGrade(채도 +0.12) 추가.
+- 색: Codex 팔레트와 정확히 같은 색만 매핑해 5,567파트 변경(흰 외벽→214,217,221, 파랑 프레임→슬레이트 76,82,92, 유리→청회색 등), 파란 지붕 37개는 사탕색 5종. 바깥 연녹 바닥판→밝은 회색.
+- Baseplate 체크(rbxassetid://6372755229, 8stud, 투명도 0.6)를 Baseplate·Extension 4·광장·레이드·구역 바닥 24·기지 바닥 6에 깜.
+- ArtKit Kit.Colors 같은 값으로 변경(UpdateSourceAsync + .Source, 편집기=Source). 종료 때 열린 탭 16개 모두 편집기=Source.
+- 검증: Edit 화면 전후(도시·거리) 캡처 → docs/studio-changes/2026-11-14-map-color-grade/. Play 1회 서버에서 새 값·BaseGrid 36개 확인, 콘솔 기존 203785492 경고만. 광장 후 화면은 Studio 뷰포트가 검게 나와 확보 못함, Play 3D 화면·밤·모바일 미확인. Save/Publish 안 함.
+- 사용자 요청으로 Codex에게 "지금 맵 기준 컨셉아트 다시 뽑기" 요청을 TODO·README에 남김.
