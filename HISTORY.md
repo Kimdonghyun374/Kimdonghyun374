@@ -692,3 +692,9 @@
 - 장난 RPG: 새 도구, SocialConfig(로켓 140·반경 12·밀기 55·띄우기 28·재사용 2초·래그돌 1.6초), SocialService 범위 폭발(도착 시각에 판정, 쏜 사람 제외, 잠금 구역 보호), SocialClient 로켓·폭발 연출, 발사 버튼 모바일 장착 중에만. UpdateSourceAsync + .Source.
 - 검증(Play 1인): 관리자 판정·창 버튼 15개·실제 클릭 코인 +1000·레이드 이동(수정 뒤 바닥 (0,3.2,-60)), 월드 패널·테스트 버튼 숨김, RPG 더미 옆 4stud 폭발로 래그돌·14.8stud 밀림·회복, 클라이언트 로켓·폭발 수신. 콘솔 기존 경고만, 열린 탭 편집기=Source.
 - 미검증: 실제 2인 명중, 모바일 실기기 발사 버튼, 게시 서버 비주인 계정 차단(코드 판정만), RPG 연출 눈 확인. Save/Publish 안 함.
+
+## 2026-11-14 KST — UI 이미지 Roblox 업로드 (Claude)
+- 사용자 지시로 Codex UI 교체 키트 아틀라스 6장(긴 변 1024로 미리 축소)과 Codex 미러 outputs/ui-rpg-v02의 RPG·버기 아이콘 6장(512 칸별 분리)을 Studio MCP upload_image로 업로드(로컬 127.0.0.1 임시 서버, 끝난 뒤 종료). 처음엔 레포에서 RPG 아이콘을 못 찾았다가 사용자 지적으로 미러 출력 폴더에서 찾음.
+- Studio 확인: 12개 모두 AssetFetchStatus.Success, 임시 화면에 띄워 투명 배경 표시 확인 후 임시 GUI 삭제.
+- 기록: art/ui/toy-city-v04/UPLOADED_ASSETS.md, ReplacementAssets.luau에 ID·AtlasScale·Icons·Assets.Rect 추가, RPG 세트 원본·잘린 아이콘을 art/ui/toy-city-v04/rpg-buggy-v02/로 복사.
+- 미적용: 게임 UI 연결 안 함(다음 작업). Save/Publish 안 함.

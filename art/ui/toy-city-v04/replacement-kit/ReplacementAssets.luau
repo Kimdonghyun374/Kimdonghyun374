@@ -1,13 +1,33 @@
 -- 72개 이미지 부품의 실제 픽셀 좌표. 각 Images 항목에 업로드한 Image asset ID를 넣습니다.
 -- ImageRect 좌표만 제공하며 9-slice SliceCenter는 실제 UI 크기에서 검증해야 합니다.
+-- 2026-11-14 Claude 업로드: Roblox 이미지 한도(긴 변 1024px)에 맞춰 각 아틀라스를 미리 줄여 올렸습니다.
+-- 아래 Sprites 좌표는 원본 픽셀 기준이므로 실제로 쓸 때는 Offset·Size에 AtlasScale을 곱해야 합니다(Assets.Rect 사용).
 local Assets = {
     Images = {
-        ["panels-atlas"] = "",
-        ["buttons-atlas"] = "",
-        ["controls-atlas"] = "",
-        ["rarity-cards-atlas"] = "",
-        ["utility-icons-atlas"] = "",
-        ["core-icons-atlas"] = "",
+        ["panels-atlas"] = "rbxassetid://99924773812428",
+        ["buttons-atlas"] = "rbxassetid://92891561815809",
+        ["controls-atlas"] = "rbxassetid://140727097324649",
+        ["rarity-cards-atlas"] = "rbxassetid://98788508085513",
+        ["utility-icons-atlas"] = "rbxassetid://90453225345501",
+        ["core-icons-atlas"] = "rbxassetid://117548738752799",
+    },
+    -- 업로드본 크기 / 원본 크기 (원본 1448×1086 → 1024×768 등)
+    AtlasScale = {
+        ["panels-atlas"] = Vector2.new(1024 / 1448, 768 / 1086),
+        ["buttons-atlas"] = Vector2.new(1024 / 1448, 768 / 1086),
+        ["controls-atlas"] = Vector2.new(1024 / 1448, 768 / 1086),
+        ["rarity-cards-atlas"] = Vector2.new(1024 / 1774, 512 / 887),
+        ["utility-icons-atlas"] = Vector2.new(1024 / 1254, 1024 / 1254),
+        ["core-icons-atlas"] = Vector2.new(1024 / 1448, 768 / 1086),
+    },
+    -- RPG·버기 아이콘(Codex outputs/ui-rpg-v02 투명본을 512px 칸별로 잘라 개별 업로드, 축소 없음)
+    Icons = {
+        rpg = "rbxassetid://81808321300866",
+        rpg_equipped = "rbxassetid://127325095571385",
+        rpg_fire = "rbxassetid://97729511215410",
+        buggy = "rbxassetid://121910566868594",
+        buggy_riding = "rbxassetid://99824442589377",
+        buggy_dismount = "rbxassetid://109535864539713",
     },
     Sprites = {
         modal_blue = { Atlas = "panels-atlas", Offset = Vector2.new(39, 126), Size = Vector2.new(307, 297) },
@@ -84,4 +104,17 @@ local Assets = {
         icon_settings = { Atlas = "core-icons-atlas", Offset = Vector2.new(1086, 724), Size = Vector2.new(362, 362) },
     },
 }
+
+-- 스프라이트 이름 → (이미지 ID, 업로드본 기준 ImageRectOffset, ImageRectSize)
+function Assets.Rect(spriteName)
+    local sprite = Assets.Sprites[spriteName]
+    if not sprite then
+        return nil
+    end
+    local scale = Assets.AtlasScale[sprite.Atlas]
+    local offset = Vector2.new(math.floor(sprite.Offset.X * scale.X + 0.5), math.floor(sprite.Offset.Y * scale.Y + 0.5))
+    local size = Vector2.new(math.floor(sprite.Size.X * scale.X + 0.5), math.floor(sprite.Size.Y * scale.Y + 0.5))
+    return Assets.Images[sprite.Atlas], offset, size
+end
+
 return Assets
