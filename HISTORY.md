@@ -656,3 +656,10 @@
 - ArtKit Kit.Colors 같은 값으로 변경(UpdateSourceAsync + .Source, 편집기=Source). 종료 때 열린 탭 16개 모두 편집기=Source.
 - 검증: Edit 화면 전후(도시·거리) 캡처 → docs/studio-changes/2026-11-14-map-color-grade/. Play 1회 서버에서 새 값·BaseGrid 36개 확인, 콘솔 기존 203785492 경고만. 광장 후 화면은 Studio 뷰포트가 검게 나와 확보 못함, Play 3D 화면·밤·모바일 미확인. Save/Publish 안 함.
 - 사용자 요청으로 Codex에게 "지금 맵 기준 컨셉아트 다시 뽑기" 요청을 TODO·README에 남김.
+
+## 2026-11-14 KST — 파랑·빨강·노랑 UI 시트와 투명 아이콘12종 (Codex)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMS. 사용자 첨부 HUD와 Pinterest3개 참고 뒤 대대적 UI 개편 시트·아이콘 재제작 요청. 최신 TODO에 Claude가 맵 색감/Studio 작업 중, Codex는 레포 UI 레퍼런스 담당임을 확인. Studio 수정·Play 전환 없음.
+- 내장 ImageGen 스킬/도구로 신규 이미지2개 생성. UI 시트1536×1024: 굵은 남색 테두리·상단 하이라이트/하단 돌출 그림자, 파랑 메뉴·노랑 강화·빨강 출격·빨강/노랑 집중 발사, HUD·미사일 보관함·연구/패시브 창·팔레트. 한글 주요 이름 시각 확인, 수치·가격·기능은 예시/미확정.
+- 아이콘 아틀라스1448×1086, 4열3행/칸362×362. 상점·미사일·도감·연구·제작·기지·차고·강화·코인·연구자료·집중 발사·설정12종. 32bit ARGB 실제 투명 픽셀 확인, 내부 칸 경계의 불투명 픽셀0. UIAtlas.luau/manifest.json에 ImageRectOffset/Size 기록, 업로드 전 asset ID 비움.
+- art/ui/toy-city-v04에 PNG2개·README·실제 생성 프롬프트·좌표표·로컬 HTML 미리보기 저장. generated_images 원본/기존 UI v01/v03 보존. 시트와 아틀라스의 세부 아이콘 차이는 적용 시 아틀라스 우선. Roblox 실제 글자/수치/상태는 네이티브로 구성하는 기준 기록.
+- 이번 범위는 디자인 시안·아이콘 파일 제작이며 Studio 구현/Roblox 업로드/모바일 Play 검증이 아니다. 최종 디자인 선택 후 별도 UI 적용·화면별 배율/터치 영역 검증 필요. 다른 에이전트의 맵 작업과 섞지 않음.

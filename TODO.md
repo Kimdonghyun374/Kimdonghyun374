@@ -83,6 +83,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 완료
 
+- [x] 파랑·빨강·노랑 입체 UI 시트·투명 아이콘12종 재제작, 아틀라스 좌표/미리보기/프롬프트 저장 (Codex, 2026-11-14, art/ui/toy-city-v04). 디자인 시안이며 Studio 적용·모바일 검증은 후속.
+
 - [x] Toy City v04 전체 그래픽·23종 자산 미사일 비행/착탄 VFX 연결, Blender5종 제작 키트·Mock Play 검증·시트/Notion 기록 완료 (Codex, 2026-11-14, 본 작업 커밋).
 - [x] **광장 공동 레이드 1차** (Claude, 2026-11-14; 완료 커밋 Git 이력 참조) — 10분마다 예고→보스 하강, 제한 5분, 체력 3000×인원, 경고 원 넘어뜨리기, 기여도 보상, HUD·Edit 미리보기, 시트 RAID. 1인 Play 검증(처치·시간 초과). 2인 이상·밤·자연 처치 시간 미검증 → 플레이테스트에서 확인.
 - [x] **되돌아간 게임 스크립트 6개 복구** (Claude, 2026-11-14; 완료 커밋 Git 이력 참조) — Studio 재실행 후 열린 탭의 옛 초안이 덮어쓴 BaseWorld·BaseDomain·BaseService·MissileCatalog·VehicleService·VehicleConfig를 최신본으로 복구, Play 확인. 재발 방지 규칙 agent.md "Studio 스크립트 수정 방법".

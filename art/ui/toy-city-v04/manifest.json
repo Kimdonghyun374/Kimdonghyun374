@@ -1,0 +1,175 @@
+{
+  "version": "toy-city-ui-v04",
+  "date": "2026-11-14",
+  "status": "visual proposal; Studio not changed",
+  "generator": "built-in image_gen",
+  "reference": "user supplied cropped HUD image and Pinterest UI references",
+  "sheet": {
+    "file": "ui-style-sheet-v04.png",
+    "width": 1536,
+    "height": 1024
+  },
+  "atlas": {
+    "file": "icons-atlas-v04.png",
+    "width": 1448,
+    "height": 1086,
+    "alpha": true,
+    "columns": 4,
+    "rows": 3,
+    "cellWidth": 362,
+    "cellHeight": 362,
+    "opaquePixelsOnInternalBoundaries": 0
+  },
+  "colors": {
+    "blue": "#2786ED",
+    "red": "#F35359",
+    "yellow": "#FFD13D",
+    "outline": "#163B55"
+  },
+  "icons": [
+    {
+      "id": "shop",
+      "label": "상점",
+      "offset": [
+        0,
+        0
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "missiles",
+      "label": "미사일",
+      "offset": [
+        362,
+        0
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "codex",
+      "label": "도감",
+      "offset": [
+        724,
+        0
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "research",
+      "label": "연구",
+      "offset": [
+        1086,
+        0
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "craft",
+      "label": "제작",
+      "offset": [
+        0,
+        362
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "base",
+      "label": "기지",
+      "offset": [
+        362,
+        362
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "garage",
+      "label": "차고",
+      "offset": [
+        724,
+        362
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "upgrade",
+      "label": "강화",
+      "offset": [
+        1086,
+        362
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "coins",
+      "label": "코인",
+      "offset": [
+        0,
+        724
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "research_data",
+      "label": "연구자료",
+      "offset": [
+        362,
+        724
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "focus",
+      "label": "집중 발사",
+      "offset": [
+        724,
+        724
+      ],
+      "size": [
+        362,
+        362
+      ]
+    },
+    {
+      "id": "settings",
+      "label": "설정",
+      "offset": [
+        1086,
+        724
+      ],
+      "size": [
+        362,
+        362
+      ]
+    }
+  ]
+}
