@@ -34,4 +34,11 @@ Roblox 이미지 한도(긴 변 1024px) 때문에 미리 줄여서 올림. 좌�
 - 연결: 집중 발사 → icon_focus, RPG 버튼 → rpg / 장착 중 rpg_equipped(+"장착 중"), 모바일 발사 → rpg_fire, 미사일 메뉴 → icon_missiles,
   탈것 메뉴 → buggy / 타는 중 buggy_dismount, 코인 → icon_coins, 연구자료 → icon_research_data, 제작 버튼 → icon_craft. 실패하면 옛 아이콘으로 돌아감.
 - Edit 미리보기도 같은 아이콘. 화면: [applied-pc-2026-11-14.jpg](applied-pc-2026-11-14.jpg)
-- 아직 안 쓴 것: 패널·버튼·게이지·희귀도 카드·레이드 배너 등 바탕 이미지(9-slice 크기 검증 필요).
+## 게임 연결 2차: 바탕 이미지 (2026-11-14)
+- 새 `StarterPlayerScripts.UISkinClient`: 경로로 찾아 뒤에 `Skin` 이미지를 깔고 원래 바탕·테두리를 숨김(기존 UI 스크립트는 그대로).
+  - 메뉴 버튼(미사일·타기) → keycap_blank, 보관함·차고 창 → modal_blue(9-slice), 레이드 패널 → boss_banner(9-slice, 안쪽 여백 18),
+    코인·연구자료 줄 → resource_capsule 캡슐(9-slice).
+- `PetMissileClient`: 집중 발사 원판 focus_normal(가득 참)/focus_disabled, 게이지 판 gauge_track·채움 gauge_blue/gauge_gold.
+- `UITheme`: `NoTheme` 속성이 있는 바탕 이미지는 색·모양 치환에서 제외.
+- Edit 미리보기도 같은 바탕. 화면: [applied-skins-hud-2026-11-14.jpg](applied-skins-hud-2026-11-14.jpg), [applied-skins-inventory-2026-11-14.jpg](applied-skins-inventory-2026-11-14.jpg)
+- 아직 안 쓴 것: 버튼 아틀라스(파랑·노랑·빨강·초록 긴 버튼), 탭, 희귀도 카드, 토스트 알림, 낮밤 표시, RPG 원판(지금은 색 원).

@@ -704,3 +704,9 @@
 - 새 ReplicatedStorage.PetMissiles.UIImages(업로드 ID·축소 비율·스프라이트 좌표·Apply). 집중 발사·RPG(장착 중 체크 아이콘)·모바일 발사·미사일·탈것(타기/내리기)·코인·연구자료·제작 아이콘 연결, 실패 시 옛 아이콘. UITheme IconTargets에 sprite 지원. Edit 미리보기도 갱신. UpdateSourceAsync + .Source, 열린 탭 편집기=Source.
 - 검증(Play 1인 PC 1918×1080): 각 아이콘 Image/ImageRect 값 확인·화면 캡처(art/ui/toy-city-v04/applied-pc-2026-11-14.jpg), RPG 장착 중 아이콘·"장착 중", 모바일 흉내에서 발사 버튼 rpg_fire 표시. 콘솔 기존 경고만.
 - 미적용: 패널·버튼·게이지·카드·레이드 배너 바탕 이미지. 실제 모바일 기기 미확인. Save/Publish 안 함.
+
+## 2026-11-14 KST — UI 바탕 이미지 연결 2차 (Claude)
+- TODO 선점 후 작업. 백업 ServerStorage.ProjectMSBackups.BeforeUISkins_1794661138(UITheme·PetMissileClient·RaidClient).
+- 새 UISkinClient(경로로 찾아 Skin 이미지 깔고 원래 바탕·테두리 숨김): 메뉴 버튼 keycap_blank, 보관함·차고 창 modal_blue, 레이드 패널 boss_banner(+안쪽 여백), 코인·연구자료 캡슐. PetMissileClient 집중 발사 원판(focus_normal/disabled)·게이지(gauge_track/blue/gold). UITheme은 NoTheme 속성 요소 제외. Edit 미리보기도 갱신. UpdateSourceAsync + .Source, 열린 탭 편집기=Source.
+- 검증(Play 1인 PC): Skin 6곳 생성·원래 바탕 투명 확인, 화면 캡처(HUD·레이드 배너·보관함 창) art/ui/toy-city-v04/applied-skins-*.jpg. 콘솔 기존 경고만.
+- 미적용: 긴 버튼·탭·희귀도 카드·토스트·낮밤 표시. 모바일 실기기 미확인. Save/Publish 안 함.
