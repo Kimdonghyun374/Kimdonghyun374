@@ -15,7 +15,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
-- [ ] **관리자(Admin) 흑백 UI + 11시 월드 패널 제거** (Claude, 2026-11-14 20:30, **Studio 게임 Place 사용 중**)
+- [x] **관리자(Admin) 흑백 UI + 11시 월드 패널 제거 + 장난 RPG(범위 폭발·래그돌) + 발사 버튼 모바일 전용 + 옛 공동 목표 지점 치우기** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [docs/studio-changes/2026-11-14-admin-ui/README.md](docs/studio-changes/2026-11-14-admin-ui/README.md). 2인 RPG 명중·모바일 실기기 미확인.
 
 - [x] **HUD 크로스 플랫폼 정리: 화면 기준 배율·탈것 버튼 축소·UI 통일·F/권총 액션 버튼(PC 왼쪽 아래, 모바일 점프 주변)** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [docs/studio-changes/2026-11-14-hud-cross-platform/README.md](docs/studio-changes/2026-11-14-hud-cross-platform/README.md). **실제 휴대폰·기기 에뮬레이터 확인은 사용자 필요.**
 

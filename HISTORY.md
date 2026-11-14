@@ -683,3 +683,12 @@
 - 컨트롤 선택 테두리의 미세 알파 잔여를 ImageGen으로 정리 시도 후 최종본 선택. 중앙 샘플alpha 최대2/255·alpha>64픽셀0, 매우 옅은 프린지 가능성은 README에 명시. 투명 아틀라스5장 알파와 개수12/12/12/8/16 확인. 패널은 등간격 배치가 아니므로 고정 셀 분할을 쓰지 않고 연결 영역(alpha>=32)+2px 여백을 실측, 아이콘 분리 조각은 중심 칸으로 묶음. 초기 C#검사기 .NET 참조 누락은 실제 런타임 참조 어셈블리 추가로 해결.
 - art/ui/toy-city-v04/replacement-kit에 PNG7장·manifest·ReplacementAssets.luau·COVERAGE·README·실제 프롬프트·HTML 미리보기 저장. 72Rect 원본 영역 내부/양의 크기 검증 통과. 9-slice 경계는 실제 크기에서 조정해야 하며 업로드 ID는 비워 둠.
 - 전달 ZIP: 프로젝트 미러 outputs/projectms-ui-replacement-kit-v01.zip(7PNG 확인). 원본 generated_images와 기존 v04 시안은 보존. 업로드/Studio 적용/모바일 Play 검증은 이번 이미지 제작 범위에서 수행하지 않았음. 기존 게임 수치·저장·서버 기능 불변.
+
+## 2026-11-14 KST — 관리자 흑백 UI·11시 패널 제거·장난 RPG·옛 오브젝트 치우기 (Claude)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMs. fetch 최신, TODO 선점 커밋 후 작업. 사용자 요청: 11시 패널(기지로 귀환 등) 불필요 → 테스트 기능을 주인만 여는 흑백 관리자 UI로, 쓰지 않는 오브젝트(공동 목표 지점) 치우기, 발사 버튼 모바일만, 권총→RPG(범위 폭발·피해 없음·밀려나며 래그돌).
+- 백업 BeforeAdminUI_1794655706, BeforePrankRpg_1794655925(옛 도구 장난 권총_원본 포함).
+- 새 AdminController(서버, 주인 CreatorId만·요청마다 서버 재확인·정해진 항목만)·AdminRequest Remote·AdminClient(흑백 ADMIN 창: 이동 8·자원 3·레이드 예고·Studio 시간 3). WorldProgressClient 월드 패널 숨김, MissileBaseClient 테스트 이동 버튼 숨김, 미리보기 정리. 2월드 일반 이동 버튼은 없어짐(섬 프롬프트·관리자만).
+- Workspace.MissileSimulator(옛 과녁·안내판)를 ServerStorage.ProjectMS_Parked로 이동(참조 스크립트 모두 꺼짐 확인).
+- 장난 RPG: 새 도구, SocialConfig(로켓 140·반경 12·밀기 55·띄우기 28·재사용 2초·래그돌 1.6초), SocialService 범위 폭발(도착 시각에 판정, 쏜 사람 제외, 잠금 구역 보호), SocialClient 로켓·폭발 연출, 발사 버튼 모바일 장착 중에만. UpdateSourceAsync + .Source.
+- 검증(Play 1인): 관리자 판정·창 버튼 15개·실제 클릭 코인 +1000·레이드 이동(수정 뒤 바닥 (0,3.2,-60)), 월드 패널·테스트 버튼 숨김, RPG 더미 옆 4stud 폭발로 래그돌·14.8stud 밀림·회복, 클라이언트 로켓·폭발 수신. 콘솔 기존 경고만, 열린 탭 편집기=Source.
+- 미검증: 실제 2인 명중, 모바일 실기기 발사 버튼, 게시 서버 비주인 계정 차단(코드 판정만), RPG 연출 눈 확인. Save/Publish 안 함.
