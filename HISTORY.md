@@ -631,3 +631,17 @@
 - 모바일 UI: 원인 확인(고정 픽셀 + UITheme.HudScale 1.2 고정, 요소별 UIScale, 터치 분기 2곳뿐, 조이스틱·점프 자리 규칙 없음). 계획 docs/MOBILE_UI_PLAN.md. 실제 에뮬레이터 화면 확인은 아직 안 함.
 - 한국어 폰트: 이 PC Roblox 설치본 기본 글꼴 43종 중 한글 포함은 NotoSansCJK Fallback(Regular 하나)뿐. 게임은 전부 Gotham 계열이라 한글은 대체 글꼴로 나와 굵기 지정이 한글에 안 먹는 것으로 추정(화면 비교 미실행).
 - 미검증: Notion 반영 화면 확인 외 Studio 실행 검증 없음. Save/Publish 없음.
+
+## 2026-11-14 KST — Toy City v04 전체 그래픽·자산 미사일 VFX 연결 (Codex)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMS. 원격 최신·미커밋 없음 확인, 진행 중 선점 c1c31f5. 사용자가 전체 그래픽 개선과 자산 플레이스의 미사일/효과 이전 요청. 중간 게임 중 요청으로 즉시 일시 중지, '다시 시작' 후 재개.
+- 승인 Toy City v03 스타일/시작 광장/건물 키트 이미지와 로컬 GDD/레벨·Notion·MS_MASTER BASE_CRAFT/BUILDINGS/RAID 대조. 최신 Studio의 6기지·구역8/6/8·광장r168/레이드r120/기지중심r230을 기준으로 유지.
+- 백업 ServerStorage.ProjectMSBackups.BeforeToyCityVisuals_1794646284. 서비스 직접 Clone 실패를 자식별 폴더 복제로 보완. Lighting 후처리 자식·주요 초기값은 보관했으나 환경광 스케일/ShadowSoftness의 초기값은 미기록(README에 한계 명시).
+- ArtKit/ApplyWorld: 밝은 흰 외벽·파란 지붕/창틀·붉은 차양·노란 기계·초록 조경. 광장 타일/둘레선·벤치·가로등·가로수, 기지 포장/전시장/차고·6칸 제작기 로봇 팔·파란 기술실 레이더/초록 AFK 캐노피·태양광, 대로 차선/횡단보도·구역 문, 월드1 22+월드2 4건물 외형, 보스/탈것/권총/미사일 복제본 마감·조명 개선. 기존 HUD 배치 보존. 모든 ToyCityArt 장식 비충돌·비조회·비접촉.
+- 자산 Place127014821326220의 23모델과 게임 MissileAssets 파트 구성(이름/클래스/크기/색) 일치. 원본/카탈로그 보존·중복 복사 없음. 독립 MissileVFX 코드를 게임 PetMissiles로 복사해 PetMissileClient 실제 발사/착탄에 연결. PC0.65·터치0.4 품질, 비행24+ 반감, 카메라240stud·초당10착탄 추가 연출 제한. Part_Icles 복사/수정/재배포 없음.
+- BaseWorld: 제작대 부속 장식도 해금 상태 표시. 첫 Play에서 잠긴 장식이 건설 Tween에 덮여 불투명해짐 발견 → 상태 전환 시 기존 Tween 취소 추가 후 재검증. RaidService는 새 보스 마감과 Edit 사본 제거, VehicleService는 새 팬/범퍼 장식도 비고정·Massless·용접. MissileModels는 원본 대신 복제본만 팔레트 변경.
+- 실제 Play 1인 Mock: 빈 기지 장식 숨김·차지→제작1개·열린 장식12개/잠긴 장식 반투명 통과. 실제 미사일로 주택 파괴, FlightVFXCount2·ImpactVFXCount2. 탈것 현재단계 인자1→0으로 검증 오류 바로잡은 뒤 구매/탑승·장식6개 용접/비고정 확인·하차. 실제 RaidService 예고→Active·HP3000·장식36개·흰 Hull·Edit 사본 제거 통과.
+- 정적/생성 검증: 23종 2.4stud 복제·PrimaryPart/비조회/비충돌/고정, 도시22채 기존 좌표/판정 크기/체력/보상 일치, 물리 판정 켜진 장식0. 최종 기지 전체2964·대로/광장1359·월드1 템플릿2427파트. 실제6인/모바일 성능·자연 공략·게시 저장 미검증.
+- Studio screen_capture가 HUD만 반환하여 native Computer Use 창으로 도시·기지 외형 확인, 검토 이미지 저장. 기존203785492 경고 외 새 Play 오류 없음. 7개 소스 로컬 UTF8 바이트/롤링 해시가 Studio와 일치. 열린 모든 탭 편집기=Source. 임시 CodexArtVerificationRunner/Remote 제거·두 Studio Edit, Save/Publish 미실행.
+- Blender5.2.3LTS 별도 ProjectMS_ToyCity_v04 장면에 게임 Part 기반 주택/사무실/기술실/AFK/제작기5종 248메시 제작, 기존 Scene/Cube/Camera/Light 보존. .blend/.glb/.png·상대 CFrame JSON·재현 Python 저장. glTF 동적 enum 조회가 빈 값이라 실행 오류의 유효 GLB 값으로 재시도 성공. 최초 내보내기에 기존 Cube가 들어가 active scene/selection으로 다시 내보냄, 최종 GLB248노드·248메시·Cube/StageGround 없음 검사. Blender 베벨 GLB를 게임에 업로드한 것으로 표기하지 않음.
+- 소스 docs/studio-changes/2026-11-14-visual-upgrade, 테스트 verification/2026-11-14-visual-upgrade, Blender art/models/toy-city-v04. 실제 수정한 파일은 모두 이 컴퓨터 C:\ProjectMS이며 프로젝트 미러 sources는 건드리지 않음.
+- 기존 승인 목적지 MS_MASTER README A37:B39에 그래픽/자산VFX/검증 기록 추가(값·줄바꿈 API 재읽기 확인, Google 화면 시각 검증은 미실행), 기존 RAID22~24의 다른 작성 기록 보존. Notion GDD/레벨 두 페이지 상단 dated review 저장 성공·경고 없음. 로컬 GDD/레벨 동기화. 게임 가격/HP·확률·실제 플레이어 데이터 시트 변경 없음.

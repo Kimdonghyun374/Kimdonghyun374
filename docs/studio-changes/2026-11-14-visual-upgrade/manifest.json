@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-14",
+  "gamePlace": 122289987934213,
+  "assetPlace": 127014821326220,
+  "backup": "ServerStorage.ProjectMSBackups.BeforeToyCityVisuals_1794646284",
+  "style": "ToyCity_v04",
+  "arenaRadius": 120,
+  "plazaRadius": 168,
+  "baseRadius": 230,
+  "baseCount": 6,
+  "cityBuildings": 22,
+  "world2Buildings": 4,
+  "parts": {
+    "bases": 2964,
+    "lanes": 1359,
+    "world1Template": 2427
+  },
+  "modelsCompared": 23,
+  "decorationsWithPhysics": 0,
+  "blender": {
+    "assets": 5,
+    "nodes": 248,
+    "meshes": 248,
+    "originalCubeIncluded": false,
+    "uploadedToRoblox": false
+  },
+  "signatures": {
+    "VehicleService": {
+      "bytes": 11126,
+      "hash": 1938333269
+    },
+    "PetMissileClient": {
+      "bytes": 20010,
+      "hash": 589694593
+    },
+    "ArtKit": {
+      "bytes": 14691,
+      "hash": 1022666996
+    },
+    "RaidService": {
+      "bytes": 15956,
+      "hash": 967159268
+    },
+    "MissileModels": {
+      "bytes": 2519,
+      "hash": 383994236
+    },
+    "BaseWorld": {
+      "bytes": 27766,
+      "hash": 852564154
+    },
+    "MissileVFX": {
+      "bytes": 11895,
+      "hash": 1492580967
+    }
+  },
+  "verification": {
+    "mockCraft": true,
+    "lockedArtGhost": true,
+    "actualMissileHouseDestruction": true,
+    "flightVFX": 2,
+    "impactVFX": 2,
+    "mountArtWelded": true,
+    "raidArt": true,
+    "multiPlayer": false,
+    "mobile": false,
+    "publishedSave": false,
+    "editorSourcesMatch": true,
+    "editModeRestored": true
+  }
+}
