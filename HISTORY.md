@@ -740,3 +740,9 @@
 - HudLayout: 왼쪽 패널 줄(LeftWorld→LeftResources)은 보이는 것만 한 덩어리로 세로 가운데. 오른쪽 메뉴 버튼 줄(MenuInventory·MenuVehicle)은 보이는 버튼 수만큼 세로 가운데. 0.5초마다 다시 놓으므로 탈것 버튼이 나타나면 자동 재정렬. 집중 발사(왼쪽 아래)·RPG(아래 가운데)·ADMIN(오른쪽 위)·모바일 점프 주변은 그대로.
 - Edit 미리보기 코인 패널·미사일 버튼도 세로 가운데.
 - 검증(Play PC 1918×1080): 코인 패널 중심·미사일 버튼(글자 포함) 중심이 화면 세로 중앙과 일치(±1px), 화면 캡처 확인. 모바일 에뮬레이터·실기기 미확인. Save/Publish 안 함.
+
+## 2026-11-15 KST — 사실적인 바주카 외형 + 진지한 발사·폭발음 (Claude)
+- 사용자 요청: "바주카를 블랜더를 이용하던 해서 좀 더 사실적으로, 사운드는 장난스럽지 않게 진지한 걸로". 백업 BeforeRealBazooka_1794671167.
+- Blender MCP 연결 확인(5.2.3, 애드온 프로토콜 13 < 16 업데이트 필요)했으나 메시 업로드 경로가 없어 Studio 파트 26개로 재제작(발사관·나무 차폐판·분사구·탄두·조준경 등). 상세 docs/studio-changes/2026-11-15-rpg-center-sounds/README.md.
+- 소리: Roblox 내장 impact_explosion_03을 발사(높고 짧게)·폭발(낮고 무겁게)에 사용. GameSounds에 문자열 id·speed 지원.
+- 검증(Play PC): 1키 장착 후 캐릭터가 든 모습 캡처, RpgLaunch 음량 1.05·속도 1.55, RpgExplosion 2.25·0.8 모두 로드·재생. 콘솔 기존 경고만. 실제 귀 확인·모바일 미확인. Save/Publish 안 함.
