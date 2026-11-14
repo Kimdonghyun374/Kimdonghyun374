@@ -15,7 +15,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
-- [ ] **업로드한 UI 이미지를 게임 HUD에 연결(아이콘 1차)** (Claude, 2026-11-14 21:10, **Studio 게임 Place UI 스크립트 사용 중**)
+- [x] **업로드한 UI 이미지를 게임 HUD에 연결(아이콘 1차)** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [art/ui/toy-city-v04/UPLOADED_ASSETS.md](art/ui/toy-city-v04/UPLOADED_ASSETS.md). 남은 것: 패널·버튼·게이지·희귀도 카드·레이드 배너 바탕 이미지(2차).
 
 - [x] **관리자(Admin) 흑백 UI + 11시 월드 패널 제거 + 장난 RPG(범위 폭발·래그돌) + 발사 버튼 모바일 전용 + 옛 공동 목표 지점 치우기** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [docs/studio-changes/2026-11-14-admin-ui/README.md](docs/studio-changes/2026-11-14-admin-ui/README.md). 2인 RPG 명중·모바일 실기기 미확인.
 

@@ -698,3 +698,9 @@
 - Studio 확인: 12개 모두 AssetFetchStatus.Success, 임시 화면에 띄워 투명 배경 표시 확인 후 임시 GUI 삭제.
 - 기록: art/ui/toy-city-v04/UPLOADED_ASSETS.md, ReplacementAssets.luau에 ID·AtlasScale·Icons·Assets.Rect 추가, RPG 세트 원본·잘린 아이콘을 art/ui/toy-city-v04/rpg-buggy-v02/로 복사.
 - 미적용: 게임 UI 연결 안 함(다음 작업). Save/Publish 안 함.
+
+## 2026-11-14 KST — 업로드한 UI 이미지 게임 연결 1차(아이콘) (Claude)
+- TODO 선점 후 작업. 백업 ServerStorage.ProjectMSBackups.BeforeUIImages_1794660506(PetMissileClient·SocialClient·MissileBaseClient·ScoutBuggyClient·UITheme·UIAssets).
+- 새 ReplicatedStorage.PetMissiles.UIImages(업로드 ID·축소 비율·스프라이트 좌표·Apply). 집중 발사·RPG(장착 중 체크 아이콘)·모바일 발사·미사일·탈것(타기/내리기)·코인·연구자료·제작 아이콘 연결, 실패 시 옛 아이콘. UITheme IconTargets에 sprite 지원. Edit 미리보기도 갱신. UpdateSourceAsync + .Source, 열린 탭 편집기=Source.
+- 검증(Play 1인 PC 1918×1080): 각 아이콘 Image/ImageRect 값 확인·화면 캡처(art/ui/toy-city-v04/applied-pc-2026-11-14.jpg), RPG 장착 중 아이콘·"장착 중", 모바일 흉내에서 발사 버튼 rpg_fire 표시. 콘솔 기존 경고만.
+- 미적용: 패널·버튼·게이지·카드·레이드 배너 바탕 이미지. 실제 모바일 기기 미확인. Save/Publish 안 함.

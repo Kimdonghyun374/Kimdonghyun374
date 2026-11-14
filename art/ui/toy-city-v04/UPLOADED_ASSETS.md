@@ -28,3 +28,10 @@ Roblox 이미지 한도(긴 변 1024px) 때문에 미리 줄여서 올림. 좌�
 | buggy_dismount | rbxassetid://109535864539713 |
 
 `current-map-ui-example.png`, `pc-hud-rpg-v02.png`, `mobile-hud-rpg-v02.png`는 컨셉 예시라 올리지 않음.
+
+## 게임 연결 (2026-11-14, 1차: 아이콘)
+- 새 모듈 `ReplicatedStorage.PetMissiles.UIImages` (위 ID·AtlasScale·Sprites·Icons + `Rect`/`Apply`).
+- 연결: 집중 발사 → icon_focus, RPG 버튼 → rpg / 장착 중 rpg_equipped(+"장착 중"), 모바일 발사 → rpg_fire, 미사일 메뉴 → icon_missiles,
+  탈것 메뉴 → buggy / 타는 중 buggy_dismount, 코인 → icon_coins, 연구자료 → icon_research_data, 제작 버튼 → icon_craft. 실패하면 옛 아이콘으로 돌아감.
+- Edit 미리보기도 같은 아이콘. 화면: [applied-pc-2026-11-14.jpg](applied-pc-2026-11-14.jpg)
+- 아직 안 쓴 것: 패널·버튼·게이지·희귀도 카드·레이드 배너 등 바탕 이미지(9-slice 크기 검증 필요).
