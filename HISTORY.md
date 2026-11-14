@@ -720,3 +720,12 @@
 - MS_MASTER README A40:B42에 UI 변경/검증 추가, 값·줄바꿈 메타데이터 재읽기 확인(시트 자체 native 화면은 미확인). 기존 Notion GDD/레벨 페이지 상단에 같은 리뷰 추가 성공·경고 없음. 사용자 탭·경제 데이터는 변경하지 않음.
 - 파일 docs/studio-changes/2026-11-14-ui-review(소스7·미리보기 갱신/좌표 검사·JSON·리뷰), art/ui/toy-city-v04/UPLOADED_ASSETS.md, TODO.md. 실제 휴대폰·2인 RPG·게시 저장·탈것 실제 구매/탑승 전환은 이번에 검증하지 않음. 기존203785492 경고만 남음.
 - 자동 승인 검토가 프로젝트 미러 HISTORY.md 동시 수정을 거절하여 미러는 수정하지 않고 실제 개발 저장소 기록만 갱신했다.
+## 2026-11-15 KST — RPG 1번 키 장착·가운데 버튼 + 효과음 음량 상향 (Claude)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMs, Place 122289987934213 Edit. 시작 시 git 동기화 깨끗(dc30cb8). 사용자 요청: "RPG는 1번 버튼으로 장착, 가운데에", "효과음이 전혀 안 들림, 키워 달라".
+- 백업 ServerStorage.ProjectMSBackups.BeforeRpgCenterSounds_1794670262(HudLayout·GameSounds·SocialClient).
+- HudLayout: PistolEquip 자리를 PC·모바일 모두 화면 아래 가운데로. PC PistolFire(숨김) 자리는 그 오른쪽. 모바일 발사 버튼은 점프 버튼 근처 그대로.
+- SocialClient: 장착 키 G → 1(숫자패드 1 포함), 배지 "1". RPG 발사음(RpgLaunch)·폭발음(RpgExplosion) 추가(기존엔 소리 없음).
+- GameSounds: MasterVolume 3(모든 효과음 초기값×3, 최대 3), 공간 음원 감쇠 12/160 → 30/260 stud. RpgLaunch(미사일 발사음 재사용 0.5)·RpgExplosion(붕괴음 재사용 0.6).
+- Edit 미리보기 UIPreview_PrankPistolHUD.PistolEquip 아래 가운데·배지 1.
+- 검증(Play 1인 PC 1918×1080): 버튼 중심 x 959, 1키로 장착 → 다시 1키로 해제, UIConfirm 음량 0.39·로드됨, RpgExplosion 음량 1.8·재생 중·로드됨. 콘솔 기존 203785492 경고만. 열린 탭 편집기=Source. Save/Publish 안 함.
+- 미검증: 실제 귀로 듣는 크기(사용자 확인 필요), 모바일 가운데 버튼 실기기, 효과음 에셋 심사 상태(게시 서버에서 들리는지).
