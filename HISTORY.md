@@ -746,3 +746,10 @@
 - Blender MCP 연결 확인(5.2.3, 애드온 프로토콜 13 < 16 업데이트 필요)했으나 메시 업로드 경로가 없어 Studio 파트 26개로 재제작(발사관·나무 차폐판·분사구·탄두·조준경 등). 상세 docs/studio-changes/2026-11-15-rpg-center-sounds/README.md.
 - 소리: Roblox 내장 impact_explosion_03을 발사(높고 짧게)·폭발(낮고 무겁게)에 사용. GameSounds에 문자열 id·speed 지원.
 - 검증(Play PC): 1키 장착 후 캐릭터가 든 모습 캡처, RpgLaunch 음량 1.05·속도 1.55, RpgExplosion 2.25·0.8 모두 로드·재생. 콘솔 기존 경고만. 실제 귀 확인·모바일 미확인. Save/Publish 안 함.
+
+## 2026-11-15 KST — 확정 UI v06 에셋 패키지 (UI 에셋 담당)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMS. 사용자 확정 시트 기반으로 UI 에셋 수정 요청. 사용자는 다른 Codex가 Studio 작업 중일 때 이쪽에서 동시에 건드리면 안 된다고 명확히 함. Studio 도구/컴퓨터 유즈 호출 없이 파일 작업만 수행.
+- art/ui/toy-city-v06에 원형3/메뉴3 바탕 새 생성, 직전 확정한 재화 캡슐2·호버보드1 포함. 기존 메뉴12 아틀라스·RPG3 원본 재사용. 총24 스프라이트(신규9+재사용15). PNG8개, manifest/실측 좌표·업로드 크기 대응용 Luau 사본·조합 HTML·프롬프트·적용 안내.
+- 실제 검증: 원본 이미지 alpha>=32 영역+2px 여백 실측, 24개 좌표 모두 이미지 내부. 기존 아이콘4파일 SHA256 원본 일치. 초기 PowerShell 해시 검사 배열 구성 오류를 수정한 뒤 4파일 모두 다시 확인. 투명 PNG 샘플 모서리 alpha0.
+- 현재 RPG 아래 중앙/1키·좌우 HUD 세로 가운데 배치는 유지하도록 안내. UIAssetPack은 설치되지 않은 좌표표이며 신규 업로드 ID는 공란, 기존 ID 보존. 9-slice 후보/최종 런타임 크기는 적용 단계 검증 필요.
+- 새 생성은 내장 ImageGen, 기존 아이콘 픽셀 수정/재생성 없음. 업로드·Studio 접근/소스 변경·Play·Save/Publish 없음. 사용자 다운로드 outputs/projectms-ui-assets-v06.zip(프로젝트 미러 outputs에 새 생성 산출물만 저장, synced sources/HISTORY는 수정 안 함).

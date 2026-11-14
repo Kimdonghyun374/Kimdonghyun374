@@ -1,0 +1,116 @@
+[
+  {
+    "assets": [
+      {
+        "name": "circle_blue",
+        "opaqueSamples": 128865,
+        "rect": [
+          78,
+          67,
+          405,
+          416
+        ]
+      },
+      {
+        "name": "circle_yellow",
+        "opaqueSamples": 128898,
+        "rect": [
+          561,
+          67,
+          405,
+          416
+        ]
+      },
+      {
+        "name": "circle_red",
+        "opaqueSamples": 130205,
+        "rect": [
+          1044,
+          67,
+          408,
+          416
+        ]
+      },
+      {
+        "name": "menu_blue",
+        "opaqueSamples": 155242,
+        "rect": [
+          79,
+          553,
+          406,
+          405
+        ]
+      },
+      {
+        "name": "menu_yellow",
+        "opaqueSamples": 154864,
+        "rect": [
+          562,
+          553,
+          405,
+          405
+        ]
+      },
+      {
+        "name": "menu_red",
+        "opaqueSamples": 157838,
+        "rect": [
+          1043,
+          553,
+          413,
+          405
+        ]
+      }
+    ],
+    "width": 1536,
+    "file": "button-backgrounds.png",
+    "height": 1024,
+    "cornerAlpha": 0
+  },
+  {
+    "assets": [
+      {
+        "name": "resource_coins",
+        "opaqueSamples": 271806,
+        "rect": [
+          329,
+          166,
+          1116,
+          262
+        ]
+      },
+      {
+        "name": "resource_research",
+        "opaqueSamples": 272874,
+        "rect": [
+          329,
+          476,
+          1116,
+          262
+        ]
+      }
+    ],
+    "width": 1774,
+    "file": "resource-backgrounds.png",
+    "height": 887,
+    "cornerAlpha": 0
+  },
+  {
+    "assets": [
+      {
+        "name": "hoverboard",
+        "opaqueSamples": 358281,
+        "rect": [
+          260,
+          221,
+          1294,
+          525
+        ]
+      }
+    ],
+    "width": 1774,
+    "file": "hoverboard.png",
+    "height": 887,
+    "cornerAlpha": 0
+  }
+]

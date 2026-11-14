@@ -1,0 +1,365 @@
+{
+  "version": "ui-assets-v06",
+  "date": "2026-11-15",
+  "status": "image files only; Studio not accessed or modified; new images not uploaded",
+  "coordinateMethod": "alpha >=32 bounds plus2px padding; existing core icons exact original cells",
+  "atlases": {
+    "button-backgrounds": {
+      "file": "button-backgrounds.png",
+      "width": 1536,
+      "height": 1024,
+      "imageAssetId": "",
+      "uploadedSize": null
+    },
+    "resource-backgrounds": {
+      "file": "resource-backgrounds.png",
+      "width": 1774,
+      "height": 887,
+      "imageAssetId": "",
+      "uploadedSize": null
+    },
+    "hoverboard": {
+      "file": "hoverboard.png",
+      "width": 1774,
+      "height": 887,
+      "imageAssetId": "",
+      "uploadedSize": null
+    },
+    "core-icons": {
+      "file": "existing-icons/core-icons-atlas.png",
+      "width": 1448,
+      "height": 1086,
+      "imageAssetId": "rbxassetid://117548738752799",
+      "uploadedSize": [
+        1024,
+        768
+      ]
+    },
+    "rpg": {
+      "file": "existing-icons/rpg.png",
+      "width": 512,
+      "height": 512,
+      "imageAssetId": "rbxassetid://81808321300866",
+      "uploadedSize": [
+        512,
+        512
+      ]
+    },
+    "rpg_equipped": {
+      "file": "existing-icons/rpg_equipped.png",
+      "width": 512,
+      "height": 512,
+      "imageAssetId": "rbxassetid://127325095571385",
+      "uploadedSize": [
+        512,
+        512
+      ]
+    },
+    "rpg_fire": {
+      "file": "existing-icons/rpg_fire.png",
+      "width": 512,
+      "height": 512,
+      "imageAssetId": "rbxassetid://97729511215410",
+      "uploadedSize": [
+        512,
+        512
+      ]
+    }
+  },
+  "assets": {
+    "circle_blue": {
+      "atlas": "button-backgrounds",
+      "rect": [
+        78,
+        67,
+        405,
+        416
+      ],
+      "source": "new",
+      "scaleType": "stretch"
+    },
+    "circle_yellow": {
+      "atlas": "button-backgrounds",
+      "rect": [
+        561,
+        67,
+        405,
+        416
+      ],
+      "source": "new",
+      "scaleType": "stretch"
+    },
+    "circle_red": {
+      "atlas": "button-backgrounds",
+      "rect": [
+        1044,
+        67,
+        408,
+        416
+      ],
+      "source": "new",
+      "scaleType": "stretch"
+    },
+    "menu_blue": {
+      "atlas": "button-backgrounds",
+      "rect": [
+        79,
+        553,
+        406,
+        405
+      ],
+      "source": "new",
+      "scaleType": "stretch"
+    },
+    "menu_yellow": {
+      "atlas": "button-backgrounds",
+      "rect": [
+        562,
+        553,
+        405,
+        405
+      ],
+      "source": "new",
+      "scaleType": "stretch"
+    },
+    "menu_red": {
+      "atlas": "button-backgrounds",
+      "rect": [
+        1043,
+        553,
+        413,
+        405
+      ],
+      "source": "new",
+      "scaleType": "stretch"
+    },
+    "resource_coins": {
+      "atlas": "resource-backgrounds",
+      "rect": [
+        329,
+        166,
+        1116,
+        262
+      ],
+      "source": "new",
+      "scaleType": "slice_candidate"
+    },
+    "resource_research": {
+      "atlas": "resource-backgrounds",
+      "rect": [
+        329,
+        476,
+        1116,
+        262
+      ],
+      "source": "new",
+      "scaleType": "slice_candidate"
+    },
+    "hoverboard": {
+      "atlas": "hoverboard",
+      "rect": [
+        260,
+        221,
+        1294,
+        525
+      ],
+      "source": "new",
+      "scaleType": "fit"
+    },
+    "icon_shop": {
+      "atlas": "core-icons",
+      "rect": [
+        0,
+        0,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_missiles": {
+      "atlas": "core-icons",
+      "rect": [
+        362,
+        0,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_codex": {
+      "atlas": "core-icons",
+      "rect": [
+        724,
+        0,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_research": {
+      "atlas": "core-icons",
+      "rect": [
+        1086,
+        0,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_craft": {
+      "atlas": "core-icons",
+      "rect": [
+        0,
+        362,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_base": {
+      "atlas": "core-icons",
+      "rect": [
+        362,
+        362,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_garage": {
+      "atlas": "core-icons",
+      "rect": [
+        724,
+        362,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_upgrade": {
+      "atlas": "core-icons",
+      "rect": [
+        1086,
+        362,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_coins": {
+      "atlas": "core-icons",
+      "rect": [
+        0,
+        724,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_research_data": {
+      "atlas": "core-icons",
+      "rect": [
+        362,
+        724,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_focus": {
+      "atlas": "core-icons",
+      "rect": [
+        724,
+        724,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "icon_settings": {
+      "atlas": "core-icons",
+      "rect": [
+        1086,
+        724,
+        362,
+        362
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "rpg": {
+      "atlas": "rpg",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "rpg_equipped": {
+      "atlas": "rpg_equipped",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    },
+    "rpg_fire": {
+      "atlas": "rpg_fire",
+      "rect": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source": "unchanged",
+      "scaleType": "fit"
+    }
+  },
+  "replacements": {
+    "focusBackground": "circle_blue",
+    "focusIcon": "icon_missiles",
+    "rpgEquipBackground": "circle_yellow",
+    "rpgFireBackground": "circle_red",
+    "inventoryBackground": "menu_blue",
+    "rideBackground": "menu_blue",
+    "rideIcon": "hoverboard",
+    "coinBackground": "resource_coins",
+    "researchBackground": "resource_research",
+    "coinIcon": "icon_coins",
+    "researchIcon": "icon_research_data"
+  },
+  "resourceSliceCandidate": {
+    "rect": [
+      144,
+      64,
+      972,
+      198
+    ],
+    "coordinates": "relative to cropped sprite in ORIGINAL source pixels",
+    "status": "candidate only; validate after actual upload and at runtime target size"
+  },
+  "notes": [
+    "Preserve current HudLayout: side HUD vertically centered, RPG bottom center and key1 per latest Claude work.",
+    "Check Studio occupancy before applying. User says other Codex is using Studio; this asset task must not modify Studio concurrently.",
+    "Keep existing production icons unchanged except ride; approved-reference.png is illustrative, not an icon extraction source.",
+    "Keep button hitboxes fixed; animate inner art per docs/UI_BUTTON_INTERACTIONS.md.",
+    "Native currency values/labels, optional F/1 badges and gauges remain separate from PNGs."
+  ]
+}
