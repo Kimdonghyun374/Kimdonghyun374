@@ -15,6 +15,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
+- [ ] **UI 이미지 연결 재점검·PC/모바일 크기/배치 보정** (Codex, 2026-11-14, Studio 게임 Place 사용 중). Claude 1·2차 적용본을 기준으로 수정, Save/Publish 없음.
+
 - [x] **UI 바탕 이미지 연결 2차(버튼 판·코인 캡슐·집중 발사·레이드 배너·창)** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [art/ui/toy-city-v04/UPLOADED_ASSETS.md](art/ui/toy-city-v04/UPLOADED_ASSETS.md). 남은 것: 긴 버튼·탭·희귀도 카드·토스트·낮밤 표시.
 
 - [x] **업로드한 UI 이미지를 게임 HUD에 연결(아이콘 1차)** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [art/ui/toy-city-v04/UPLOADED_ASSETS.md](art/ui/toy-city-v04/UPLOADED_ASSETS.md). 남은 것: 패널·버튼·게이지·희귀도 카드·레이드 배너 바탕 이미지(2차).
