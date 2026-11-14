@@ -623,3 +623,11 @@
 - Studio Place122289987934213 Edit에 적용. 백업 BeforeRaidArenaExpansion_1794645015·1794645135. 기지·대로6개/Entry·게이트·도시22채·스폰·공용 차고·월드1 공용Entry를 최초 대비60stud 바깥 이동. 레이드 ArenaRadius120/AttackPlayerRange135·밤 안전반경306. 보스 크기·중심·체력·시간·보상·사거리 보존.
 - 검증: 각 기지 반경230·모든 대로Part와 도시22모델 최초 대비 이동 일치, 최종 Play 지름240/336·RaidConfig·스폰 아래 바닥·레이드 초기화·권총 확인. 기존203785492 경고 외 새 오류 없음. 두 수정 스크립트 UpdateSourceAsync+.Source 적용, 종료 시 열린 탭 전체 일치. Edit 복귀, 임시 러너 없음, Save/Publish 미실행.
 - 화면 캡처에 맵이 나타나지 않아 최종 시각 검증 미완료. 실제2인·확대 공간 자연 공략·모바일은 후속. 소스/재현본 docs/studio-changes/2026-11-14-arena-expansion. 로컬 레벨 문서에 현행 치수 갱신.
+
+## 2026-11-14 KST — Notion·시트 최신화, 모바일 UI 수정 준비, 한국어 폰트 점검 (Claude)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMs. 시작 때 fetch → 원격과 같음·미커밋 없음. Codex가 같은 폴더에서 그래픽 개선 진행 중(TODO 진행 중, Studio Play 중) → Studio는 읽기만, 게임·UI 스크립트 수정 없음.
+- Notion: 게임 기획서 v0.3·레벨디자인 v0.3 맨 위에 "구현 리뷰 추가 — 2026-11-14"(공동 레이드 1차, 레이드 원120·광장168·기지 중심230, 스크립트 6개 복구, Codex 그래픽 진행 중). 기획서 v0.3 공동 콘텐츠 행·다음 작업 안내, 레벨디자인 2-2절·RaidArena 행 갱신. 다른 문단·Codex 담당(그래픽·레퍼런스·디자이너 페이지)은 손대지 않음. 레벨디자인 본문 d 값은 옛 기준이라고 표시만 함(최신은 docs/LEVEL_DESIGN_v0.3.md).
+- 시트 MS_MASTER RAID 탭(AI 탭) A22:E24에 Codex 변경값 ArenaRadius 120·AttackPlayerRange 135 추가(게임에 이미 적용된 값 기록, Studio 반영 아님). 사용자 탭은 건드리지 않음.
+- 모바일 UI: 원인 확인(고정 픽셀 + UITheme.HudScale 1.2 고정, 요소별 UIScale, 터치 분기 2곳뿐, 조이스틱·점프 자리 규칙 없음). 계획 docs/MOBILE_UI_PLAN.md. 실제 에뮬레이터 화면 확인은 아직 안 함.
+- 한국어 폰트: 이 PC Roblox 설치본 기본 글꼴 43종 중 한글 포함은 NotoSansCJK Fallback(Regular 하나)뿐. 게임은 전부 Gotham 계열이라 한글은 대체 글꼴로 나와 굵기 지정이 한글에 안 먹는 것으로 추정(화면 비교 미실행).
+- 미검증: Notion 반영 화면 확인 외 Studio 실행 검증 없음. Save/Publish 없음.
