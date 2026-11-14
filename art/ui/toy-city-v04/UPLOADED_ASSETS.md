@@ -1,7 +1,7 @@
 # Roblox 업로드한 UI 이미지 (2026-11-14 KST, Claude)
 
 사용자 지시("업로드해보세요")로 Studio MCP `upload_image`를 써서 주인 계정에 올림. 모두 Studio에서 내려받기 성공(AssetFetchStatus.Success)·화면 표시(투명 배경) 확인.
-**아직 게임 UI에 연결하지 않음** — 이미지 ID만 확보.
+**게임 UI 연결 완료(Claude 1·2차 + Codex 재점검)** — 아래 단계별 기록과 최신 리뷰를 참조.
 
 ## 교체 키트 아틀라스 6장 (`replacement-kit/`)
 Roblox 이미지 한도(긴 변 1024px) 때문에 미리 줄여서 올림. 좌표는 `ReplacementAssets.luau`의 `AtlasScale`을 곱해야 함(`Assets.Rect(이름)` 함수가 계산).
@@ -42,3 +42,8 @@ Roblox 이미지 한도(긴 변 1024px) 때문에 미리 줄여서 올림. 좌�
 - `UITheme`: `NoTheme` 속성이 있는 바탕 이미지는 색·모양 치환에서 제외.
 - Edit 미리보기도 같은 바탕. 화면: [applied-skins-hud-2026-11-14.jpg](applied-skins-hud-2026-11-14.jpg), [applied-skins-inventory-2026-11-14.jpg](applied-skins-inventory-2026-11-14.jpg)
 - 아직 안 쓴 것: 버튼 아틀라스(파랑·노랑·빨강·초록 긴 버튼), 탭, 희귀도 카드, 토스트 알림, 낮밤 표시, RPG 원판(지금은 색 원).
+
+## Codex 재점검 (2026-11-14)
+- UIAppearance 모듈로 Play/Edit 이미지 연결 통일. 재화·낮밤 대비, 버튼/게이지 ZIndex, 긴 버튼 상태·닫기·토스트 이미지와 PC/모바일 배치 보정.
+- 보관함/차고 이중 축소 제거. 모바일 가로749×381·세로400×776, PC1918×1080 점검. 실제 휴대폰 후속.
+- 상세: [UI 재점검 기록](../../../docs/studio-changes/2026-11-14-ui-review/README.md).

@@ -15,7 +15,7 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 
 ## 진행 중
 
-- [ ] **UI 이미지 연결 재점검·PC/모바일 크기/배치 보정** (Codex, 2026-11-14, Studio 게임 Place 사용 중). Claude 1·2차 적용본을 기준으로 수정, Save/Publish 없음.
+
 
 - [x] **UI 바탕 이미지 연결 2차(버튼 판·코인 캡슐·집중 발사·레이드 배너·창)** (Claude, 2026-11-14) — Studio 사용 끝남. 상세 [art/ui/toy-city-v04/UPLOADED_ASSETS.md](art/ui/toy-city-v04/UPLOADED_ASSETS.md). 남은 것: 긴 버튼·탭·희귀도 카드·토스트·낮밤 표시.
 
@@ -92,6 +92,8 @@ Claude·Codex 등 모든 AI 에이전트와 사용자가 함께 보는 **현재 
 - [ ] 미검증: 2인 이상 동시 접속, 버기 대로 주행, 모바일 실기기, 게시 서버 저장·재접속. (월드2 진입은 2026-11-10 확인)
 
 ## 완료
+
+- [x] **UI 이미지 연결 재점검·PC/모바일 크기/배치 보정** (Codex, 2026-11-14, 본 작업 커밋). Studio 사용 끝남. 재화/낮밤 대비·버튼/게이지 레이어·팝업 이중 축소·가로/세로 배치 수정. docs/studio-changes/2026-11-14-ui-review. 실제 휴대폰 후속.
 
 - [x] 현재 UI 전체 교체용 이미지 키트72부품(신규60+메뉴12)·PNG7장·최신 맵 HUD컨셉·현재 UI 사용표/실측 좌표/ZIP 준비 (Codex, 2026-11-14, art/ui/toy-city-v04/replacement-kit). 업로드·Studio 적용·모바일 검증 후속.
 

@@ -710,3 +710,13 @@
 - 새 UISkinClient(경로로 찾아 Skin 이미지 깔고 원래 바탕·테두리 숨김): 메뉴 버튼 keycap_blank, 보관함·차고 창 modal_blue, 레이드 패널 boss_banner(+안쪽 여백), 코인·연구자료 캡슐. PetMissileClient 집중 발사 원판(focus_normal/disabled)·게이지(gauge_track/blue/gold). UITheme은 NoTheme 속성 요소 제외. Edit 미리보기도 갱신. UpdateSourceAsync + .Source, 열린 탭 편집기=Source.
 - 검증(Play 1인 PC): Skin 6곳 생성·원래 바탕 투명 확인, 화면 캡처(HUD·레이드 배너·보관함 창) art/ui/toy-city-v04/applied-skins-*.jpg. 콘솔 기존 경고만.
 - 미적용: 긴 버튼·탭·희귀도 카드·토스트·낮밤 표시. 모바일 실기기 미확인. Save/Publish 안 함.
+
+## 2026-11-14 KST — UI 이미지 연결 재점검·PC/모바일 배치 보정 (Codex)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMS. 사용자 요청: Claude가 연결한 이미지를 다시 점검·연결하고 크기/배치 보정. 선점 ac15f56, 시작 미커밋 없음. 백업 ServerStorage.ProjectMSBackups.BeforeUIReview_1794662859.
+- UIAppearance + UISkinClient 공통 적용, UITheme NoTheme 동적 재색칠 차단. 재화/낮밤 흰 글자·청사진 아이콘, 긴 버튼 상태·닫기·토스트, 보스 게이지·버튼 바탕 Global ZIndex 가림 수정. 집중 발사 세 미사일+이름, RPG 노랑/모바일 발사 빨강. PC 클릭 발사·모바일 장착 때만 발사 표시 유지.
+- PC HUD 배율 0.9~1.25, 재화82/메뉴72. 모바일 재화110으로 CoreGui 공간 확보, 세로 낮밤60·레이드는 재화 아래. 보관함/차고 이중 배율 제거, 실제 화면 여백으로 크기 결정·목록 공간 확보. 닫기44×44·장착/판매 높이44. 확률 RichText 밝은 색 가독성 보정. 구매/판매/피해 수치 변경 없음.
+- 검증: Studio Play PC1918×1080, 실제 기기 에뮬레이터 가로749×381·세로400×776 주요 HUD 겹침/화면 이탈0 및 native 화면 확인. G 해제/재장착 시 발사 숨김/표시·체크 아이콘, B 보관함 열기/닫기, 실제 레이드 예고/Active 금색 체력 게이지. 목록 높이 가로133·세로/PC296. 최종 닫기44×44와 버튼/낮밤 아틀라스 확인, Play 미리보기 사본0.
+- Edit 미리보기14개와 숨김 팝업 갱신. 마지막 미리보기 복사에서 빠진 Hint를 발견해 직접 생성·복구. 모든 사본 RemoveInPlay 유지. 임시 모듈0, 열린 편집기 불일치0, 소스7개 UTF8 바이트 길이/base31 해시 로컬=Studio 일치. 원래 PS5 에뮬레이터 모드·Edit 복귀, Save/Publish 미실행.
+- MS_MASTER README A40:B42에 UI 변경/검증 추가, 값·줄바꿈 메타데이터 재읽기 확인(시트 자체 native 화면은 미확인). 기존 Notion GDD/레벨 페이지 상단에 같은 리뷰 추가 성공·경고 없음. 사용자 탭·경제 데이터는 변경하지 않음.
+- 파일 docs/studio-changes/2026-11-14-ui-review(소스7·미리보기 갱신/좌표 검사·JSON·리뷰), art/ui/toy-city-v04/UPLOADED_ASSETS.md, TODO.md. 실제 휴대폰·2인 RPG·게시 저장·탈것 실제 구매/탑승 전환은 이번에 검증하지 않음. 기존203785492 경고만 남음.
+- 자동 승인 검토가 프로젝트 미러 HISTORY.md 동시 수정을 거절하여 미러는 수정하지 않고 실제 개발 저장소 기록만 갱신했다.

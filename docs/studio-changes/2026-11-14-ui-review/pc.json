@@ -1,0 +1,52 @@
+{
+  "touch": false,
+  "playerGuiChildren": 12,
+  "inventoryListHeight": 296,
+  "viewport": "1918, 1080",
+  "issues": [],
+  "rects": [
+    {
+      "y": 82,
+      "x": 12,
+      "name": "Resources",
+      "w": 282.5,
+      "h": 117.5
+    },
+    {
+      "y": 8,
+      "x": 819,
+      "name": "Phase",
+      "w": 280,
+      "h": 50
+    },
+    {
+      "y": 68,
+      "x": 709,
+      "name": "RaidPanel",
+      "w": 500,
+      "h": 127.5
+    },
+    {
+      "y": 72,
+      "x": 1818,
+      "name": "OpenInventory",
+      "w": 80,
+      "h": 80
+    },
+    {
+      "y": 920,
+      "x": 20,
+      "name": "Panel",
+      "w": 120,
+      "h": 120
+    },
+    {
+      "y": 935.5,
+      "x": 157.5,
+      "name": "PistolEquip",
+      "w": 105,
+      "h": 105
+    }
+  ],
+  "scale": 1.25
+}
