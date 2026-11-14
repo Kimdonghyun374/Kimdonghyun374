@@ -663,3 +663,13 @@
 - 아이콘 아틀라스1448×1086, 4열3행/칸362×362. 상점·미사일·도감·연구·제작·기지·차고·강화·코인·연구자료·집중 발사·설정12종. 32bit ARGB 실제 투명 픽셀 확인, 내부 칸 경계의 불투명 픽셀0. UIAtlas.luau/manifest.json에 ImageRectOffset/Size 기록, 업로드 전 asset ID 비움.
 - art/ui/toy-city-v04에 PNG2개·README·실제 생성 프롬프트·좌표표·로컬 HTML 미리보기 저장. generated_images 원본/기존 UI v01/v03 보존. 시트와 아틀라스의 세부 아이콘 차이는 적용 시 아틀라스 우선. Roblox 실제 글자/수치/상태는 네이티브로 구성하는 기준 기록.
 - 이번 범위는 디자인 시안·아이콘 파일 제작이며 Studio 구현/Roblox 업로드/모바일 Play 검증이 아니다. 최종 디자인 선택 후 별도 UI 적용·화면별 배율/터치 영역 검증 필요. 다른 에이전트의 맵 작업과 섞지 않음.
+
+## 2026-11-14 KST — HUD 크로스 플랫폼 정리 (Claude)
+- 실행 DESKTOP-RLF93FA, C:\ProjectMs. fetch 최신(Codex 3da0e8d UI 시트·아이콘 받음), TODO 선점 커밋 후 작업.
+- 사용자 요청: 모바일에서 UI 너무 큼, 버튼 전체적으로 크게, 탈것 타기를 인벤토리처럼 작게·UI 통일, 권총을 F 옆에 + 장착 상태 표시, 액션(권총 발사·특수 스킬) PC 왼쪽 아래·모바일 점프 주변.
+- 백업 ServerStorage.ProjectMSBackups.BeforeHudCrossPlatform_1794654855.
+- 새 ReplicatedStorage.PetMissiles.HudLayout(화면 짧은 변 기준 배율 PC 1.15~1.5·모바일 0.75~1.1, 큰 창 1배 이하, 버튼 자리). UIScaleClient가 고정 1.2 대신 이 배율을 쓰고 화면 바뀌면 갱신.
+- PetMissileClient F 버튼 96px·HudLayout 자리, SocialClient 동그란 권총(장착 중 주황)·발사 버튼(장착 중에만, 화면 가운데 조준), ScoutBuggyClient 탈것을 64px 아이콘 + "타기/내리기", MissileBaseClient 미사일 버튼 64px + "미사일". UITheme의 SummonBuggy 아이콘 항목 제거. UpdateSourceAsync + .Source.
+- StarterGui UIPreview 4개를 새 PC 배치로 갱신(Edit 화면 확인).
+- 검증(Play 1인): PC 1918×1080 배율 1.5 배치·겹침 없음 캡처, 권총 버튼 클릭 장착→주황 "장착 중"·발사 버튼 클릭과 화면 클릭 각각 서버 궤적 수신(TracesSeen 2), 해제 시 흰색·발사 숨김. 모바일은 HudForceTouch+844×390 흉내로 점프 자리 주변 배치 확인. 콘솔 기존 203785492 경고만. 열린 탭 16개 편집기=Source.
+- 미검증: 실제 휴대폰, Studio 기기 에뮬레이터, 실제 TouchGui 점프 버튼 위치, 탈것 보유 상태의 타기/내리기 실제 전환(버튼 모양만 확인). Save/Publish 안 함.
